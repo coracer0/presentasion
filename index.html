@@ -92,12 +92,15 @@
                     class="relative w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-dark shadow-2xl object-cover transform transition duration-500 hover:scale-105">
                 <div class="absolute bottom-2 right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-dark shadow-lg"></div>
             </div>
-
+            <div class="relative z-10">
+            <p class="text-blue-400 font-bold tracking-[0.3em] uppercase text-sm mb-4 animate-pulse">
+                Tu idea, mi código. <span class="text-white">Software que trabaja por ti.</span>
+            </p>
             <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">
                 Axel <span class="gradient-text">Coracero</span>
             </h1>
             <h2 class="text-2xl md:text-3xl text-slate-400 font-semibold mb-8 tracking-wide">
-                Software Engineer & Automation Specialist
+                Ingeniero de Software & Especialista en Automatización
             </h2>
 
             <p class="max-w-3xl text-slate-400 text-xl mb-12 leading-relaxed font-light">
@@ -111,9 +114,9 @@
                     class="group flex items-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-[#25D366]/20">
                     <i class="fab fa-whatsapp text-2xl group-hover:rotate-12 transition"></i> WhatsApp Directo
                 </a>
-                <a href="https://github.com/coracer0" target="_blank"
+                <a href="#proyectos"
                     class="group flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105 border border-slate-700 shadow-xl">
-                    <i class="fab fa-github text-2xl group-hover:scale-110 transition"></i> GitHub Pro
+                    <i class="fas fa-rocket text-2xl group-hover:scale-110 transition text-blue-400"></i> Ver Mis Soluciones
                 </a>
                 <a href="mailto:ax.coracero@gmail.com"
                     class="group flex items-center gap-3 bg-rose-600 hover:bg-rose-700 text-white px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-rose-600/20">
@@ -127,8 +130,8 @@
     <main class="max-w-7xl mx-auto px-6 relative z-10">
 
         <!-- Tab Navigation -->
-        <div
-            class="flex overflow-x-auto gap-2 justify-start md:justify-center mb-12 border-b border-slate-700 pb-px no-scrollbar">
+        <div id="proyectos"
+            class="flex overflow-x-auto gap-2 justify-start md:justify-center mb-12 border-b border-slate-700 pb-px no-scrollbar scroll-mt-24">
             <button onclick="openTab('bots')" id="btn-bots"
                 class="tab-btn active px-6 py-3 text-lg font-semibold border-b-2 border-primary text-primary transition whitespace-nowrap">
                 <i class="fas fa-robot mr-2"></i> Asistentes y Automatización (40)
@@ -1421,10 +1424,7 @@
                     <!-- QR Code will be injected here -->
                     <img id="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://coracer0.github.io/presentasion/" alt="QR Code">
                 </div>
-                <button onclick="printQR()" 
-                    class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors font-medium">
-                    <i class="fas fa-print"></i> Imprimir código
-                </button>
+                </div>
             </div>
         </div>
     </section>
