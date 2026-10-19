@@ -1,7 +1,7 @@
 import QRCode from "qrcode";
 import { writeFileSync } from "node:fs";
 
-const svg = await QRCode.toString("https://coracer0.github.io/presentasion/", {
+const svg = await QRCode.toString("https://wa.me/524181774447", {
   type: "svg",
   errorCorrectionLevel: "M",
   margin: 1,

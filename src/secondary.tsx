@@ -21,7 +21,7 @@ function ContactCard() {
           alt="Axel Coracero"
         />
         <span>HOLA, SOY AXEL</span>
-        <h1>Hablemos de tu siguiente idea.</h1>
+        <h1>Cuéntame qué tienes en mente.</h1>
         <p>
           Creo páginas y herramientas que ayudan a negocios locales a atender
           mejor y ahorrar tareas repetitivas. Me importa escucharte y dejar todo
@@ -33,10 +33,15 @@ function ContactCard() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MessageCircle size={19} /> WhatsApp <ArrowUpRight size={18} />
+            <MessageCircle size={19} /> Escríbeme por WhatsApp{" "}
+            <ArrowUpRight size={18} />
           </a>
-          <a href="mailto:ax.coracero@gmail.com">
-            <Mail size={19} /> Correo electrónico <ArrowUpRight size={18} />
+          <a
+            className="contact-alternative"
+            href="mailto:ax.coracero@gmail.com"
+          >
+            <Mail size={19} /> Si prefieres, envíame un correo{" "}
+            <ArrowUpRight size={18} />
           </a>
           <a href={base}>
             <ArrowLeft size={19} /> Ver portafolio <ArrowUpRight size={18} />
@@ -47,9 +52,12 @@ function ContactCard() {
             src={`${base}qr.svg`}
             width="84"
             height="84"
-            alt="Código QR que abre el portafolio"
+            alt="Código QR que abre WhatsApp para escribirme"
           />
-          <span>Escanea para explorar las demos y compartir mi trabajo.</span>
+          <span>
+            Escanea y escríbeme por WhatsApp. También puedes explorar las demos
+            desde el portafolio.
+          </span>
         </div>
       </article>
     </main>
@@ -65,23 +73,19 @@ function PrintCard() {
       </button>
       <div className="print-cards">
         <article className="print-card print-front">
-          <span>AXEL CORACERO / DESARROLLO</span>
-          <h1>
-            Software útil.
-            <br />
-            Trato humano.
-          </h1>
+          <span>AXEL CORACERO</span>
+          <h1>Hagamos tu día más fácil.</h1>
           <p>Páginas web · Bots de mensajes · Herramientas a medida</p>
-          <small>ax.coracero@gmail.com · +52 418 177 4447</small>
+          <small>WhatsApp: +52 418 177 4447</small>
         </article>
         <article className="print-card print-back">
           <img
             src={`${base}qr.svg`}
             width="100"
             height="100"
-            alt="Código QR del portafolio"
+            alt="Código QR para escribirme por WhatsApp"
           />
-          <span>EXPLORA MIS DEMOS</span>
+          <span>ESCANEA Y ESCRÍBEME POR WHATSAPP</span>
         </article>
       </div>
       <p className="print-note">

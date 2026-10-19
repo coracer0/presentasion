@@ -96,9 +96,11 @@ function ConceptDetails({ item }: { item: PortfolioItem }) {
       </div>
       <a
         className="text-link"
-        href="mailto:ax.coracero@gmail.com?subject=Quiero%20conversar%20sobre%20un%20proyecto"
+        href="https://wa.me/524181774447?text=Hola%20Axel%2C%20vi%20una%20idea%20en%20tu%20portafolio%20y%20quiero%20contarte%20mi%20caso."
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        Conversemos sobre algo similar <ArrowUpRight size={17} />
+        Cuéntame tu idea por WhatsApp <ArrowUpRight size={17} />
       </a>
     </div>
   );
@@ -188,7 +190,7 @@ function DemoAfterword({ id }: { id: DemoId }) {
       <div className="demo-next-step">
         <p>¿Te serviría algo así para tu negocio?</p>
         <a href={contactUrl} target="_blank" rel="noopener noreferrer">
-          Cuéntame tu caso <ArrowUpRight size={16} />
+          Escríbeme por WhatsApp <ArrowUpRight size={16} />
         </a>
         <a href={getCaseUrl(id)}>
           Leer el caso completo <ArrowUpRight size={16} />

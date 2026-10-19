@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, MessageCircle, X } from "lucide-react";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,11 +27,8 @@ export function SiteHeader() {
         href="#inicio"
         aria-label="Axel Coracero, ir al inicio"
       >
-        <span className="brand-mark">
-          A<span>.</span>
-        </span>
         <span>
-          AXEL CORACERO<small>SOFTWARE CON TRATO HUMANO</small>
+          Axel Coracero<small>PÁGINAS Y HERRAMIENTAS A TU MEDIDA</small>
         </span>
       </a>
       <nav aria-label="Navegación principal">
@@ -46,7 +43,7 @@ export function SiteHeader() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Hablemos <ArrowUpRight size={16} />
+        <MessageCircle size={16} /> WhatsApp <ArrowUpRight size={16} />
       </a>
       <button
         className="menu-toggle"

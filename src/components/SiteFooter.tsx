@@ -26,20 +26,14 @@ export function SiteFooter() {
             <MessageCircle size={18} /> Escribir por WhatsApp{" "}
             <ArrowUpRight size={18} />
           </a>
-          <a
-            className="button button-outline"
-            href="mailto:ax.coracero@gmail.com"
-          >
-            <Mail size={18} /> Enviar un correo <ArrowUpRight size={18} />
+          <a className="footer-email" href="mailto:ax.coracero@gmail.com">
+            <Mail size={18} /> ¿No usas WhatsApp? Envíame un correo
           </a>
         </div>
         <div className="footer-bottom">
           <a className="brand" href="#inicio">
-            <span className="brand-mark">
-              A<span>.</span>
-            </span>
             <span>
-              AXEL CORACERO<small>SOFTWARE CON TRATO HUMANO</small>
+              Axel Coracero<small>PÁGINAS Y HERRAMIENTAS A TU MEDIDA</small>
             </span>
           </a>
           <div>

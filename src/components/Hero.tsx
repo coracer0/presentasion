@@ -13,21 +13,21 @@ export function Hero() {
           Tu negocio puede funcionar con <em>menos trabajo repetitivo.</em>
         </h1>
         <p>
-          Soy Axel. Creo páginas y herramientas para negocios locales que
-          quieren atender mejor y dedicar menos tiempo a tareas repetitivas.
-          Conoce cómo trabajo y prueba seis demos con datos ficticios.
+          Soy Axel. Creo páginas y herramientas para negocios locales. Te ayudo
+          a atender mejor y ahorrar tiempo en tareas repetitivas. Prueba seis
+          demos con datos ficticios.
         </p>
         <div className="hero-actions">
-          <a className="button button-light" href="#trabajos">
-            Conocer las demos <ArrowDownRight size={18} />
-          </a>
           <a
-            className="button button-outline"
+            className="button button-light"
             href="https://wa.me/524181774447"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Cuéntame tu idea <ArrowUpRight size={18} />
+            Escríbeme por WhatsApp <ArrowUpRight size={18} />
+          </a>
+          <a className="button button-outline" href="#trabajos">
+            Conocer las demos <ArrowDownRight size={18} />
           </a>
         </div>
         <div className="hero-bottom">
