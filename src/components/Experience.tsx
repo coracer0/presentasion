@@ -1,6 +1,10 @@
 export function Experience() {
   return (
-    <section className="section-shell experience-section">
+    <section
+      id="sobre-mi"
+      className="section-shell experience-section"
+      tabIndex={-1}
+    >
       <div className="experience-photo">
         <img
           src={`${import.meta.env.BASE_URL}profile.webp`}
@@ -8,33 +12,66 @@ export function Experience() {
           height="520"
           alt="Axel Coracero"
         />
-        <span>AC / EN PERSONA</span>
+        <span>AXEL / EN PERSONA</span>
       </div>
       <div className="experience-copy">
-        <span className="eyebrow">04 / DETRÁS DEL CÓDIGO</span>
+        <span className="eyebrow">01 / QUIÉN ESTÁ DETRÁS</span>
         <h2>
-          Ideas grandes.
+          Soy Axel.
           <br />
-          <em>Trabajo cercano.</em>
+          <em>Trabajo contigo.</em>
         </h2>
-        <p>
-          Soy Axel Coracero, desarrollador independiente. He aplicado
-          automatizaciones en un proyecto profesional privado que no puedo
-          mostrar por confidencialidad. Por eso construí estas demos públicas:
-          para enseñar mi forma de pensar sin revelar trabajo ajeno.
+        <p className="experience-lead">
+          Soy ingeniero en Desarrollo y Gestión de Software. Creo que todas las
+          personas y negocios merecen software útil y de calidad sin tener que
+          gastar una fortuna. Por eso empiezo por el problema que más pesa y
+          propongo un alcance claro para su presupuesto.
         </p>
         <p>
-          Trabajo con negocios que necesitan algo más que una pantalla bonita:
-          procesos más ágiles, software entendible y experiencias digitales que
-          la gente quiera usar.
+          Me importa la confianza: escuchar bien, respetar los acuerdos y
+          construir algo que sirva en el día a día. Pongo cuidado en los
+          detalles y cariño en cada entrega.
         </p>
+        <ul className="experience-values">
+          <li>
+            <strong>Acuerdos claros</strong>
+            <span>Sabes qué vamos a hacer y qué incluye.</span>
+          </li>
+          <li>
+            <strong>Calidad útil</strong>
+            <span>Pruebo los pasos que importan a tu negocio.</span>
+          </li>
+          <li>
+            <strong>Trato cercano</strong>
+            <span>Hablamos sin tecnicismos innecesarios.</span>
+          </li>
+        </ul>
         <div className="experience-note">
-          <span>LO QUE VES AQUÍ</span>
-          <strong>
-            Prototipos propios, ejemplos ficticios y una conversación abierta
-            sobre tu siguiente proyecto.
-          </strong>
+          <span>MI RECORRIDO</span>
+          <div>
+            <p>
+              Durante tres años y medio mantuve, corregí y amplié módulos de un
+              sistema interno universitario, incluidos procesos de contabilidad,
+              alumnos, calificaciones y calidad.
+            </p>
+            <p>
+              También he creado bots de WhatsApp y sitios para negocios locales,
+              una página para una empresa de software del sector aéreo y realicé
+              cuatro meses de prácticas en seguridad y pruebas de un sistema
+              bancario.
+            </p>
+          </div>
         </div>
+        <p className="experience-personal">
+          Vivo con una discapacidad psicomotora; a veces necesito un momento más
+          para encontrar las palabras. Me gusta trabajar con calma, dejar
+          acuerdos claros y poner mucho cariño en lo que construyo.
+        </p>
+        <p className="experience-disclosure">
+          Los trabajos de terceros tienen sus propios derechos. Las demos que
+          ves aquí usan marcas y datos ficticios para mostrar cómo abordo
+          problemas cotidianos.
+        </p>
       </div>
     </section>
   );

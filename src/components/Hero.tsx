@@ -13,13 +13,13 @@ export function Hero() {
           Tu negocio puede funcionar con <em>menos trabajo repetitivo.</em>
         </h1>
         <p>
-          Creo páginas y herramientas para organizar reservas, pedidos y tareas
-          del día a día. Prueba cuatro demos hechas por mí con datos ficticios y
-          cuéntame qué necesitas resolver.
+          Soy Axel. Creo páginas y herramientas para negocios locales que
+          quieren atender mejor y dedicar menos tiempo a tareas repetitivas.
+          Conoce cómo trabajo y prueba seis demos con datos ficticios.
         </p>
         <div className="hero-actions">
           <a className="button button-light" href="#trabajos">
-            Ver las demos <ArrowDownRight size={18} />
+            Conocer las demos <ArrowDownRight size={18} />
           </a>
           <a
             className="button button-outline"

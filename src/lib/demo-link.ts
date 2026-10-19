@@ -5,6 +5,8 @@ const demoIds: readonly DemoId[] = [
   "restaurant",
   "prices",
   "podcast",
+  "messages",
+  "quotes",
 ];
 
 export function readDemoFromUrl(search: string): DemoId | null {

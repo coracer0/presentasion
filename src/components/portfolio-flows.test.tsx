@@ -49,9 +49,12 @@ describe("recorridos del portafolio", () => {
     );
     expect(
       screen.getAllByRole("button", { name: /Probar demo:/ }),
-    ).toHaveLength(2);
+    ).toHaveLength(3);
     expect(
       screen.getByRole("button", { name: /Reservas sin mensajes/ }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole("button", { name: /Respuestas claras/ }),
     ).toBeTruthy();
   });
 

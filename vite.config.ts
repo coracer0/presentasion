@@ -16,6 +16,8 @@ export default defineConfig({
         ordersCase: resolve(import.meta.dirname, "casos/pedidos.html"),
         pricesCase: resolve(import.meta.dirname, "casos/precios.html"),
         broadcastsCase: resolve(import.meta.dirname, "casos/directos.html"),
+        messagesCase: resolve(import.meta.dirname, "casos/mensajes.html"),
+        quotesCase: resolve(import.meta.dirname, "casos/cotizaciones.html"),
       },
     },
   },

@@ -31,13 +31,14 @@ export function SiteHeader() {
           A<span>.</span>
         </span>
         <span>
-          AXEL CORACERO<small>SOFTWARE & EXPERIENCIAS</small>
+          AXEL CORACERO<small>SOFTWARE CON TRATO HUMANO</small>
         </span>
       </a>
       <nav aria-label="Navegación principal">
+        <a href="#sobre-mi">Sobre mí</a>
         <a href="#trabajos">Demos</a>
-        <a href="#catalogo">Explora</a>
-        <a href="#proceso">Proceso</a>
+        <a href="#proceso">Cómo trabajo</a>
+        <a href="#catalogo">Más ideas</a>
       </nav>
       <a
         className="header-contact"
@@ -64,6 +65,9 @@ export function SiteHeader() {
         aria-label="Navegación móvil"
         inert={!menuOpen}
       >
+        <a href="#sobre-mi" onClick={() => closeMenu("sobre-mi")}>
+          Sobre mí
+        </a>
         <a href="#trabajos" onClick={() => closeMenu("trabajos")}>
           Probar demos
         </a>

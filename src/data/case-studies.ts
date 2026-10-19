@@ -13,6 +13,10 @@ export const caseStudies: Record<DemoId, CaseStudy> = {
       "Negocios que atienden con agenda y personas que reservan una cita.",
     tryHere: "Elige uno de tres horarios y confirma una reserva de muestra.",
     decision: "Un horario confirmado deja de ofrecerse durante esta sesión.",
+    contribution:
+      "Diseñé un recorrido corto para elegir, confirmar y reconocer un horario ocupado.",
+    ability:
+      "Convertir una tarea repetitiva en pasos claros y prevenir errores antes de confirmar.",
     limit: "No se conecta a WhatsApp ni a un calendario real.",
     realWorld:
       "Definir disponibilidad, cancelaciones, permisos y mensajes de confirmación.",
@@ -30,6 +34,10 @@ export const caseStudies: Record<DemoId, CaseStudy> = {
       "Restaurantes y clientes que quieren elegir antes de contactar al negocio.",
     tryHere: "Agrega platillos al carrito y confirma un resumen ficticio.",
     decision: "El precio y el total se mantienen visibles mientras se elige.",
+    contribution:
+      "Diseñé y construí una experiencia que permite explorar, elegir y revisar un pedido.",
+    ability:
+      "Unir diseño visual con una compra fácil de entender, también en móvil.",
     limit: "No cobra, no comprueba inventario y no envía pedidos.",
     realWorld:
       "Conectar horarios, disponibilidad, pagos y recepción de órdenes.",
@@ -48,6 +56,10 @@ export const caseStudies: Record<DemoId, CaseStudy> = {
       "Elige una baja mínima y simula un cambio con productos ficticios.",
     decision:
       "La alerta explica el producto, la diferencia y la regla que se cumplió.",
+    contribution:
+      "Construí una regla de aviso que muestra por qué se activó y deja ajustar el umbral.",
+    ability:
+      "Hacer comprensibles las reglas de una tarea automática y sus resultados.",
     limit: "No consulta comercios ni envía notificaciones.",
     realWorld:
       "Elegir fuentes permitidas, frecuencia, historial y canal de avisos.",
@@ -65,12 +77,62 @@ export const caseStudies: Record<DemoId, CaseStudy> = {
     tryHere: "Cambia escena, nombres y color; copia una URL para OBS.",
     decision:
       "Una misma configuración genera una vista previa y una fuente de navegador 16:9.",
+    contribution:
+      "Diseñé controles para personalizar la escena y comprobar el resultado antes de usarlo.",
+    ability:
+      "Crear herramientas visuales que ahorran preparación sin quitar control al usuario.",
     limit:
       "La URL no controla una transmisión en tiempo real; hay que actualizar la fuente.",
     realWorld:
       "Adaptar marca, escenas, resolución y operación del equipo de producción.",
     measure:
       "Tiempo para preparar un episodio y errores de rótulos detectados antes de salir al aire.",
+  },
+  messages: {
+    id: "messages",
+    slug: "mensajes",
+    title: "Respuestas claras para preguntas repetidas",
+    summary: "Prueba un asistente de mensajes para un local ficticio.",
+    problem:
+      "Responder horario, ubicación y entregas una y otra vez quita tiempo al equipo.",
+    audience:
+      "Negocios locales que reciben muchas preguntas parecidas por chat.",
+    tryHere:
+      "Elige una pregunta y mira la respuesta; también puedes pedir ayuda humana.",
+    decision:
+      "Las opciones son visibles y siempre existe una salida para hablar con una persona.",
+    contribution:
+      "Preparé una conversación breve que responde lo frecuente sin encerrar al cliente en el bot.",
+    ability: "Diseñar conversaciones útiles, cercanas y con límites claros.",
+    limit:
+      "Es una simulación; no está conectada a WhatsApp ni recibe mensajes reales.",
+    realWorld:
+      "Definir respuestas aprobadas, horarios reales, canal de atención y aviso de privacidad.",
+    measure:
+      "Preguntas resueltas y conversaciones que necesitan intervención humana.",
+  },
+  quotes: {
+    id: "quotes",
+    slug: "cotizaciones",
+    title: "Una cotización fácil de revisar",
+    summary: "Calcula un presupuesto ficticio para una imprenta local.",
+    problem:
+      "Calcular precios a mano retrasa la respuesta y puede provocar errores.",
+    audience:
+      "Pequeños negocios que preparan presupuestos con reglas repetidas.",
+    tryHere:
+      "Elige producto, cantidad y prioridad para ver un presupuesto de muestra.",
+    decision:
+      "El resultado separa producto, cantidad y recargo para que el total se entienda.",
+    contribution:
+      "Construí un cálculo sencillo y una vista que explica cada parte del precio.",
+    ability:
+      "Traducir reglas de negocio en cálculos revisables y fáciles de usar.",
+    limit: "Los precios son ficticios; no genera una oferta ni envía datos.",
+    realWorld:
+      "Validar tarifas, impuestos, existencias, vigencia y aprobación del negocio.",
+    measure:
+      "Tiempo de cotización y correcciones necesarias antes de enviarla.",
   },
 };
 

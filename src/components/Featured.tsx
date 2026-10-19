@@ -10,26 +10,28 @@ import type { NeedId, NeedOption } from "./featured.types";
 const featured: readonly DemoId[] = [
   "appointments",
   "restaurant",
+  "messages",
+  "quotes",
   "prices",
   "podcast",
 ];
 const needs: readonly NeedOption[] = [
-  { id: "all", label: "Ver las cuatro", demos: featured },
-  { id: "sell", label: "Quiero vender más", demos: ["restaurant", "prices"] },
+  { id: "all", label: "Ver las seis", demos: featured },
+  { id: "sell", label: "Quiero vender más", demos: ["restaurant", "quotes"] },
   {
     id: "save",
     label: "Quiero ahorrar tiempo",
-    demos: ["appointments", "prices"],
+    demos: ["appointments", "messages", "prices"],
   },
   {
     id: "care",
     label: "Quiero atender mejor",
-    demos: ["appointments", "restaurant"],
+    demos: ["appointments", "messages"],
   },
   {
     id: "launch",
     label: "Quiero lanzar una idea",
-    demos: ["podcast", "restaurant"],
+    demos: ["podcast", "restaurant", "quotes"],
   },
 ];
 
@@ -46,7 +48,7 @@ export function Featured({ onOpen }: FeaturedProps) {
     >
       <div className="section-intro">
         <div>
-          <span className="eyebrow">01 / EJEMPLOS QUE PUEDES PROBAR</span>
+          <span className="eyebrow">02 / EJEMPLOS QUE PUEDES PROBAR</span>
           <h2>
             ¿Qué te gustaría
             <br />

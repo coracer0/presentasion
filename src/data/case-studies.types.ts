@@ -9,6 +9,8 @@ export interface CaseStudy {
   audience: string;
   tryHere: string;
   decision: string;
+  contribution: string;
+  ability: string;
   limit: string;
   realWorld: string;
   measure: string;

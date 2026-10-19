@@ -2,7 +2,7 @@
 
 [![CI y GitHub Pages](https://github.com/coracer0/presentasion/actions/workflows/ci-cd-main.yml/badge.svg)](https://github.com/coracer0/presentasion/actions/workflows/ci-cd-main.yml)
 
-Portafolio público de software, automatización y experiencias web. Incluye 70 fichas clasificadas y cuatro demostraciones interactivas con **datos ficticios**. Las fichas no representan proyectos entregados a clientes.
+Portafolio público de Axel Coracero, centrado en negocios locales y software con trato humano. Incluye 70 ideas clasificadas y seis demostraciones interactivas con **datos ficticios**. Las ideas y demos no representan proyectos entregados a clientes.
 
 ## Requisitos e instalación
 
@@ -10,7 +10,7 @@ Portafolio público de software, automatización y experiencias web. Incluye 70 
 - `npm ci`
 - `npm run dev`
 
-Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.html`, `/print-card.html`, `/overlay.html` y los cuatro casos de `/casos/`.
+Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.html`, `/print-card.html`, `/overlay.html` y los seis casos de `/casos/`.
 
 ## Comandos
 
@@ -29,12 +29,14 @@ Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.h
 - **Reservas:** elige un horario, confírmalo y comprueba que quede ocupado dentro de esa sesión local. No se conecta a WhatsApp ni a un calendario.
 - **Monitor de precios:** ajusta un umbral y simula una baja para visualizar una alerta. No consulta tiendas.
 - **Restaurante:** agrega platillos y confirma un resumen de pedido. No cobra ni envía órdenes.
+- **Mensajes:** explora respuestas a preguntas habituales y la opción de pedir atención humana. No se conecta a WhatsApp.
+- **Cotizaciones:** calcula un presupuesto ficticio para una imprenta y revisa su desglose. No genera una oferta comercial.
 
 Las 40 fichas de scripts incluyen problema, disparador, entrada de ejemplo, proceso, salida, integraciones posibles y límites. El contenido está en `src/data/`; la lógica pura de las demos está en `src/lib/`.
 
 ## Casos y experiencia
 
-Cada demo tiene una página HTML compartible con problema, público, decisión de diseño, límites y una forma de medir el resultado: [reservas](https://coracer0.github.io/presentasion/casos/reservas.html), [pedidos](https://coracer0.github.io/presentasion/casos/pedidos.html), [precios](https://coracer0.github.io/presentasion/casos/precios.html) y [directos](https://coracer0.github.io/presentasion/casos/directos.html). Los resultados descritos son de simulación; no se presentan cifras ni clientes inventados.
+Cada demo tiene una página HTML compartible con problema, público, aporte, decisión de diseño, límites y una forma de medir el resultado: [reservas](https://coracer0.github.io/presentasion/casos/reservas.html), [pedidos](https://coracer0.github.io/presentasion/casos/pedidos.html), [precios](https://coracer0.github.io/presentasion/casos/precios.html), [directos](https://coracer0.github.io/presentasion/casos/directos.html), [mensajes](https://coracer0.github.io/presentasion/casos/mensajes.html) y [cotizaciones](https://coracer0.github.io/presentasion/casos/cotizaciones.html). Los resultados descritos son de simulación; no se presentan cifras ni clientes inventados.
 
 La portada permite recorrer ejemplos según la necesidad del visitante. La biblioteca muestra ocho ideas al inicio y permite explorar las 70. La búsqueda ignora acentos. Las demos se cargan cuando se abren y un error en una demo queda aislado. El menú móvil, los diálogos y el enlace para saltar al contenido se pueden usar con teclado. Las animaciones breves respetan `prefers-reduced-motion`.
 

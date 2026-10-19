@@ -39,7 +39,7 @@ export function SiteFooter() {
               A<span>.</span>
             </span>
             <span>
-              AXEL CORACERO<small>SOFTWARE & EXPERIENCIAS</small>
+              AXEL CORACERO<small>SOFTWARE CON TRATO HUMANO</small>
             </span>
           </a>
           <div>

@@ -38,6 +38,31 @@ export function FeatureArt({ id }: { id: DemoId }) {
         </div>
       </div>
     );
+  if (id === "messages")
+    return (
+      <div className="feature-art art-messages">
+        <div className="mini-message-phone">
+          <span>CAFÉ BARRIO · AYUDA</span>
+          <p>¿A qué hora abren?</p>
+          <strong>De lunes a sábado, de 9:00 a 18:00.</strong>
+          <small>Siempre puedes hablar con alguien ↗</small>
+        </div>
+      </div>
+    );
+  if (id === "quotes")
+    return (
+      <div className="feature-art art-quotes">
+        <div className="mini-quote-sheet">
+          <span>IMPRENTA LOMA / EJEMPLO</span>
+          <strong>Tu precio, paso a paso.</strong>
+          <div>
+            <span>100 volantes</span>
+            <span>$320</span>
+          </div>
+          <small>Preparación + cantidad = total claro</small>
+        </div>
+      </div>
+    );
   return (
     <div className="feature-art art-food">
       <div className="food-orb" />

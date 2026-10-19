@@ -42,6 +42,9 @@ function App() {
           <Hero />
         </motion.div>
         <ScrollReveal>
+          <Experience />
+        </ScrollReveal>
+        <ScrollReveal>
           <Featured
             onOpen={(id) => {
               rememberFocus();
@@ -50,18 +53,15 @@ function App() {
           />
         </ScrollReveal>
         <ScrollReveal>
+          <Process />
+        </ScrollReveal>
+        <ScrollReveal>
           <Catalog
             onOpen={(selected) => {
               rememberFocus();
               setItem(selected);
             }}
           />
-        </ScrollReveal>
-        <ScrollReveal>
-          <Process />
-        </ScrollReveal>
-        <ScrollReveal>
-          <Experience />
         </ScrollReveal>
       </main>
       <SiteFooter />

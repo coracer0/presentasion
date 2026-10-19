@@ -28,6 +28,16 @@ const RestaurantDemo = lazy(() =>
     default: module.RestaurantDemo,
   })),
 );
+const MessagesDemo = lazy(() =>
+  import("../demos/MessagesDemo").then((module) => ({
+    default: module.MessagesDemo,
+  })),
+);
+const QuotesDemo = lazy(() =>
+  import("../demos/QuotesDemo").then((module) => ({
+    default: module.QuotesDemo,
+  })),
+);
 
 function AutomationDetails({ item }: { item: PortfolioItem }) {
   const example = automationExamples[item.id];
@@ -36,15 +46,15 @@ function AutomationDetails({ item }: { item: PortfolioItem }) {
       <p className="detail-lead">{example.problem}</p>
       <div className="detail-example">
         <div>
-          <span>DISPARADOR</span>
+          <span>QUÉ LA PONE EN MARCHA</span>
           <p>{example.trigger}</p>
         </div>
         <div>
-          <span>ENTRADA DE EJEMPLO</span>
+          <span>INFORMACIÓN QUE RECIBE</span>
           <p>{example.input}</p>
         </div>
         <div>
-          <span>PROCESO</span>
+          <span>QUÉ HACE</span>
           <ol>
             {example.steps.map((step) => (
               <li key={step}>{step}</li>
@@ -52,7 +62,7 @@ function AutomationDetails({ item }: { item: PortfolioItem }) {
           </ol>
         </div>
         <div>
-          <span>RESULTADO ESPERADO</span>
+          <span>QUÉ ENTREGA</span>
           <p>{example.output}</p>
         </div>
       </div>
@@ -109,6 +119,12 @@ function DemoContent({ id }: { id: DemoId }) {
     case "restaurant":
       content = <RestaurantDemo />;
       break;
+    case "messages":
+      content = <MessagesDemo />;
+      break;
+    case "quotes":
+      content = <QuotesDemo />;
+      break;
     default:
       content = null;
   }
@@ -146,6 +162,14 @@ function DemoAfterword({ id }: { id: DemoId }) {
           <div>
             <dt>Decisión de diseño</dt>
             <dd>{study.decision}</dd>
+          </div>
+          <div>
+            <dt>Mi aporte</dt>
+            <dd>{study.contribution}</dd>
+          </div>
+          <div>
+            <dt>Lo que demuestra</dt>
+            <dd>{study.ability}</dd>
           </div>
           <div>
             <dt>Límite de esta demo</dt>
@@ -205,7 +229,7 @@ export function DetailDialog({
                 {demo
                   ? "DEMO ORIGINAL · DATOS FICTICIOS"
                   : item?.kind === "automation"
-                    ? "TAREA AUTOMATIZABLE · EJEMPLO EXPLICADO"
+                    ? "UNA TAREA MENOS · EJEMPLO EXPLICADO"
                     : item?.kind === "system"
                       ? "SISTEMA · CONCEPTO"
                       : "PÁGINA · EXPLORACIÓN VISUAL"}

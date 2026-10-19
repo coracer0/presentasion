@@ -14,9 +14,9 @@ const filters: readonly { id: Filter; label: string }[] = [
   { id: "landing", label: "Páginas para vender" },
 ];
 const kindLabel: Record<PortfolioKind, string> = {
-  automation: "TAREA AUTOMATIZABLE",
-  system: "CONCEPTO DE SISTEMA",
-  landing: "PÁGINA DE MUESTRA",
+  automation: "UNA TAREA MENOS",
+  system: "IDEA PARA TU NEGOCIO",
+  landing: "PÁGINA DE EJEMPLO",
 };
 
 export function Catalog({ onOpen }: CatalogProps) {
@@ -48,7 +48,7 @@ export function Catalog({ onOpen }: CatalogProps) {
     >
       <div className="section-intro">
         <div>
-          <span className="eyebrow">02 / MÁS IDEAS</span>
+          <span className="eyebrow">04 / MÁS IDEAS</span>
           <h2>
             Ideas para
             <br />
@@ -56,9 +56,9 @@ export function Catalog({ onOpen }: CatalogProps) {
           </h2>
         </div>
         <p>
-          Aquí hay ocho ideas para empezar. Si buscas algo específico, explora
-          la biblioteca completa: 40 tareas automatizables, 20 sistemas y 10
-          propuestas de páginas. Son conceptos, no proyectos de clientes.
+          Estas ocho ideas muestran otras tareas que podríamos simplificar. Hay
+          70 ideas de muestra para explorar; ninguna representa un proyecto de
+          un cliente.
         </p>
       </div>
       <div className="catalog-toolbar">
@@ -92,8 +92,9 @@ export function Catalog({ onOpen }: CatalogProps) {
         </label>
       </div>
       <p className="catalog-count">
-        {matches.length} {matches.length === 1 ? "resultado" : "resultados"} ·
-        Selecciona una ficha para ver más
+        Mostrando {visible.length} de {matches.length}{" "}
+        {matches.length === 1 ? "idea" : "ideas"} · Selecciona una ficha para
+        ver más
       </p>
       <div className="catalog-grid">
         {visible.map((item) => (

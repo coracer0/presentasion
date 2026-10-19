@@ -23,8 +23,9 @@ function ContactCard() {
         <span>HOLA, SOY AXEL</span>
         <h1>Hablemos de tu siguiente idea.</h1>
         <p>
-          Diseño software, automatizaciones y experiencias web para negocios que
-          quieren avanzar.
+          Creo páginas y herramientas que ayudan a negocios locales a atender
+          mejor y ahorrar tareas repetitivas. Me importa escucharte y dejar todo
+          claro.
         </p>
         <div className="contact-links">
           <a
@@ -64,13 +65,13 @@ function PrintCard() {
       </button>
       <div className="print-cards">
         <article className="print-card print-front">
-          <span>AXEL CORACERO / SOFTWARE</span>
+          <span>AXEL CORACERO / DESARROLLO</span>
           <h1>
-            Ideas que
+            Software útil.
             <br />
-            se vuelven reales.
+            Trato humano.
           </h1>
-          <p>Desarrollo web · Automatización · Experiencias</p>
+          <p>Páginas web · Bots de mensajes · Herramientas a medida</p>
           <small>ax.coracero@gmail.com · +52 418 177 4447</small>
         </article>
         <article className="print-card print-back">

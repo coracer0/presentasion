@@ -7,17 +7,17 @@ const steps = [
   [
     "02",
     "Diseñamos la experiencia",
-    "Definimos un flujo útil, una interfaz clara y la integración necesaria.",
+    "Acordamos qué necesita la primera versión y cómo la usarán tus clientes.",
   ],
   [
     "03",
     "Construimos y probamos",
-    "Implemento una primera versión y probamos los pasos más importantes.",
+    "Construyo una primera versión y probamos juntos los pasos más importantes.",
   ],
   [
     "04",
     "Medimos y mejoramos",
-    "Después de publicar, mejoramos lo que dificulta usarlo.",
+    "Después de publicar, revisamos qué funciona y qué conviene mejorar.",
   ],
 ] as const;
 

@@ -17,4 +17,5 @@ export interface AutomationExample {
   limits: string;
 }
 
-export type DemoId = "podcast" | "appointments" | "prices" | "restaurant";
+export type DemoId =
+  "podcast" | "appointments" | "prices" | "restaurant" | "messages" | "quotes";
