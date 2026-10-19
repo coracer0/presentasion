@@ -14,11 +14,11 @@ export function MessagesDemo() {
         <h3>Responde lo de siempre. Atiende lo importante.</h3>
         <p className="demo-hint">
           Elige una pregunta habitual. Verás cómo podría contestarla un negocio
-          local sin perder la opción de hablar con una persona.
+          local y cómo se vería la opción de hablar con una persona.
         </p>
         <p className="demo-side-note">
           <MessageCircle size={18} /> Esta conversación es ficticia. No se
-          conecta a WhatsApp ni envía mensajes.
+          conecta a WhatsApp, no envía mensajes ni avisa a ninguna persona.
         </p>
       </div>
       <div className="local-demo-stage">

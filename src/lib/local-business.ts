@@ -9,7 +9,7 @@ export const messageTopics: readonly { id: MessageTopic; label: string }[] = [
   { id: "hours", label: "¿A qué hora abren?" },
   { id: "location", label: "¿Dónde están?" },
   { id: "delivery", label: "¿Hacen entregas?" },
-  { id: "human", label: "Prefiero hablar con alguien" },
+  { id: "human", label: "Ver atención humana (demo)" },
 ];
 
 export const messageReplies: Record<MessageTopic, MessageReply> = {
@@ -29,9 +29,9 @@ export const messageReplies: Record<MessageTopic, MessageReply> = {
     followUp: "¿Te ayudo con otra pregunta?",
   },
   human: {
-    title: "Atención personal",
-    body: "Claro. En una versión real pasaríamos la conversación al equipo y mostraríamos cuándo responderá.",
-    followUp: "Nadie recibe mensajes desde esta demo.",
+    title: "Así pedirías atención personal",
+    body: "En esta demo nadie recibe el mensaje. En un negocio real, esta opción avisaría al equipo y mostraría cuándo puede responder.",
+    followUp: "Es solo un ejemplo de cómo funcionaría.",
   },
 };
 

@@ -17,8 +17,8 @@ describe("cotización de ejemplo", () => {
 });
 
 describe("asistente de mensajes", () => {
-  it("permite pedir una persona en lugar de continuar con el bot", () => {
-    expect(messageReplies.human.title).toBe("Atención personal");
-    expect(messageReplies.human.body).toContain("pasaríamos la conversación");
+  it("explica la atención humana sin prometer un aviso real", () => {
+    expect(messageReplies.human.title).toBe("Así pedirías atención personal");
+    expect(messageReplies.human.body).toContain("nadie recibe el mensaje");
   });
 });

@@ -74,7 +74,8 @@ export const caseStudies: Record<DemoId, CaseStudy> = {
     problem:
       "Preparar rótulos para cada episodio lleva tiempo y rompe la identidad visual.",
     audience: "Productoras, creadores y equipos que transmiten en vivo.",
-    tryHere: "Cambia escena, nombres y color; copia una URL para OBS.",
+    tryHere:
+      "Cambia escena, nombres y color; copia un enlace para usarlo en OBS.",
     decision:
       "Una misma configuración genera una vista previa y una fuente de navegador 16:9.",
     contribution:

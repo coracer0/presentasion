@@ -2,18 +2,27 @@ import { afterEach, describe, expect, it } from "vitest";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { MessagesDemo } from "./MessagesDemo";
 import { QuotesDemo } from "./QuotesDemo";
+import { AppointmentsDemo } from "./AppointmentsDemo";
 
 afterEach(cleanup);
 
 describe("demos para negocios locales", () => {
-  it("responde una duda y permite pedir atención humana", () => {
+  it("separa las palabras del contador de citas", () => {
+    render(<AppointmentsDemo />);
+    expect(screen.getByText("0 citas reservadas en esta demo")).toBeTruthy();
+  });
+
+  it("responde una duda y aclara que la atención humana es simulada", () => {
     render(<MessagesDemo />);
     fireEvent.click(screen.getByRole("button", { name: "¿A qué hora abren?" }));
     expect(screen.getByText("Horario")).toBeTruthy();
     fireEvent.click(
-      screen.getByRole("button", { name: "Prefiero hablar con alguien" }),
+      screen.getByRole("button", { name: "Ver atención humana (demo)" }),
     );
-    expect(screen.getByText("Atención personal")).toBeTruthy();
+    expect(screen.getByText("Así pedirías atención personal")).toBeTruthy();
+    expect(
+      screen.getByText(/En esta demo nadie recibe el mensaje/),
+    ).toBeTruthy();
   });
 
   it("muestra un presupuesto desglosado sin enviar datos", () => {

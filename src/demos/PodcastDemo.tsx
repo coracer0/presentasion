@@ -61,9 +61,9 @@ export function PodcastDemo() {
         <p className="demo-kicker">01 / CONTROL DE ESCENA</p>
         <h3>Diseña el directo en segundos.</h3>
         <p className="demo-hint">
-          Prueba cuatro escenas, edita los rótulos y genera una URL para agregar
-          como Browser Source en OBS. Los cambios en OBS requieren actualizar la
-          fuente.
+          Prueba cuatro escenas, cambia los nombres y crea un enlace para usar
+          el gráfico en OBS, un programa para transmitir. Si haces cambios aquí,
+          pega el nuevo enlace en OBS para verlos.
         </p>
         <div className="scene-switch" aria-label="Escena">
           <span>ESCENA</span>
@@ -109,7 +109,7 @@ export function PodcastDemo() {
           </label>
         </div>
         <label className="demo-field url-field">
-          <span>URL para OBS · 1920 × 1080</span>
+          <span>Enlace para OBS · 1920 × 1080</span>
           <input
             id="overlay-url"
             value={url}
@@ -120,7 +120,7 @@ export function PodcastDemo() {
         <div className="demo-actions">
           <button className="action-primary" type="button" onClick={copyUrl}>
             {copied ? <Check size={17} /> : <Copy size={17} />}
-            {copied ? "URL copiada" : "Copiar URL"}
+            {copied ? "Enlace copiado" : "Copiar enlace"}
           </button>
           <a
             className="action-quiet"

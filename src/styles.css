@@ -1116,7 +1116,8 @@ a {
 }
 .dialog-header h2 {
   font-size: clamp(25px, 3vw, 39px);
-  letter-spacing: -0.055em;
+  letter-spacing: -0.025em;
+  word-spacing: 0.06em;
   line-height: 1.2;
   margin: 0 0 8px;
 }
@@ -1128,8 +1129,8 @@ a {
 .dialog-close {
   @apply flex items-center justify-center;
   flex: none;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border: 1px solid #54627a;
   background: transparent;
   color: var(--paper);
@@ -1229,11 +1230,12 @@ a {
 .demo-controls h3 {
   font-size: clamp(27px, 3vw, 42px);
   line-height: 1.17;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.03em;
+  word-spacing: 0.06em;
   margin: 13px 0 16px;
 }
 .demo-hint {
-  font-size: 12px;
+  font-size: 14px;
   color: #aab8c8;
   line-height: 1.75;
   margin: 0 0 27px;
@@ -1247,7 +1249,7 @@ a {
 .demo-field > span,
 .scene-switch > span {
   font:
-    600 10px "IBM Plex Mono",
+    600 12px "IBM Plex Mono",
     monospace;
   letter-spacing: 0.1em;
   color: #9faec2;
@@ -1255,12 +1257,13 @@ a {
 .demo-field input {
   width: 100%;
   min-width: 0;
+  min-height: 44px;
   background: #1e2a3b;
   border: 1px solid #48566d;
   color: #f4f3ef;
   padding: 10px 12px;
   border-radius: 2px;
-  font-size: 12px;
+  font-size: 16px;
 }
 .demo-field input:focus {
   border-color: var(--accent);
@@ -1273,7 +1276,7 @@ a {
 }
 .color-field input {
   padding: 4px;
-  height: 37px;
+  height: 44px;
 }
 .scene-switch {
   margin: 0 0 20px;
@@ -1288,7 +1291,8 @@ a {
   color: #c5d1de;
   border: 1px solid #45546d;
   padding: 8px 10px;
-  font-size: 10px;
+  min-height: 44px;
+  font-size: 14px;
 }
 .scene-switch button[aria-pressed="true"] {
   background: #dce4fa;
@@ -1297,7 +1301,7 @@ a {
 }
 .url-field input {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
+  font-size: 14px;
   color: #b9c7d8;
 }
 .demo-actions {
@@ -1309,9 +1313,9 @@ a {
 .action-quiet {
   @apply inline-flex items-center justify-center;
   gap: 8px;
-  min-height: 39px;
+  min-height: 44px;
   padding: 8px 11px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   border-radius: 2px;
 }
@@ -1341,7 +1345,7 @@ a {
   padding: 16px;
   border: 1px solid #40516b;
   color: #a7b8cb;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.65;
 }
 .demo-side-note svg {
@@ -1668,7 +1672,7 @@ a {
   width: max-content;
   padding: 14px 16px;
   border-radius: 13px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   box-shadow: 0 3px 11px rgba(18, 54, 42, 0.1);
 }
@@ -1691,12 +1695,13 @@ a {
   margin-top: 20px;
 }
 .slot-list button {
+  min-height: 44px;
   padding: 9px 12px;
   border: 1px solid #5b977d;
   border-radius: 16px;
   background: #eef9f1;
   color: #2d6b4f;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
 }
 .slot-list button[aria-pressed="true"] {
@@ -1720,7 +1725,7 @@ a {
   border-color: #2b7958;
 }
 .chat-footer span {
-  font-size: 10px;
+  font-size: 13px;
   color: #587364;
 }
 .price-board {
@@ -1806,7 +1811,7 @@ a {
   font-size: 13px;
 }
 .alert-preview p {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.55;
   margin: 5px 0 0;
 }
@@ -1833,7 +1838,8 @@ a {
 }
 .restaurant-hero h3 {
   font-size: 38px;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.03em;
+  word-spacing: 0.06em;
   line-height: 1.02;
   margin: 18px 0 8px;
 }
@@ -1871,8 +1877,8 @@ a {
 }
 .menu-row button {
   @apply flex items-center justify-center;
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   background: #763d2a;
   border: 0;
   color: #fff;
@@ -1924,11 +1930,12 @@ a {
 }
 .cart-summary button {
   @apply inline-flex items-center gap-2;
+  min-height: 44px;
   border: 0;
   background: #733a29;
   color: white;
   padding: 11px 14px;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
 }
 .cart-summary button:disabled {
@@ -1939,7 +1946,7 @@ a {
   margin: 0;
   background: #ede1d2;
   color: #395c3c;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .contact-page {
@@ -3266,13 +3273,14 @@ a {
 }
 .local-chat-header small {
   color: #d3e9de;
-  font-size: 11px;
+  font-size: 13px;
 }
 .local-chat-header button {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  flex: none;
+  min-width: 44px;
+  height: 44px;
   margin-left: auto;
   border: 1px solid #b8dbce;
   border-radius: 50%;
@@ -3309,7 +3317,7 @@ a {
 }
 .local-bubble small {
   color: #496054;
-  font-size: 12px;
+  font-size: 14px;
 }
 .local-chat-thread .local-bubble {
   animation: slide-in 0.3s ease both;
@@ -3321,13 +3329,13 @@ a {
   padding: 15px 18px 20px;
 }
 .local-chat-options button {
-  min-height: 40px;
-  padding: 8px 11px;
+  min-height: 44px;
+  padding: 10px 14px;
   border: 1px solid #7caaa0;
   border-radius: 20px;
   color: #255344;
   background: #fff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 .local-chat-options button[aria-pressed="true"] {
@@ -3358,19 +3366,21 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-height: 44px;
   color: #e2eaf4;
   font-size: 14px;
   line-height: 1.45;
 }
 .quote-urgent input {
-  width: 19px;
-  height: 19px;
+  width: 24px;
+  height: 24px;
+  flex: none;
   accent-color: #9eb5ff;
 }
 .quote-error {
   margin: 0;
   color: #ffbfb4;
-  font-size: 13px;
+  font-size: 14px;
 }
 .quote-sheet {
   width: min(100%, 490px);
@@ -3435,7 +3445,7 @@ a {
 .quote-fineprint,
 .quote-empty p {
   color: #665a4f;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
 }
 .quote-empty {

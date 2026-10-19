@@ -82,8 +82,8 @@ export function AppointmentsDemo() {
           </button>
           <span>
             {booked.length}{" "}
-            {booked.length === 1 ? "cita reservada" : "citas reservadas"}
-            en esta demo
+            {booked.length === 1 ? "cita reservada" : "citas reservadas"} en
+            esta demo
           </span>
         </div>
       </div>
