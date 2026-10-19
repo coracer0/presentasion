@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Plus, RotateCcw, ShoppingBag } from "lucide-react";
+import { Check, Plus, RotateCcw } from "lucide-react";
 import { addToCart, cartTotal, menuItems } from "../lib/demos";
 import type { Cart } from "../lib/demos.types";
 
@@ -26,20 +26,13 @@ export function RestaurantDemo() {
   return (
     <div className="demo-layout restaurant-layout">
       <div className="demo-controls">
-        <p className="demo-kicker">04 / LANDING DE COMERCIO</p>
-        <h3>Del antojo al pedido, sin fricción.</h3>
+        <p className="demo-kicker">MENÚ Y PEDIDO DE MUESTRA</p>
+        <h3>Elige algo del menú.</h3>
         <p className="demo-hint">
           Menú y compra simulados con datos ficticios. Añade productos y
           confirma para ver el resumen; no se procesa pago ni se envía un
           pedido.
         </p>
-        <div className="demo-side-note">
-          <ShoppingBag size={22} />
-          <span>
-            Un proyecto real puede integrar inventario, horarios, pagos y
-            recepción de órdenes según la operación del restaurante.
-          </span>
-        </div>
         <div className="demo-actions">
           <button className="action-quiet" type="button" onClick={reset}>
             <RotateCcw size={16} /> Reiniciar demo

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CalendarCheck, RotateCcw } from "lucide-react";
+import { RotateCcw } from "lucide-react";
 import { appointmentSlots, reserveSlot } from "../lib/demos";
 
 export function AppointmentsDemo() {
@@ -15,32 +15,12 @@ export function AppointmentsDemo() {
   return (
     <div className="demo-layout appointment-layout">
       <div className="demo-controls">
-        <p className="demo-kicker">02 / FLUJO CONVERSACIONAL</p>
-        <h3>Una cita, sin mensajes de ida y vuelta.</h3>
+        <p className="demo-kicker">RESERVA PASO A PASO</p>
+        <h3>Elige un horario.</h3>
         <p className="demo-hint">
-          Simulación local: el cliente elige un horario, confirma y el cupo se
-          bloquea en esta sesión. No se envía nada a WhatsApp ni a un
-          calendario.
+          Elige un horario y confirma. Usamos datos de muestra; nada se envía
+          fuera de esta página.
         </p>
-        <div className="demo-actions">
-          <button
-            className="action-quiet"
-            type="button"
-            onClick={() => {
-              setBooked([]);
-              setSelected("");
-            }}
-          >
-            <RotateCcw size={16} /> Reiniciar demo
-          </button>
-        </div>
-        <div className="demo-side-note">
-          <CalendarCheck size={22} />
-          <span>
-            En un producto real se conectaría a disponibilidad, calendario y
-            mensajería oficial, con confirmación y manejo de cancelaciones.
-          </span>
-        </div>
       </div>
       <div className="chat-shell">
         <div className="chat-header">
@@ -50,6 +30,17 @@ export function AppointmentsDemo() {
             <small>Simulación · negocio ficticio</small>
           </div>
           <span className="online-dot" />
+          <button
+            className="chat-reset"
+            type="button"
+            aria-label="Reiniciar demo"
+            onClick={() => {
+              setBooked([]);
+              setSelected("");
+            }}
+          >
+            <RotateCcw size={17} />
+          </button>
         </div>
         <div className="chat-body">
           <div className="bubble incoming">
@@ -74,7 +65,7 @@ export function AppointmentsDemo() {
             <div className="bubble outgoing">Me funciona a las {selected}.</div>
           )}
           {confirmed && (
-            <div className="bubble incoming success">
+            <div className="bubble incoming success" role="status">
               ¡Listo! Cita de ejemplo confirmada para las {selected}. Ese
               horario ya no está disponible.
             </div>

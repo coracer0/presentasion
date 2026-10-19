@@ -1,20 +1,33 @@
+import { Suspense, lazy } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowUpRight, X } from "lucide-react";
 import { automationExamples } from "../data/examples";
+import { caseStudies, getCaseUrl } from "../data/case-studies";
 import { LandingVisual } from "./LandingVisual";
-import { PodcastDemo } from "../demos/PodcastDemo";
-import { AppointmentsDemo } from "../demos/AppointmentsDemo";
-import { PricesDemo } from "../demos/PricesDemo";
-import { RestaurantDemo } from "../demos/RestaurantDemo";
+import { DemoErrorBoundary } from "./DemoErrorBoundary";
 import type { DemoId, PortfolioItem } from "../data/portfolio.types";
 import type { DetailDialogProps } from "./site.types";
 
-const demoTitles: Record<DemoId, string> = {
-  podcast: "Estudio para podcast y directos",
-  appointments: "Asistente de reservas",
-  prices: "Monitor de precios",
-  restaurant: "Menú y pedido guiado",
-};
+const PodcastDemo = lazy(() =>
+  import("../demos/PodcastDemo").then((module) => ({
+    default: module.PodcastDemo,
+  })),
+);
+const AppointmentsDemo = lazy(() =>
+  import("../demos/AppointmentsDemo").then((module) => ({
+    default: module.AppointmentsDemo,
+  })),
+);
+const PricesDemo = lazy(() =>
+  import("../demos/PricesDemo").then((module) => ({
+    default: module.PricesDemo,
+  })),
+);
+const RestaurantDemo = lazy(() =>
+  import("../demos/RestaurantDemo").then((module) => ({
+    default: module.RestaurantDemo,
+  })),
+);
 
 function AutomationDetails({ item }: { item: PortfolioItem }) {
   const example = automationExamples[item.id];
@@ -44,7 +57,7 @@ function AutomationDetails({ item }: { item: PortfolioItem }) {
         </div>
       </div>
       <div className="detail-note">
-        <span>INTEGRACIONES POSIBLES</span>
+        <span>HERRAMIENTAS CON LAS QUE SE CONECTARÍA</span>
         <p>{example.integrations}</p>
         <span>LÍMITE IMPORTANTE</span>
         <p>{example.limits}</p>
@@ -62,7 +75,7 @@ function ConceptDetails({ item }: { item: PortfolioItem }) {
         <span>ESTADO</span>
         <p>
           {item.kind === "landing"
-            ? "Exploración visual de una posible landing. Sus textos y marca son ficticios."
+            ? "Exploración visual de una posible página de presentación. Sus textos y marca son ficticios."
             : "Concepto de producto. Alcance, diseño e integraciones se definen con cada cliente."}
         </p>
         <span>SIGUIENTE PASO</span>
@@ -82,18 +95,83 @@ function ConceptDetails({ item }: { item: PortfolioItem }) {
 }
 
 function DemoContent({ id }: { id: DemoId }) {
+  let content;
   switch (id) {
     case "podcast":
-      return <PodcastDemo />;
+      content = <PodcastDemo />;
+      break;
     case "appointments":
-      return <AppointmentsDemo />;
+      content = <AppointmentsDemo />;
+      break;
     case "prices":
-      return <PricesDemo />;
+      content = <PricesDemo />;
+      break;
     case "restaurant":
-      return <RestaurantDemo />;
+      content = <RestaurantDemo />;
+      break;
     default:
-      return null;
+      content = null;
   }
+  return (
+    <DemoErrorBoundary>
+      <Suspense
+        fallback={
+          <p className="demo-loading" role="status">
+            Preparando la demo…
+          </p>
+        }
+      >
+        {content}
+      </Suspense>
+    </DemoErrorBoundary>
+  );
+}
+
+function DemoAfterword({ id }: { id: DemoId }) {
+  const study = caseStudies[id];
+  const contactUrl = `https://wa.me/524181774447?text=${encodeURIComponent(`Hola Axel, vi la demo de ${study.title} y quiero contarte mi caso.`)}`;
+  return (
+    <div className="demo-afterword">
+      <details className="case-explainer">
+        <summary>Cómo funcionaría en tu negocio</summary>
+        <dl>
+          <div>
+            <dt>Problema</dt>
+            <dd>{study.problem}</dd>
+          </div>
+          <div>
+            <dt>Para quién</dt>
+            <dd>{study.audience}</dd>
+          </div>
+          <div>
+            <dt>Decisión de diseño</dt>
+            <dd>{study.decision}</dd>
+          </div>
+          <div>
+            <dt>Límite de esta demo</dt>
+            <dd>{study.limit}</dd>
+          </div>
+          <div>
+            <dt>Antes de implementarlo</dt>
+            <dd>{study.realWorld}</dd>
+          </div>
+          <div>
+            <dt>Cómo medirlo</dt>
+            <dd>{study.measure}</dd>
+          </div>
+        </dl>
+      </details>
+      <div className="demo-next-step">
+        <p>¿Te serviría algo así para tu negocio?</p>
+        <a href={contactUrl} target="_blank" rel="noopener noreferrer">
+          Cuéntame tu caso <ArrowUpRight size={16} />
+        </a>
+        <a href={getCaseUrl(id)}>
+          Leer el caso completo <ArrowUpRight size={16} />
+        </a>
+      </div>
+    </div>
+  );
 }
 
 export function DetailDialog({
@@ -103,7 +181,7 @@ export function DetailDialog({
   returnFocus,
 }: DetailDialogProps) {
   const open = demo !== null || item !== null;
-  const title = demo ? demoTitles[demo] : (item?.title ?? "");
+  const title = demo ? caseStudies[demo].title : (item?.title ?? "");
   return (
     <Dialog.Root
       open={open}
@@ -125,12 +203,12 @@ export function DetailDialog({
             <div>
               <p>
                 {demo
-                  ? "DEMO INTERACTIVA · DATOS FICTICIOS"
+                  ? "DEMO ORIGINAL · DATOS FICTICIOS"
                   : item?.kind === "automation"
-                    ? "SCRIPT · EJEMPLO EXPLICADO"
+                    ? "TAREA AUTOMATIZABLE · EJEMPLO EXPLICADO"
                     : item?.kind === "system"
                       ? "SISTEMA · CONCEPTO"
-                      : "LANDING · EXPLORACIÓN VISUAL"}
+                      : "PÁGINA · EXPLORACIÓN VISUAL"}
               </p>
               <Dialog.Title>{title}</Dialog.Title>
               <Dialog.Description id="dialog-description">
@@ -144,7 +222,10 @@ export function DetailDialog({
             </Dialog.Close>
           </div>
           {demo ? (
-            <DemoContent id={demo} />
+            <>
+              <DemoContent id={demo} />
+              <DemoAfterword id={demo} />
+            </>
           ) : item?.kind === "automation" ? (
             <AutomationDetails item={item} />
           ) : item ? (

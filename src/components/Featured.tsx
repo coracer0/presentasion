@@ -1,87 +1,108 @@
+import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 import { FeatureArt } from "./FeatureArt";
+import { caseStudies, getCaseUrl } from "../data/case-studies";
 import type { DemoId } from "../data/portfolio.types";
 import type { FeaturedProps } from "./site.types";
+import type { NeedId, NeedOption } from "./featured.types";
 
-const featured: readonly {
-  id: DemoId;
-  number: string;
-  type: string;
-  title: string;
-  description: string;
-}[] = [
+const featured: readonly DemoId[] = [
+  "appointments",
+  "restaurant",
+  "prices",
+  "podcast",
+];
+const needs: readonly NeedOption[] = [
+  { id: "all", label: "Ver las cuatro", demos: featured },
+  { id: "sell", label: "Quiero vender más", demos: ["restaurant", "prices"] },
   {
-    id: "podcast",
-    number: "01",
-    type: "DISEÑO PARA DIRECTOS",
-    title: "Escenas para podcast y video en vivo",
-    description: "Personaliza rótulos y escenas; obtén un overlay para OBS.",
+    id: "save",
+    label: "Quiero ahorrar tiempo",
+    demos: ["appointments", "prices"],
   },
   {
-    id: "appointments",
-    number: "02",
-    type: "AUTOMATIZACIÓN",
-    title: "Asistente de reservas",
-    description:
-      "Prueba un flujo conversacional que confirma horarios disponibles.",
+    id: "care",
+    label: "Quiero atender mejor",
+    demos: ["appointments", "restaurant"],
   },
   {
-    id: "prices",
-    number: "03",
-    type: "MONITOREO",
-    title: "Alertas de precios",
-    description: "Ajusta el umbral y observa cuándo se prepara una alerta.",
-  },
-  {
-    id: "restaurant",
-    number: "04",
-    type: "EXPERIENCIA WEB",
-    title: "Menú con pedido guiado",
-    description: "Explora una landing de restaurante con carrito de muestra.",
+    id: "launch",
+    label: "Quiero lanzar una idea",
+    demos: ["podcast", "restaurant"],
   },
 ];
 
 export function Featured({ onOpen }: FeaturedProps) {
+  const [need, setNeed] = useState<NeedId>("all");
+  const reduceMotion = useReducedMotion();
+  const visible = needs.find((option) => option.id === need)?.demos ?? featured;
+
   return (
-    <section id="trabajos" className="section-shell featured-section">
+    <section
+      id="trabajos"
+      className="section-shell featured-section"
+      tabIndex={-1}
+    >
       <div className="section-intro">
         <div>
-          <span className="eyebrow">01 / TRABAJO EN ACCIÓN</span>
+          <span className="eyebrow">01 / EJEMPLOS QUE PUEDES PROBAR</span>
           <h2>
-            Menos promesas.
+            ¿Qué te gustaría
             <br />
-            <em>Más cosas que probar.</em>
+            <em>mejorar primero?</em>
           </h2>
         </div>
         <p>
-          Son prototipos interactivos con datos ficticios: una forma concreta de
-          conversar sobre lo que podríamos construir para tu negocio.
+          Elige lo que hoy te preocupa y prueba ejemplos relacionados. Son
+          demostraciones originales con datos ficticios.
         </p>
       </div>
-      <div className="feature-grid">
-        {featured.map((project) => (
+      <div className="need-paths" aria-label="Filtrar ejemplos por necesidad">
+        {needs.map((option) => (
           <button
-            className={`feature-card feature-${project.id}`}
             type="button"
-            key={project.id}
-            onClick={() => onOpen(project.id)}
-            aria-label={`Abrir demo: ${project.title}`}
+            key={option.id}
+            aria-pressed={need === option.id}
+            onClick={() => setNeed(option.id)}
           >
-            <FeatureArt id={project.id} />
-            <div className="feature-card-copy">
-              <div>
-                <span>
-                  {project.number} / {project.type}
-                </span>
-                <ArrowUpRight size={20} />
-              </div>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <strong>
-                Probar demo <span>↗</span>
-              </strong>
-            </div>
+            {option.label}
           </button>
+        ))}
+      </div>
+      <div className="feature-grid" aria-live="polite">
+        {visible.map((id, index) => (
+          <motion.article
+            className={`feature-card feature-${id}`}
+            key={id}
+            initial={reduceMotion ? false : { opacity: 0, y: 26 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.16 }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+          >
+            <button
+              className="feature-open"
+              type="button"
+              onClick={() => onOpen(id)}
+              aria-label={`Probar demo: ${caseStudies[id].title}`}
+            >
+              <FeatureArt id={id} />
+              <div className="feature-card-copy">
+                <div>
+                  <span>DEMO / DATOS FICTICIOS</span>
+                  <ArrowUpRight size={20} />
+                </div>
+                <h3>{caseStudies[id].title}</h3>
+                <p>{caseStudies[id].summary}</p>
+                <strong>
+                  Probar demo <span>↗</span>
+                </strong>
+              </div>
+            </button>
+            <a className="feature-case-link" href={getCaseUrl(id)}>
+              Leer cómo lo diseñé <ArrowUpRight size={16} />
+            </a>
+          </motion.article>
         ))}
       </div>
     </section>

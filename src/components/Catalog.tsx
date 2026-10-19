@@ -1,21 +1,22 @@
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
-import { catalog } from "../data/catalog";
+import { catalog, featuredCatalog } from "../data/catalog";
 import { LandingVisual } from "./LandingVisual";
+import { normalizeSearch } from "../lib/search";
 import type { PortfolioKind } from "../data/portfolio.types";
 import type { CatalogProps } from "./site.types";
 
 type Filter = "all" | PortfolioKind;
 const filters: readonly { id: Filter; label: string }[] = [
-  { id: "all", label: "Todo (70)" },
-  { id: "automation", label: "Scripts (40)" },
-  { id: "system", label: "Sistemas (20)" },
-  { id: "landing", label: "Landings (10)" },
+  { id: "all", label: "Todas las ideas" },
+  { id: "automation", label: "Automatizar tareas" },
+  { id: "system", label: "Sistemas a medida" },
+  { id: "landing", label: "Páginas para vender" },
 ];
 const kindLabel: Record<PortfolioKind, string> = {
-  automation: "SCRIPT EXPLICADO",
+  automation: "TAREA AUTOMATIZABLE",
   system: "CONCEPTO DE SISTEMA",
-  landing: "EXPLORACIÓN VISUAL",
+  landing: "PÁGINA DE MUESTRA",
 };
 
 export function Catalog({ onOpen }: CatalogProps) {
@@ -27,29 +28,37 @@ export function Catalog({ onOpen }: CatalogProps) {
       catalog.filter(
         (item) =>
           (filter === "all" || item.kind === filter) &&
-          `${item.title} ${item.summary}`
-            .toLocaleLowerCase("es-MX")
-            .includes(query.toLocaleLowerCase("es-MX").trim()),
+          normalizeSearch(`${item.title} ${item.summary}`).includes(
+            normalizeSearch(query),
+          ),
       ),
     [filter, query],
   );
-  const visible = showAll ? matches : matches.slice(0, 12);
+  const visible = showAll
+    ? matches
+    : filter === "all" && query.trim() === ""
+      ? featuredCatalog
+      : matches.slice(0, 8);
 
   return (
-    <section id="catalogo" className="section-shell catalog-section">
+    <section
+      id="catalogo"
+      className="section-shell catalog-section"
+      tabIndex={-1}
+    >
       <div className="section-intro">
         <div>
-          <span className="eyebrow">02 / BIBLIOTECA DE POSIBILIDADES</span>
+          <span className="eyebrow">02 / MÁS IDEAS</span>
           <h2>
-            Explora lo que
+            Ideas para
             <br />
-            <em>podemos construir.</em>
+            <em>tu siguiente paso.</em>
           </h2>
         </div>
         <p>
-          Las fichas son ideas y demostraciones, no proyectos publicados de
-          clientes. Los 40 scripts incluyen un ejemplo de entrada, proceso y
-          resultado.
+          Aquí hay ocho ideas para empezar. Si buscas algo específico, explora
+          la biblioteca completa: 40 tareas automatizables, 20 sistemas y 10
+          propuestas de páginas. Son conceptos, no proyectos de clientes.
         </p>
       </div>
       <div className="catalog-toolbar">
@@ -115,13 +124,13 @@ export function Catalog({ onOpen }: CatalogProps) {
           <p>Prueba otro término o cambia la categoría.</p>
         </div>
       )}
-      {!showAll && matches.length > 12 && (
+      {!showAll && matches.length > 8 && (
         <button
           className="show-more"
           type="button"
           onClick={() => setShowAll(true)}
         >
-          Mostrar los {matches.length} resultados <ArrowUpRight size={17} />
+          Explorar las {matches.length} ideas <ArrowUpRight size={17} />
         </button>
       )}
     </section>

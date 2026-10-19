@@ -29,8 +29,8 @@ export function PricesDemo() {
         <p className="demo-kicker">03 / MONITOREO DE PRECIOS</p>
         <h3>Detecta el cambio que importa.</h3>
         <p className="demo-hint">
-          Los precios son ficticios. Cambia el umbral y simula una baja para ver
-          cómo se prepara una alerta. La demo no consulta tiendas externas.
+          Los precios son ficticios. Elige cuánto debe bajar el precio y simula
+          un cambio para ver el aviso. No consultamos tiendas externas.
         </p>
         <label className="demo-field">
           <span>Avisar cuando la baja sea de al menos (MXN)</span>
@@ -56,13 +56,6 @@ export function PricesDemo() {
           >
             <RotateCcw size={16} /> Reiniciar
           </button>
-        </div>
-        <div className="demo-side-note">
-          <BellRing size={22} />
-          <span>
-            En producción se usarían fuentes permitidas, historial de precios,
-            reintentos y alertas por el canal elegido.
-          </span>
         </div>
       </div>
       <div className="price-board">
@@ -100,7 +93,7 @@ export function PricesDemo() {
                 <strong>Alerta preparada</strong>
                 <p>
                   {alerts[0].name} bajó {money(priceDrop(alerts[0]))}; supera tu
-                  umbral de {money(threshold)}.
+                  mínimo de {money(threshold)}.
                 </p>
               </div>
             </>
@@ -109,7 +102,7 @@ export function PricesDemo() {
               <BellRing size={20} />
               <div>
                 <strong>Sin alertas por ahora</strong>
-                <p>Simula una baja o ajusta el umbral para ver el aviso.</p>
+                <p>Simula una baja o cambia el mínimo para ver el aviso.</p>
               </div>
             </>
           )}

@@ -77,3 +77,22 @@ export const catalog: readonly PortfolioItem[] = (
         ? landingDescriptions[item.id]
         : systemDescriptions[item.id],
 }));
+
+const featuredCatalogIds = [
+  "automation-12",
+  "system-3",
+  "landing-2",
+  "automation-31",
+  "system-13",
+  "landing-5",
+  "automation-35",
+  "system-17",
+] as const;
+
+export const featuredCatalog: readonly PortfolioItem[] = featuredCatalogIds.map(
+  (id) => {
+    const item = catalog.find((entry) => entry.id === id);
+    if (!item) throw new Error(`Falta la ficha ${id} del catálogo`);
+    return item;
+  },
+);

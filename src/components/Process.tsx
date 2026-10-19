@@ -12,26 +12,26 @@ const steps = [
   [
     "03",
     "Construimos y probamos",
-    "Implemento una primera versión y verifico sus caminos críticos.",
+    "Implemento una primera versión y probamos los pasos más importantes.",
   ],
   [
     "04",
     "Medimos y mejoramos",
-    "Después de publicar, corregimos fricción con evidencia de uso.",
+    "Después de publicar, mejoramos lo que dificulta usarlo.",
   ],
 ] as const;
 
 export function Process() {
   return (
-    <section id="proceso" className="process-section">
+    <section id="proceso" className="process-section" tabIndex={-1}>
       <div className="section-shell">
         <div className="section-intro">
           <div>
             <span className="eyebrow">03 / FORMA DE TRABAJAR</span>
             <h2>
-              La forma importa
+              Empezamos por entender
               <br />
-              <em>tanto como la idea.</em>
+              <em>tu problema.</em>
             </h2>
           </div>
           <p>

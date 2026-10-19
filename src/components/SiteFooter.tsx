@@ -2,18 +2,18 @@ import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer id="contacto" className="site-footer">
+    <footer id="contacto" className="site-footer" tabIndex={-1}>
       <div className="section-shell">
         <span className="eyebrow">05 / SIGUIENTE PASO</span>
         <div className="footer-main">
           <h2>
-            ¿Construimos algo
+            ¿Qué te gustaría mejorar
             <br />
-            <em>que valga la pena?</em>
+            <em>en tu negocio?</em>
           </h2>
           <p>
-            Cuéntame qué quieres resolver. Podemos empezar con una idea, una
-            demo o un proceso que hoy te quita demasiado tiempo.
+            Cuéntame qué te quita tiempo o qué te gustaría ofrecer de otra
+            forma. Podemos empezar con una conversación breve.
           </p>
         </div>
         <div className="footer-actions">

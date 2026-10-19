@@ -128,7 +128,7 @@ export function PodcastDemo() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ExternalLink size={16} /> Abrir overlay
+            <ExternalLink size={16} /> Abrir gráfico para OBS
           </a>
           <button
             className="action-quiet"
@@ -149,8 +149,8 @@ export function PodcastDemo() {
         </div>
         <OverlayGraphics config={config} />
         <p>
-          La página de overlay usa fondo transparente para colocarse sobre la
-          imagen o cámaras en OBS.
+          El gráfico usa fondo transparente para colocarse sobre la imagen o
+          cámaras en OBS.
         </p>
       </div>
     </div>

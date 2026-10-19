@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://coracer0.github.io/presentasion/</loc></url>
+  <url><loc>https://coracer0.github.io/presentasion/casos/reservas.html</loc></url>
+  <url><loc>https://coracer0.github.io/presentasion/casos/pedidos.html</loc></url>
+  <url><loc>https://coracer0.github.io/presentasion/casos/precios.html</loc></url>
+  <url><loc>https://coracer0.github.io/presentasion/casos/directos.html</loc></url>
   <url><loc>https://coracer0.github.io/presentasion/card.html</loc></url>
 </urlset>

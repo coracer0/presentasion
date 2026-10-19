@@ -10,7 +10,7 @@ Portafolio público de software, automatización y experiencias web. Incluye 70 
 - `npm ci`
 - `npm run dev`
 
-Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.html`, `/print-card.html` y `/overlay.html`.
+Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.html`, `/print-card.html`, `/overlay.html` y los cuatro casos de `/casos/`.
 
 ## Comandos
 
@@ -32,9 +32,15 @@ Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.h
 
 Las 40 fichas de scripts incluyen problema, disparador, entrada de ejemplo, proceso, salida, integraciones posibles y límites. El contenido está en `src/data/`; la lógica pura de las demos está en `src/lib/`.
 
+## Casos y experiencia
+
+Cada demo tiene una página HTML compartible con problema, público, decisión de diseño, límites y una forma de medir el resultado: [reservas](https://coracer0.github.io/presentasion/casos/reservas.html), [pedidos](https://coracer0.github.io/presentasion/casos/pedidos.html), [precios](https://coracer0.github.io/presentasion/casos/precios.html) y [directos](https://coracer0.github.io/presentasion/casos/directos.html). Los resultados descritos son de simulación; no se presentan cifras ni clientes inventados.
+
+La portada permite recorrer ejemplos según la necesidad del visitante. La biblioteca muestra ocho ideas al inicio y permite explorar las 70. La búsqueda ignora acentos. Las demos se cargan cuando se abren y un error en una demo queda aislado. El menú móvil, los diálogos y el enlace para saltar al contenido se pueden usar con teclado. Las animaciones breves respetan `prefers-reduced-motion`.
+
 ## Publicación
 
-El proyecto mantiene la ruta pública `https://coracer0.github.io/presentasion/`. Vite usa `base: '/presentasion/'`. El workflow `ci-cd-main.yml` instala desde el lockfile, comprueba formato, lint, tipos, pruebas y build, y publica `dist/` en GitHub Pages después de un push a `main`. En Settings → Pages, seleccionar **GitHub Actions** como origen del despliegue.
+El proyecto mantiene la ruta pública `https://coracer0.github.io/presentasion/`. Vite usa `base: '/presentasion/'`. El workflow `ci-cd-main.yml` instala desde el lockfile, comprueba formato, lint, tipos, pruebas y build, y publica `dist/` en GitHub Pages después de un push a `main`. GitHub Pages ya usa **GitHub Actions** como origen del despliegue.
 
 ## Contenido y privacidad
 
