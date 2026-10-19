@@ -2,7 +2,7 @@
 
 [![CI y GitHub Pages](https://github.com/coracer0/presentasion/actions/workflows/ci-cd-main.yml/badge.svg)](https://github.com/coracer0/presentasion/actions/workflows/ci-cd-main.yml)
 
-Portafolio público de Axel Coracero, centrado en páginas y herramientas para negocios locales. Incluye 70 ideas clasificadas y seis demostraciones interactivas con **datos ficticios**. Las ideas y demos no representan proyectos entregados a clientes. El canal de contacto principal es WhatsApp; el QR de las tarjetas también lo abre.
+Portafolio público de Axel Coracero, centrado en páginas y herramientas para negocios locales. Incluye 70 ideas clasificadas y seis demostraciones interactivas con **datos ficticios**. Las ideas y demos no representan proyectos entregados a clientes. El canal de contacto principal es WhatsApp; el QR de la tarjeta imprimible abre el portafolio y el QR de la tarjeta digital abre WhatsApp.
 
 ## Requisitos e instalación
 

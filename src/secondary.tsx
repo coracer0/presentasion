@@ -80,12 +80,13 @@ function PrintCard() {
         </article>
         <article className="print-card print-back">
           <img
-            src={`${base}qr.svg`}
+            src={`${base}portfolio-qr.svg`}
             width="100"
             height="100"
-            alt="Código QR para escribirme por WhatsApp"
+            alt="Código QR que abre el portafolio y sus demos"
           />
-          <span>ESCANEA Y ESCRÍBEME POR WHATSAPP</span>
+          <span>ESCANEA Y EXPLORA MIS DEMOS</span>
+          <small>coracer0.github.io/presentasion/</small>
         </article>
       </div>
       <p className="print-note">

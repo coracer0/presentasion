@@ -2117,6 +2117,12 @@ a {
 .print-back span {
   margin-top: 9px;
 }
+.print-back small {
+  margin-top: 5px;
+  font-size: 8px;
+  letter-spacing: 0.02em;
+  color: #d4def0;
+}
 .print-note {
   max-width: 500px;
   margin: 25px auto !important;
@@ -3010,7 +3016,7 @@ a {
   }
   .print-sheet > p,
   .print-sheet > button,
-  .print-note {
+  .print-sheet > a {
     display: none;
   }
   .print-cards {
@@ -3021,6 +3027,8 @@ a {
     margin: 12mm auto;
     break-inside: avoid;
     border: 1px solid #bbb;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 }
 @media (prefers-reduced-motion: reduce) {
