@@ -2045,16 +2045,22 @@ a {
   font-size: 12px;
   color: #546376;
 }
-.print-sheet > button {
+.print-sheet > button,
+.print-download {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin: 8px auto 28px;
+  margin: 8px 6px 28px;
   background: #172030;
   color: #fff;
   padding: 11px 20px;
   border: 0;
   font-weight: 800;
+}
+.print-sheet > button {
+  background: #f5f4ef;
+  color: #172030;
+  border: 1px solid #9ca8b6;
 }
 .print-cards {
   display: flex;
@@ -2075,7 +2081,6 @@ a {
   background: #f5f4ef;
   border-left: 5px solid #8da8ff;
 }
-.print-front > span,
 .print-back > span {
   font:
     600 9px "IBM Plex Mono",
@@ -2083,12 +2088,18 @@ a {
   letter-spacing: 0.13em;
 }
 .print-front h1 {
-  font-size: 27px;
+  font-size: 29px;
   line-height: 1;
-  letter-spacing: -0.06em;
-  margin: 15px 0 8px;
+  letter-spacing: -0.05em;
+  margin: 5px 0 15px;
 }
-.print-front p {
+.print-promise {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+.print-services {
   font-size: 10px;
   color: #596774;
   margin: 0;
@@ -2126,6 +2137,38 @@ a {
 .print-note {
   max-width: 500px;
   margin: 25px auto !important;
+}
+@media (max-width: 420px) {
+  .print-sheet {
+    padding: 24px 12px;
+  }
+  .print-sheet > button,
+  .print-download {
+    width: 100%;
+    justify-content: center;
+    margin: 6px 0;
+  }
+  .print-cards {
+    margin-top: 20px;
+  }
+  .print-card {
+    width: min(336px, calc(100vw - 24px));
+    height: auto;
+    aspect-ratio: 7 / 4;
+    padding: 20px;
+  }
+  .print-front h1 {
+    font-size: 26px;
+  }
+  .print-promise {
+    font-size: 16px;
+  }
+  .print-services {
+    font-size: 9px;
+  }
+  .print-front > small {
+    left: 20px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -2529,7 +2572,7 @@ a {
   background: #1c2636;
 }
 .story-before {
-  animation: story-dim 0.6s ease 1.3s both;
+  transform-origin: center left;
 }
 .story-before p {
   padding: 10px 12px;
@@ -2556,7 +2599,7 @@ a {
   background: #e5f0e9;
   color: #193a2c;
   border-color: #98cbb2;
-  animation: story-arrive 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both;
+  transform-origin: center left;
 }
 .story-after small {
   color: #3a735b;
@@ -2580,22 +2623,6 @@ a {
   margin: 0;
   color: #b7c5da;
   font-size: 13px;
-}
-@keyframes story-dim {
-  to {
-    opacity: 0.58;
-    transform: translateY(-7px);
-  }
-}
-@keyframes story-arrive {
-  from {
-    opacity: 0;
-    transform: translateY(22px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }
 .need-paths {
   display: flex;
@@ -3001,12 +3028,6 @@ a {
   }
   .case-header {
     padding: 12px 20px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .story-before,
-  .story-after {
-    animation: none;
   }
 }
 @media print {

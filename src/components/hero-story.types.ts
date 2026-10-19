@@ -6,3 +6,13 @@ export interface StoryScene {
   result: string;
   detail: string;
 }
+
+export interface StoryPanelProps {
+  story: StoryScene;
+  reduceMotion: boolean;
+}
+
+export interface StoryTabsProps {
+  selected: StoryId;
+  onSelect: (id: StoryId) => void;
+}

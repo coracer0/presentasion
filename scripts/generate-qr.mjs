@@ -1,12 +1,13 @@
 import QRCode from "qrcode";
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
+
+const destinations = JSON.parse(
+  readFileSync(new URL("./card-links.json", import.meta.url), "utf8"),
+);
 
 const codes = [
-  { name: "qr.svg", url: "https://wa.me/524181774447" },
-  {
-    name: "portfolio-qr.svg",
-    url: "https://coracer0.github.io/presentasion/",
-  },
+  { name: "qr.svg", url: destinations.digital },
+  { name: "portfolio-qr.svg", url: destinations.print },
 ];
 
 for (const code of codes) {

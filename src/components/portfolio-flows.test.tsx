@@ -12,6 +12,7 @@ import { SiteHeader } from "./SiteHeader";
 import { Featured } from "./Featured";
 import { Catalog } from "./Catalog";
 import { DetailDialog } from "./DetailDialog";
+import { HeroStory } from "./HeroStory";
 
 afterEach(cleanup);
 beforeAll(() => {
@@ -25,6 +26,19 @@ beforeAll(() => {
 afterAll(() => vi.unstubAllGlobals());
 
 describe("recorridos del portafolio", () => {
+  it("repite la historia sin cambiar el ejemplo elegido", () => {
+    render(<HeroStory />);
+    fireEvent.click(screen.getByRole("button", { name: "Pedidos" }));
+    expect(screen.getByRole("status").textContent).toContain("2 productos");
+    fireEvent.click(screen.getByRole("button", { name: "Repetir" }));
+    expect(
+      screen
+        .getByRole("button", { name: "Pedidos" })
+        .getAttribute("aria-pressed"),
+    ).toBe("true");
+    expect(screen.getByRole("status").textContent).toContain("2 productos");
+  });
+
   it("abre y cierra la navegación móvil", () => {
     render(<SiteHeader />);
     const open = screen.getByRole("button", { name: "Abrir menú" });

@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import {
   ArrowLeft,
   ArrowUpRight,
+  Download,
   Mail,
   MessageCircle,
   Printer,
@@ -67,15 +68,24 @@ function ContactCard() {
 function PrintCard() {
   return (
     <main className="print-sheet">
-      <p>Tarjeta lista para imprimir · frente y reverso</p>
+      <p>Tarjeta de presentación · frente y reverso</p>
+      <a
+        className="print-download"
+        href={`${base}axel-coracero-tarjeta-imprenta.pdf`}
+        download
+      >
+        <Download size={17} /> Descargar PDF para imprenta
+      </a>
       <button type="button" onClick={() => window.print()}>
-        <Printer size={17} /> Imprimir tarjeta
+        <Printer size={17} /> Imprimir en casa
       </button>
       <div className="print-cards">
         <article className="print-card print-front">
-          <span>AXEL CORACERO</span>
-          <h1>Hagamos tu día más fácil.</h1>
-          <p>Páginas web · Bots de mensajes · Herramientas a medida</p>
+          <h1>Axel Coracero</h1>
+          <p className="print-promise">Hagamos tu día más fácil.</p>
+          <p className="print-services">
+            Páginas web · Bots de mensajes · Herramientas a medida
+          </p>
           <small>WhatsApp: +52 418 177 4447</small>
         </article>
         <article className="print-card print-back">
@@ -90,8 +100,10 @@ function PrintCard() {
         </article>
       </div>
       <p className="print-note">
-        Exporta dos páginas, una por cara, a escala 100% y con impresión a
-        color.
+        El PDF para imprenta tiene dos caras, 3 mm de sangrado y un margen
+        seguro de 4 mm. Antes de imprimir muchas unidades, prueba el escaneo del
+        QR en una muestra física. La opción de casa imprime al tamaño final, sin
+        sangrado.
       </p>
       <a href={base}>Volver al portafolio</a>
     </main>
