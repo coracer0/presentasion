@@ -3010,7 +3010,17 @@ a {
   }
 }
 @media print {
+  html,
+  body,
+  #root {
+    width: 3.5in;
+    min-height: 0;
+    margin: 0;
+    background: #fff;
+  }
   .print-sheet {
+    width: 3.5in;
+    min-height: 0;
     background: #fff;
     padding: 0;
   }
@@ -3021,14 +3031,20 @@ a {
   }
   .print-cards {
     display: block;
+    width: 3.5in;
   }
   .print-card {
+    width: 3.5in;
+    height: 2in;
     box-shadow: none;
-    margin: 12mm auto;
-    break-inside: avoid;
-    border: 1px solid #bbb;
+    margin: 0;
+    border: 0;
+    break-after: page;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+  }
+  .print-card:last-child {
+    break-after: auto;
   }
 }
 @media (prefers-reduced-motion: reduce) {

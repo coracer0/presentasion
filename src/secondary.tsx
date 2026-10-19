@@ -90,8 +90,8 @@ function PrintCard() {
         </article>
       </div>
       <p className="print-note">
-        Verifica escala al 100% y configura impresión a color para conservar el
-        diseño.
+        Exporta dos páginas, una por cara, a escala 100% y con impresión a
+        color.
       </p>
       <a href={base}>Volver al portafolio</a>
     </main>

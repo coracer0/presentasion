@@ -44,6 +44,8 @@ La portada permite recorrer ejemplos según la necesidad del visitante. La bibli
 
 El proyecto mantiene la ruta pública `https://coracer0.github.io/presentasion/`. Vite usa `base: '/presentasion/'`. El workflow `ci-cd-main.yml` instala desde el lockfile, comprueba formato, lint, tipos, pruebas y build, y publica `dist/` en GitHub Pages después de un push a `main`. GitHub Pages ya usa **GitHub Actions** como origen del despliegue.
 
+La tarjeta imprimible en `/print-card.html` exporta dos páginas de 3.5 × 2 pulgadas, una por cara. El QR del reverso abre el portafolio público. Para llevarla a imprenta, solicitar sangrado y prueba física de lectura del QR.
+
 ## Contenido y privacidad
 
 Las personas, marcas, precios y horarios de los prototipos son ficticios. La experiencia profesional privada de Axel se describe sin compartir código, capturas ni datos de terceros. Los datos introducidos en las demos se mantienen en el navegador; el overlay codifica texto visible en su URL, por lo que no se deben incluir secretos ni datos de clientes.
