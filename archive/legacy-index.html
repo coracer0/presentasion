@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axel Coracero | Soluciones en Software & Automatización</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6', // blue-500
+                        secondary: '#8b5cf6', // violet-500
+                        dark: '#0f172a', // slate-900
+                        cardBg: '#1e293b', // slate-800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-slate-300 font-sans antialiased min-h-screen pb-20">
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden pt-24 pb-16">
+        <!-- Background Decorative Elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-6xl opacity-30 pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/40 rounded-full mix-blend-screen filter blur-[120px] animate-pulse"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/40 rounded-full mix-blend-screen filter blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+            <!-- Profile Photo Container -->
+            <div class="relative mb-10 group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <img src="fb.jpg" alt="Axel Coracero"
+                    class="relative w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-dark shadow-2xl object-cover transform transition duration-500 hover:scale-105">
+                <div class="absolute bottom-2 right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-dark shadow-lg"></div>
+            </div>
+            <div class="relative z-10">
+            <p class="text-blue-400 font-bold tracking-[0.3em] uppercase text-sm mb-4 animate-pulse">
+                Tu idea, mi código. <span class="text-white">Software que trabaja por ti.</span>
+            </p>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">
+                Axel <span class="gradient-text">Coracero</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-slate-400 font-semibold mb-8 tracking-wide">
+                Ingeniero de Software & Especialista en Automatización
+            </h2>
+
+            <p class="max-w-3xl text-slate-400 text-xl mb-12 leading-relaxed font-light">
+                Impulsando la eficiencia empresarial a través de <span class="text-white font-medium italic">Inteligencia Artificial</span>, 
+                <span class="text-white font-medium italic">Automatización RPA</span> y <span class="text-white font-medium italic">Desarrollo Web de Alto Impacto</span>.
+            </p>
+
+            <!-- Redes y Contacto -->
+            <div class="flex flex-wrap justify-center gap-6 mb-16">
+                <a href="https://wa.me/524181774447" target="_blank"
+                    class="group flex items-center gap-3 bg-[#25D366] hover:bg-[#1da851] text-white px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-[#25D366]/20">
+                    <i class="fab fa-whatsapp text-2xl group-hover:rotate-12 transition"></i> WhatsApp Directo
+                </a>
+                <a href="#proyectos"
+                    class="group flex items-center gap-3 bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105 border border-slate-700 shadow-xl">
+                    <i class="fas fa-rocket text-2xl group-hover:scale-110 transition text-blue-400"></i> Ver Mis Soluciones
+                </a>
+                <a href="mailto:ax.coracero@gmail.com"
+                    class="group flex items-center gap-3 bg-rose-600 hover:bg-rose-700 text-white px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-rose-600/20">
+                    <i class="fas fa-envelope text-2xl group-hover:-translate-y-1 transition"></i> Email
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: Tabs -->
+    <main class="max-w-7xl mx-auto px-6 relative z-10">
+
+        <!-- Tab Navigation -->
+        <div id="proyectos"
+            class="flex overflow-x-auto gap-2 justify-start md:justify-center mb-12 border-b border-slate-700 pb-px no-scrollbar scroll-mt-24">
+            <button onclick="openTab('bots')" id="btn-bots"
+                class="tab-btn active px-6 py-3 text-lg font-semibold border-b-2 border-primary text-primary transition whitespace-nowrap">
+                <i class="fas fa-robot mr-2"></i> Asistentes y Automatización (40)
+            </button>
+            <button onclick="openTab('web')" id="btn-web"
+                class="tab-btn px-6 py-3 text-lg font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition whitespace-nowrap">
+                <i class="fas fa-laptop-code mr-2"></i> Sistemas y Plataformas Web (20)
+            </button>
+            <button onclick="openTab('landing')" id="btn-landing"
+                class="tab-btn px-6 py-3 text-lg font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition whitespace-nowrap">
+                <i class="fas fa-rocket mr-2"></i> Páginas Web de Ventas (10)
+            </button>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB CONTENT: BOTS (40 EJEMPLOS)            -->
+        <!-- ========================================== -->
+        <div id="bots" class="tab-content fade-in grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+            <!-- Categoría 1: Búsqueda Automática de Información (Scraping) -->
+            <div class="col-span-full mb-2 mt-4">
+                <h3 class="text-2xl font-bold text-white border-l-4 border-primary pl-3">Búsqueda Automática de
+                    Información en Internet</h3>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-search-dollar"></i></div>
+                <h4 class="text-white font-bold mb-2">1. Comparador de Precios</h4>
+                <p class="text-sm text-slate-400">Revisa tiendas en línea todos los días y te avisa a tu celular si tu
+                    competencia bajó sus precios.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Busca en cientos de páginas a la vez</li>
+                        <li><i class="fas fa-bell text-primary w-4"></i> Alertas instantáneas de ofertas</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-home"></i></div>
+                <h4 class="text-white font-bold mb-2">2. Cazador de Bienes Raíces</h4>
+                <p class="text-sm text-slate-400">Recopila casas en venta o renta de varios portales y te hace una tabla
+                    en Excel automática con precios y zonas.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Ideal para agentes inmobiliarios</li>
+                        <li><i class="fas fa-file-excel text-primary w-4"></i> Reportes listos para imprimir</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-users"></i></div>
+                <h4 class="text-white font-bold mb-2">3. Buscador de Clientes (B2B)</h4>
+                <p class="text-sm text-slate-400">Extrae correos y teléfonos de negocios en mapas de internet para que
+                    tu equipo de ventas les llame.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Crea listas de contactos masivas</li>
+                        <li><i class="fas fa-filter text-primary w-4"></i> Filtro por ciudad o giro comercial</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-newspaper"></i></div>
+                <h4 class="text-white font-bold mb-2">4. Resumen de Noticias</h4>
+                <p class="text-sm text-slate-400">Lee periódicos digitales cada mañana y te envía a tu correo solo lo
+                    más importante de tu sector.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Inteligencia artificial para resumir</li>
+                        <li><i class="fas fa-envelope text-primary w-4"></i> Llega directo a tu bandeja de entrada</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-plane"></i></div>
+                <h4 class="text-white font-bold mb-2">5. Monitor de Vuelos Baratos</h4>
+                <p class="text-sm text-slate-400">Vigila las aerolíneas día y noche para encontrar boletos en
+                    liquidación o promociones secretas.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Detecta errores de precios</li>
+                        <li><i class="fas fa-clock text-primary w-4"></i> Funciona 24 horas ininterrumpidas</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-eye"></i></div>
+                <h4 class="text-white font-bold mb-2">6. Espía de la Competencia</h4>
+                <p class="text-sm text-slate-400">Te avisa en el momento en que tu competencia directa lanza un nuevo
+                    producto o cambia sus fotos.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Análisis de catálogos ajenos</li>
+                        <li><i class="fas fa-chart-line text-primary w-4"></i> Siempre un paso adelante</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-car"></i></div>
+                <h4 class="text-white font-bold mb-2">7. Buscador de Autos Usados</h4>
+                <p class="text-sm text-slate-400">Rastrea portales de venta de autos para encontrar la camioneta o coche
+                    específico que estás buscando comprar.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Cruza datos de agencias y particulares</li>
+                        <li><i class="fas fa-filter text-primary w-4"></i> Filtros de presupuesto estrictos</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-briefcase"></i></div>
+                <h4 class="text-white font-bold mb-2">8. Lector de Ofertas Laborales</h4>
+                <p class="text-sm text-slate-400">Ideal para reclutadores. Lee cientos de perfiles y te entrega solo los
+                    que cumplen con lo que buscas.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Ahorra horas de lectura de currículums</li>
+                        <li><i class="fas fa-users-cog text-primary w-4"></i> Búsqueda de talento automatizada</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-gavel"></i></div>
+                <h4 class="text-white font-bold mb-2">9. Monitor de Compras de Gobierno</h4>
+                <p class="text-sm text-slate-400">Revisa portales de licitaciones públicas y te manda un mensaje si hay
+                    un contrato que tú puedas ganar.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Nunca te pierdas un concurso público</li>
+                        <li><i class="fas fa-file-contract text-primary w-4"></i> Lee bases de contratos rápido</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-wallet"></i></div>
+                <h4 class="text-white font-bold mb-2">10. Vigilante de Inversiones</h4>
+                <p class="text-sm text-slate-400">Compara el valor de monedas o inversiones en distintos lugares para
+                    que sepas cuándo es buen momento para vender.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-primary w-4"></i> Decisiones basadas en matemáticas</li>
+                        <li><i class="fas fa-bolt text-primary w-4"></i> Velocidad de respuesta inmediata</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Categoría 2: WhatsApp & Telegram -->
+            <div class="col-span-full mb-2 mt-8">
+                <h3 class="text-2xl font-bold text-white border-l-4 border-green-500 pl-3">Atención al Cliente (WhatsApp
+                    Automático)</h3>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-utensils"></i></div>
+                <h4 class="text-white font-bold mb-2">11. Mesero Virtual por Chat</h4>
+                <p class="text-sm text-slate-400">Muestra tu menú, toma pedidos, suma la cuenta y manda la orden directo
+                    a tu cocina sin que tú hagas nada.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Manda a imprimir los tickets a cocina</li>
+                        <li><i class="fas fa-dollar-sign text-green-400 w-4"></i> Aumenta tus ventas y agiliza entregas
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-calendar-alt"></i></div>
+                <h4 class="text-white font-bold mb-2">12. Recepcionista de Citas</h4>
+                <p class="text-sm text-slate-400">Tus clientes piden cita por WhatsApp, el asistente revisa qué horas
+                    tienes libres y los anota en tu calendario.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Se conecta a tu Google Calendar</li>
+                        <li><i class="fas fa-ban text-green-400 w-4"></i> Evita que dos personas se empalmen</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-robot"></i></div>
+                <h4 class="text-white font-bold mb-2">13. Contestador Inteligente</h4>
+                <p class="text-sm text-slate-400">Aprende sobre tu negocio y responde dudas a los clientes como si fuera
+                    una persona real (no suena a robot).</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Usa Inteligencia Artificial moderna</li>
+                        <li><i class="fas fa-user-friends text-green-400 w-4"></i> Si no sabe la respuesta, te avisa a
+                            ti</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-box"></i></div>
+                <h4 class="text-white font-bold mb-2">14. Rastreador de Paquetes</h4>
+                <p class="text-sm text-slate-400">El cliente escribe su número de envío en el chat y el asistente le
+                    dice en qué parte de la ciudad va su pedido.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Evita que te saturen a preguntas</li>
+                        <li><i class="fas fa-truck text-green-400 w-4"></i> Tranquilidad para tus compradores</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-file-invoice-dollar"></i></div>
+                <h4 class="text-white font-bold mb-2">15. Auto-Facturador en Chat</h4>
+                <p class="text-sm text-slate-400">Pide el ticket y RFC por mensaje, y envía la factura timbrada al
+                    instante en PDF. Adiós filas en la caja.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Conexión oficial al sistema del SAT</li>
+                        <li><i class="fas fa-cogs text-green-400 w-4"></i> Sin errores de tipeo manuales</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-stethoscope"></i></div>
+                <h4 class="text-white font-bold mb-2">16. Recordatorio para Pacientes</h4>
+                <p class="text-sm text-slate-400">Para clínicas. Envía un mensaje amable a los pacientes a cierta hora
+                    para recordarles que se tomen su medicina.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Aumenta la confianza en la clínica</li>
+                        <li><i class="fas fa-heart text-green-400 w-4"></i> Servicio de alta calidad al cliente</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-poll"></i></div>
+                <h4 class="text-white font-bold mb-2">17. Encuestador Post-Venta</h4>
+                <p class="text-sm text-slate-400">Un día después de la compra, le pregunta al cliente cómo le fue.
+                    Guarda respuestas positivas y te alerta de las malas.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Mide la calidad de tus empleados</li>
+                        <li><i class="fas fa-star text-green-400 w-4"></i> Consigue más estrellitas en Google</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-key"></i></div>
+                <h4 class="text-white font-bold mb-2">18. Asesor de Bienes Raíces</h4>
+                <p class="text-sm text-slate-400">Le muestra a tus clientes fotos de las casas por chat según su
+                    presupuesto, y te avisa a ti si quieren ir a verla.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Filtro de clientes no interesados</li>
+                        <li><i class="fas fa-clock text-green-400 w-4"></i> Vendes incluso mientras duermes</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-hotel"></i></div>
+                <h4 class="text-white font-bold mb-2">19. Asistente para Hoteles</h4>
+                <p class="text-sm text-slate-400">Los huéspedes le escriben para pedir comida al cuarto, toallas extra o
+                    la clave del WiFi de forma automática.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Descarga de trabajo a recepción</li>
+                        <li><i class="fas fa-concierge-bell text-green-400 w-4"></i> Experiencia de lujo al visitante
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 relative overflow-hidden">
+                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-graduation-cap"></i></div>
+                <h4 class="text-white font-bold mb-2">20. Tutor de Capacitación</h4>
+                <p class="text-sm text-slate-400">Entrena a tus nuevos empleados por chat mandándoles el reglamento,
+                    videos y preguntas para ver si entendieron.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-green-400 w-4"></i> Inducción rápida y sin quitarte tiempo</li>
+                        <li><i class="fas fa-tasks text-green-400 w-4"></i> Calificaciones automáticas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Categoría 3: Discord & Comunidades -->
+            <div class="col-span-full mb-2 mt-8">
+                <h3 class="text-2xl font-bold text-white border-l-4 border-indigo-500 pl-3">Gestión de Comunidades
+                    (Discord y Redes)</h3>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                <h4 class="text-white font-bold mb-2">21. Moderador Automático</h4>
+                <p class="text-sm text-slate-400">Si alguien dice groserías o hace spam en tus grupos, el sistema borra
+                    el mensaje y expulsa a la persona al instante.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Reglas estrictas configurables</li>
+                        <li><i class="fas fa-broom text-indigo-400 w-4"></i> Mantiene tu grupo sano 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-gift"></i></div>
+                <h4 class="text-white font-bold mb-2">22. Gestor de Sorteos</h4>
+                <p class="text-sm text-slate-400">Tú le dices qué vas a regalar. El sistema hace que la gente participe
+                    y al final elige un ganador al azar de forma justa.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Fomenta la participación de tus clientes
+                        </li>
+                        <li><i class="fas fa-handshake text-indigo-400 w-4"></i> Selección transparente sin fraudes</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-ticket-alt"></i></div>
+                <h4 class="text-white font-bold mb-2">23. Tickets de Atención</h4>
+                <p class="text-sm text-slate-400">Si un cliente tiene una queja, se abre un canal privado para atenderlo
+                    sin que los demás vean el problema.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Cuida la reputación pública de tu marca
+                        </li>
+                        <li><i class="fas fa-clipboard-check text-indigo-400 w-4"></i> Historial de problemas resueltos
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-star"></i></div>
+                <h4 class="text-white font-bold mb-2">24. Sistema de Puntos y Niveles</h4>
+                <p class="text-sm text-slate-400">Premia a los clientes que más interactúan en tus grupos. Entre más
+                    participan, más puntos ganan para canjear por premios.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Crea lealtad hacia tu negocio</li>
+                        <li><i class="fas fa-medal text-indigo-400 w-4"></i> Genera competencia amistosa</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-language"></i></div>
+                <h4 class="text-white font-bold mb-2">25. Traductor en Vivo</h4>
+                <p class="text-sm text-slate-400">Ideal si tienes clientes de otros países. Traduce automáticamente lo
+                    que dicen al español para que los entiendas.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Soporta decenas de idiomas</li>
+                        <li><i class="fas fa-globe text-indigo-400 w-4"></i> Elimina las barreras de ventas</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-broadcast-tower"></i></div>
+                <h4 class="text-white font-bold mb-2">26. Notificador de En Vivos</h4>
+                <p class="text-sm text-slate-400">Avisa a toda tu comunidad cuando subes un nuevo video, podcast o
+                    inicias una transmisión en vivo.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Atrae más espectadores rápido</li>
+                        <li><i class="fas fa-video text-indigo-400 w-4"></i> Funciona en automático sin que lo actives
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-image"></i></div>
+                <h4 class="text-white font-bold mb-2">27. Creador de Imágenes Divertidas</h4>
+                <p class="text-sm text-slate-400">Permite a tus clientes crear memes o imágenes con tu logo fácilmente,
+                    ideal para que te hagan publicidad gratis.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Genera contenido que la gente comparte</li>
+                        <li><i class="fas fa-laugh text-indigo-400 w-4"></i> Mantiene a tu grupo entretenido</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-user-plus"></i></div>
+                <h4 class="text-white font-bold mb-2">28. Saludos Automáticos</h4>
+                <p class="text-sm text-slate-400">Recibe a los nuevos clientes que entran a tus grupos con un mensaje
+                    bonito explicándoles qué vendes o haces.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Da una primera impresión muy profesional
+                        </li>
+                        <li><i class="fas fa-door-open text-indigo-400 w-4"></i> Les da las instrucciones de compra</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-gamepad"></i></div>
+                <h4 class="text-white font-bold mb-2">29. Mini-juegos para Clientes</h4>
+                <p class="text-sm text-slate-400">Juegos de adivinanzas o trivias pequeñas en tus grupos de chat para
+                    que la gente pase el rato y se acuerde de tu marca.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Evita que se salgan de tu grupo</li>
+                        <li><i class="fas fa-heart text-indigo-400 w-4"></i> Interacción amigable</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 relative overflow-hidden">
+                <div class="text-indigo-500 text-3xl mb-4"><i class="fas fa-tags"></i></div>
+                <h4 class="text-white font-bold mb-2">30. Clasificador de Clientes</h4>
+                <p class="text-sm text-slate-400">Les permite a los clientes elegir qué les interesa (Ej: "Ropa de
+                    hombre" o "Ropa de mujer") para enviarles solo eso.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Evitas mandar información que no quieren
+                        </li>
+                        <li><i class="fas fa-bullseye text-indigo-400 w-4"></i> Ofertas directas al grano</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Categoría 4: Automatización de Tareas de Oficina (RPA) -->
+            <div class="col-span-full mb-2 mt-8">
+                <h3 class="text-2xl font-bold text-white border-l-4 border-rose-500 pl-3">Automatización de Trabajo de
+                    Oficina</h3>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-file-pdf"></i></div>
+                <h4 class="text-white font-bold mb-2">31. Capturista Automático</h4>
+                <p class="text-sm text-slate-400">Lee datos de tus facturas o documentos en PDF y los escribe solito en
+                    tu sistema o en un archivo de Excel.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Reduce errores humanos al 0%</li>
+                        <li><i class="fas fa-tachometer-alt text-rose-400 w-4"></i> Hace el trabajo de horas en minutos
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-chart-pie"></i></div>
+                <h4 class="text-white font-bold mb-2">32. Creador de Reportes Financieros</h4>
+                <p class="text-sm text-slate-400">Suma tus ventas, resta tus gastos y te entrega un reporte en PDF súper
+                    bonito cada viernes por la tarde.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Gráficos fáciles de entender</li>
+                        <li><i class="fas fa-chart-bar text-rose-400 w-4"></i> Control total de tu dinero sin esfuerzo
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-folder-open"></i></div>
+                <h4 class="text-white font-bold mb-2">33. Organizador de Archivos</h4>
+                <p class="text-sm text-slate-400">Acomoda todos los archivos desordenados de tu computadora en carpetas
+                    por fecha, cliente o tipo de documento.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Encuentras las cosas más rápido</li>
+                        <li><i class="fas fa-broom text-rose-400 w-4"></i> Tu computadora siempre limpia</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-envelope-open-text"></i></div>
+                <h4 class="text-white font-bold mb-2">34. Enviador de Correos Masivos</h4>
+                <p class="text-sm text-slate-400">Manda promociones a miles de clientes, usando su nombre para que suene
+                    personal, y te avisa quién lo abrió.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Excelente para vender por email</li>
+                        <li><i class="fas fa-eye text-rose-400 w-4"></i> Sabes si de verdad leyeron tu oferta</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-server"></i></div>
+                <h4 class="text-white font-bold mb-2">35. Guardián de Tu Página Web</h4>
+                <p class="text-sm text-slate-400">Revisa tu página de internet a cada rato. Si se cae o deja de
+                    funcionar, te avisa por mensaje para arreglarlo rápido.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> No pierdes ventas por fallos técnicos</li>
+                        <li><i class="fas fa-shield-alt text-rose-400 w-4"></i> Alertas directas a tu celular</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-database"></i></div>
+                <h4 class="text-white font-bold mb-2">36. Respaldo de Información Seguro</h4>
+                <p class="text-sm text-slate-400">Hace una copia de seguridad de toda la información de tu empresa todos
+                    los días y la guarda bajo llave en la nube.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Te protege de virus o hackeos</li>
+                        <li><i class="fas fa-cloud text-rose-400 w-4"></i> Duerme tranquilo sabiendo que no perderás
+                            nada</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-id-card"></i></div>
+                <h4 class="text-white font-bold mb-2">37. Recibimiento a Nuevos Empleados</h4>
+                <p class="text-sm text-slate-400">Crea el correo de empresa, da permisos y manda mensaje de bienvenida
+                    solito a la gente nueva que contratas.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Ahorra tiempo a tu equipo de Recursos Humanos
+                        </li>
+                        <li><i class="fas fa-smile text-rose-400 w-4"></i> Los empleados se sienten bienvenidos desde el
+                            día uno</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-address-book"></i></div>
+                <h4 class="text-white font-bold mb-2">38. Actualizador de Contactos</h4>
+                <p class="text-sm text-slate-400">Si un cliente llena un formulario pidiendo informes, lo guarda y le
+                    avisa inmediatamente a tu vendedor de turno.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Atiendes a tus posibles clientes mientras
+                            están "calientes"</li>
+                        <li><i class="fas fa-bolt text-rose-400 w-4"></i> Nadie se queda sin ser contactado</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-images"></i></div>
+                <h4 class="text-white font-bold mb-2">39. Achicador de Fotos Automático</h4>
+                <p class="text-sm text-slate-400">Le pasas miles de fotos pesadas y te las regresa livianas para que tu
+                    página de internet cargue rapidísimo.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Una página rápida hace que la gente no se
+                            salga</li>
+                        <li><i class="fas fa-compress text-rose-400 w-4"></i> Ahorras espacio de almacenamiento</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 relative overflow-hidden">
+                <div class="text-rose-500 text-3xl mb-4"><i class="fas fa-print"></i></div>
+                <h4 class="text-white font-bold mb-2">40. Imprimidor Silencioso</h4>
+                <p class="text-sm text-slate-400">Vigila una bandeja de correo; si llega un PDF (como una cotización o
+                    plano), lo manda a imprimir en automático.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Excelente para oficinas o restaurantes
+                            ocupados</li>
+                        <li><i class="fas fa-cog text-rose-400 w-4"></i> Tú no tienes que presionar ningún botón</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB CONTENT: WEB PROJECTS (20 EJEMPLOS)    -->
+        <!-- ========================================== -->
+        <div id="web" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="col-span-full mb-2 mt-4">
+                <h3 class="text-2xl font-bold text-white border-l-4 border-secondary pl-3">Sistemas de Gestión, Control
+                    Empresarial y Dashboards</h3>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl border border-secondary/30 relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                    Más Solicitado</div>
+                <h4 class="text-xl text-white font-bold mb-2">1. Sistema de Auto-Facturación</h4>
+                <p class="text-sm text-slate-400 mb-4">Ideal para restaurantes. El cliente escanea su ticket con el
+                    celular y él mismo saca su factura. Te ahorra la queja de clientes esperando su factura.</p>
+                <div class="flex gap-2 mb-2">
+                    <span class="bg-slate-700 text-xs px-2 py-1 rounded">Fácil de usar</span>
+                    <span class="bg-slate-700 text-xs px-2 py-1 rounded">Conectado al SAT</span>
+                </div>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Se lee mediante código QR fácil y rápido
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Descongestiona las filas de tus cajeros</li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Maneja los pagos pendientes sin problema
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">2. Plataforma de Pedidos a Domicilio</h4>
+                <p class="text-sm text-slate-400 mb-4">Tu propio "Uber Eats" pero sin pagar comisiones altas. Tus
+                    clientes ven los platillos, eligen, pagan en línea y tú recibes la orden en tu pantalla.</p>
+                <div class="flex gap-2"><span class="bg-slate-700 text-xs px-2 py-1 rounded">Cuentas Seguras</span><span
+                        class="bg-slate-700 text-xs px-2 py-1 rounded">Menú Interactivo</span></div>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Cada cliente tiene su contraseña privada
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Panel de control para ver qué pidió cada
+                            quién</li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Acepta cobros seguros por tarjeta de crédito
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">3. Control Total de Inventarios</h4>
+                <p class="text-sm text-slate-400 mb-4">Lleva la cuenta de todo lo que entra y sale de tu bodega. El
+                    sistema te lanza una alerta en rojo cuando te estás quedando sin algún producto clave.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Gráficas visuales fáciles de entender</li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Diferentes accesos para empleados y dueños
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">4. Portal para Empleados</h4>
+                <p class="text-sm text-slate-400 mb-4">Tus empleados inician sesión y pueden pedir vacaciones, descargar
+                    sus recibos de pago y checar su hora de entrada desde su computadora.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Firmas de contratos directo en la
+                            computadora</li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Calendario interno con fechas importantes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">5. Gestión de Consultorios Médicos</h4>
+                <p class="text-sm text-slate-400 mb-4">Expedientes clínicos digitales. Ten toda la historia de tus
+                    pacientes guardada de forma segura, agenda citas y crea recetas que se mandan por WhatsApp.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Se acabó buscar expedientes de papel</li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Alta confidencialidad de datos médicos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">6. Panel Gerencial de Ventas</h4>
+                <p class="text-sm text-slate-400 mb-4">Si tienes varias sucursales, este panel junta toda la información
+                    y te muestra gráficas con el dinero que entró hoy, qué producto se vende más, etc.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Todo a la vista de un solo vistazo</li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Te ayuda a tomar decisiones como jefe</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">7. Tu Propia Escuela Digital</h4>
+                <p class="text-sm text-slate-400 mb-4">Sube tus clases en video, cobra por ellas, revisa cómo van
+                    avanzando tus alumnos y dales un certificado de regalo cuando terminen el curso.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Evita que se copien los videos</li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Exámenes de opción múltiple automáticos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">8. Software para tu Gimnasio</h4>
+                <p class="text-sm text-slate-400 mb-4">Controla qué personas ya pagaron el mes, quélete acceso por
+                    torniquete y hazles un plan de pesas o dieta desde la computadora.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Cobro automático cada 30 días a su tarjeta
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Bloquea la entrada a los que deben el mes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">9. Administrador de Choferes y Autos</h4>
+                <p class="text-sm text-slate-400 mb-4">Para dueños de camiones. Te avisa cuándo le toca el cambio de
+                    aceite a cada carro y te calcula en qué vehículo estás gastando más gasolina.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Evitas tener vehículos descompuestos parados
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Guardas las identificaciones de tus choferes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">10. Motor de Reservas de Hotel</h4>
+                <p class="text-sm text-slate-400 mb-4">Los turistas entran, escogen fecha, ven qué cuartos hay libres,
+                    pagan su noche y tú solo los recibes cuando llegan con su llave lista.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Sin comisiones pesadas como las de Booking
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Todo en un calendario bonito y fácil de
+                            entender</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">11. Cobrador por Tiempo Trabajado</h4>
+                <p class="text-sm text-slate-400 mb-4">Ideal para quienes cobran por hora (abogados, consultores). Le
+                    das iniciar y al terminar, le hace el cálculo exacto a tu cliente de cuánto debe pagarte.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Transparencia total para quien te contrata
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Saca reportes para cobrar cada fin de mes
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">12. Mercado en Línea Múltiple</h4>
+                <p class="text-sm text-slate-400 mb-4">Tu propio MercadoLibre pequeño. Diferentes negocios pueden subir
+                    sus productos a tu página y tú te llevas una comisión por cada venta que hagan.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Repartición de pagos justa a cada vendedor
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Panel gigante para controlar qué se vende
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">13. Buzón de Soporte a Clientes</h4>
+                <p class="text-sm text-slate-400 mb-4">Tus compradores mandan sus dudas o problemas. Tu equipo los
+                    atiende por orden de importancia sin que ninguno se pierda o se quede sin ayuda.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Semáforo rojo para clientes muy enojados
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Mide cuánto tarda tu personal en contestar
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">14. Sistema de Suscripciones Mensuales</h4>
+                <p class="text-sm text-slate-400 mb-4">Para negocios que cobran mes tras mes (como internet,
+                    colegiaturas o clubs). Se encarga de hacer el cobro solo sin que tengas que ir a cobrar puerta a
+                    puerta.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Si la tarjeta falla, le avisa al cliente
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Ingresos predecibles cada 30 días</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">15. Checador de Asistencia con Ubicación</h4>
+                <p class="text-sm text-slate-400 mb-4">El empleado aprieta un botón en su celular para decir "ya
+                    llegué". El sistema comprueba su ubicación para asegurar que de verdad está en el trabajo.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Evita que alguien mienta y diga que ya llegó
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Genial para trabajadores que están en la
+                            calle</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">16. Plataforma de Votaciones Seguras</h4>
+                <p class="text-sm text-slate-400 mb-4">Para elegir líderes vecinales o sindicales. La gente entra, vota
+                    de forma secreta y el sistema da los ganadores al final sin permitir trucos ni fraudes.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Cada persona solo puede dar un voto</li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Alta confidencialidad garantizada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">17. Cotizador Automático</h4>
+                <p class="text-sm text-slate-400 mb-4">El cliente va eligiendo qué quiere comprar en tu página. Al
+                    final, el sistema le entrega un documento en PDF con el precio exacto en menos de un segundo.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Ya no pierdes tiempo armando cuentas largas
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> A la gente le gusta saber el precio rápido
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">18. Subastas en Vivo</h4>
+                <p class="text-sm text-slate-400 mb-4">La gente ofrece dinero por tus productos al mismo tiempo. Ven en
+                    la pantalla cómo el precio sube en segundos y gana el que ofrezca más al terminar el reloj.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Emoción instantánea para el cliente</li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Gran oportunidad para rematar sobrantes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">19. Nutriólogo Virtual</h4>
+                <p class="text-sm text-slate-400 mb-4">Los pacientes ponen su peso y lo que quieren lograr. El sistema
+                    les hace un menú semanal para comer y una lista de lo que tienen que comprar en el mercado.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Calcula las proteínas y calorías exactas
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Muy útil si tienes un consultorio de
+                            nutrición</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="glass-effect p-6 rounded-2xl group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary/30 relative overflow-hidden">
+                <h4 class="text-xl text-white font-bold mb-2">20. Asesor de Ventas de Inmuebles</h4>
+                <p class="text-sm text-slate-400 mb-4">Los agentes inmobiliarios ven quién quiere comprar casa, a quién
+                    ya llamaron y quién está a punto de firmar los papeles para no perder la comisión.</p>
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li><i class="fas fa-check text-secondary w-4"></i> Se organiza a tu equipo de ventas por metas
+                        </li>
+                        <li><i class="fas fa-check text-secondary w-4"></i> Tienen toda la galería de fotos en su
+                            celular</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB CONTENT: LANDING PAGES (Demos en vivo) -->
+        <!-- ========================================== -->
+        <div id="landing" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="col-span-full mb-2 mt-4">
+                <h3 class="text-2xl font-bold text-white border-l-4 border-teal-500 pl-3">Páginas Web Diseñadas para
+                    Vender (¡Haz clic para ver la demostración!)</h3>
+                <p class="text-slate-400 text-sm mt-2">Haz que quienes visiten tu página no solo se queden a ver, sino
+                    que te compren. Toca en las tarjetas para abrir una demostración de cómo se vería tu negocio.</p>
+            </div>
+
+            <!-- TARJETA CON DEMO 1: APP MÓVIL -->
+            <div onclick="openDemo('app')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/30 overflow-hidden border border-transparent hover:border-teal-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-teal-500 to-indigo-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-teal-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">1. Página para promocionar tu Aplicación</h4>
+                <p class="text-sm text-slate-400">Página súper elegante y moderna para convencer a la gente de descargar
+                    e instalar la aplicación de tu negocio.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-teal-400 w-4"></i> Enlaces que llevan directo a descargar la app
+                        </li>
+                        <li><i class="fas fa-check text-teal-400 w-4"></i> Efectos visuales llamativos al bajar la
+                            página</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA CON DEMO 2: RESTAURANTE -->
+            <div onclick="openDemo('restaurant')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-500/30 overflow-hidden border border-transparent hover:border-orange-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-orange-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">2. Menú para Restaurante o Comida Rápida</h4>
+                <p class="text-sm text-slate-400">Se ven unas fotos riquísimas de tus platillos. La gente se antoja,
+                    escoge qué quiere comer y te lo pide ahí mismo.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-orange-400 w-4"></i> Botones grandes para pedir comida fácil
+                        </li>
+                        <li><i class="fas fa-check text-orange-400 w-4"></i> Mapa para que encuentren el local rápido
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA CON DEMO 3: LEAD MAGNET -->
+            <div onclick="openDemo('lead')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/30 overflow-hidden border border-transparent hover:border-blue-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-blue-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">3. Página para Conseguir Nuevos Contactos</h4>
+                <p class="text-sm text-slate-400">Le regalas a la gente un manual o consejo gratis, y a cambio ellos te
+                    dan su correo para que después les vendas tus cosas.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-blue-400 w-4"></i> Guarda los correos de las personas solito
+                        </li>
+                        <li><i class="fas fa-check text-blue-400 w-4"></i> Excelente para campañas de publicidad masivas
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA CON DEMO 4: CURSO ONLINE -->
+            <div onclick="openDemo('course')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/30 overflow-hidden border border-transparent hover:border-purple-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-purple-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">4. Página para Vender Talleres o Cursos</h4>
+                <p class="text-sm text-slate-400">Perfecta para maestros o capacitadores. Muestra qué vas a enseñar y al
+                    final un botón gigante de comprar seguro.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-purple-400 w-4"></i> Trucos de venta como usar temporizadores
+                            (Solo quedan 2 horas)</li>
+                        <li><i class="fas fa-check text-purple-400 w-4"></i> Pasan su tarjeta de crédito con total
+                            confianza</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA CON DEMO 5: NEGOCIO LOCAL -->
+            <div onclick="openDemo('local')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/30 overflow-hidden border border-transparent hover:border-cyan-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-cyan-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">5. Para Consultorios o Especialistas Locales</h4>
+                <p class="text-sm text-slate-400">Si eres dentista, abogado o mecánico. Muestra a qué te dedicas y tiene
+                    un espacio a la derecha para que te dejen su cita.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-cyan-400 w-4"></i> Botón en el celular para que te llamen al
+                            instante</li>
+                        <li><i class="fas fa-check text-cyan-400 w-4"></i> Da una imagen de que tienes un negocio grande
+                            y serio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA CON DEMO 6: WAITLIST -->
+            <div onclick="openDemo('waitlist')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/30 overflow-hidden border border-transparent hover:border-indigo-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-violet-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-indigo-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">6. Página de Misterio "Próximamente"</h4>
+                <p class="text-sm text-slate-400">Si apenas estás abriendo tu empresa y quieres que la gente se emocione
+                    y deje su correo antes de que lances tus productos a la venta.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Diseño oscuro y tecnológico que llama la
+                            atención</li>
+                        <li><i class="fas fa-check text-indigo-400 w-4"></i> Crea ganas e impaciencia en los clientes de
+                            que abras ya</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA CON DEMO 7: INMOBILIARIA -->
+            <div onclick="openDemo('realestate')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-500/30 overflow-hidden border border-transparent hover:border-neutral-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-neutral-400 to-slate-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-neutral-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">7. Venta de Bienes Raíces o Casas Finas</h4>
+                <p class="text-sm text-slate-400">Diseño carísimo a la vista. Con fotos de la propiedad abarcando toda
+                    la pantalla y cuadritos presumiendo cuántos baños y cuartos tiene.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-neutral-400 w-4"></i> Visualmente diseñada para vender terrenos
+                            o casas de lujo</li>
+                        <li><i class="fas fa-check text-neutral-400 w-4"></i> Símbolos fáciles para ver si caben los
+                            carros, las camas, etc.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA CON DEMO 8: EVENTO -->
+            <div onclick="openDemo('event')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 overflow-hidden border border-transparent hover:border-rose-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-rose-500 to-orange-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-rose-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">8. Venta de Entradas a Eventos o Fiestas</h4>
+                <p class="text-sm text-slate-400">Una página muy enérgica. Pones la fecha del evento grandota, quiénes
+                    van a hablar o qué artistas van, y el botón para comprar boleto.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Colores que invitan a la acción y a
+                            emocionarse</li>
+                        <li><i class="fas fa-check text-rose-400 w-4"></i> Muestra a tus invitados especiales de forma
+                            muy profesional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA CON DEMO 9: COACHING -->
+            <div onclick="openDemo('coach')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/30 overflow-hidden border border-transparent hover:border-amber-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-amber-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">9. Para Profesores, Entrenadores o Asesores</h4>
+                <p class="text-sm text-slate-400">La página eres tú. Con tu foto muy limpia de un lado y de qué forma
+                    puedes ayudar a que las personas mejoren sus negocios o sus vidas del otro.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-amber-400 w-4"></i> Da una tremenda autoridad y hace que la
+                            gente confíe en ti</li>
+                        <li><i class="fas fa-check text-amber-400 w-4"></i> Colores cálidos y agradables para leer
+                            tranquilo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TARJETA CON DEMO 10: PORTFOLIO -->
+            <div onclick="openDemo('portfolio2')"
+                class="glass-effect p-6 rounded-2xl group relative cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/30 overflow-hidden border border-transparent hover:border-emerald-500/50">
+                <div class="w-full h-32 bg-slate-700 rounded-lg mb-4 overflow-hidden relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 opacity-40 group-hover:opacity-80 transition duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span
+                            class="bg-white text-slate-900 font-bold px-4 py-2 rounded-full text-sm shadow-lg shadow-black/50"><i
+                                class="fas fa-play mr-2 text-emerald-500"></i>Abrir Demostración</span>
+                    </div>
+                </div>
+                <h4 class="text-lg text-white font-bold mb-2">10. Presentación "Geek" de Película</h4>
+                <p class="text-sm text-slate-400">Hace de cuenta que entraste a la computadora de un hacker en una
+                    película (letras verdes sobre negro) mostrando todo lo que el creador de la página sabe hacer.</p>
+
+                <div
+                    class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden group-hover:mt-4 group-hover:pt-4 border-t border-transparent group-hover:border-slate-700/50">
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li><i class="fas fa-check text-emerald-400 w-4"></i> Llama muchísimo la atención de gerentes o
+                            directores de tecnología</li>
+                        <li><i class="fas fa-check text-emerald-400 w-4"></i> Efectos divertidos donde pareciera que
+                            alguien está escribiendo</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- QR Section (NEW) -->
+    <section class="max-w-4xl mx-auto px-6 py-20 mt-20 border-t border-slate-800">
+        <div class="glass-effect rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 text-center md:text-left relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-5">
+                <i class="fas fa-qrcode text-9xl"></i>
+            </div>
+            
+            <div class="flex-1">
+                <h3 class="text-3xl font-bold text-white mb-4">¡Comparte mi portafolio!</h3>
+                <p class="text-slate-400 text-lg mb-8 text-balance">
+                    Escanea este código o genera uno nuevo para compartir mi trabajo con alguien que necesite automatizar su negocio.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="text" id="qr-url" value="https://coracer0.github.io/presentasion/" 
+                        class="bg-slate-900 border border-slate-700 text-white px-6 py-4 rounded-xl flex-1 focus:outline-none focus:ring-2 focus:ring-primary transition-all font-mono text-sm"
+                        placeholder="Pega tu link de GitHub Pages aquí">
+                    <button onclick="updateQR()" 
+                        class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-primary/20">
+                        Actualizar link
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-4">
+                <div id="qr-container" class="bg-white p-4 rounded-2xl shadow-2xl transition-transform hover:scale-105">
+                    <!-- QR Code will be injected here -->
+                    <img id="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://coracer0.github.io/presentasion/" alt="QR Code">
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-slate-500 mt-20 pb-10">
+        <p>&copy; 2026 Axel Coracero. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Hecho con pasión y tecnología para ayudar a los negocios.</p>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- OVERLAY / MODAL PARA DEMOS DE LANDING PAGE -->
+    <!-- ========================================== -->
+    <div id="demo-modal" class="fixed inset-0 z-50 bg-dark hidden flex-col transition-opacity duration-300 opacity-0">
+        <!-- Navbar del Simulador -->
+        <div
+            class="h-16 bg-slate-900 border-b border-slate-700 flex items-center justify-between px-6 shadow-2xl z-50 shrink-0">
+            <div class="text-white font-bold flex items-center gap-3">
+                <div class="bg-primary/20 p-2 rounded-lg text-primary"><i class="fas fa-eye"></i></div>
+                <div>
+                    <span class="block leading-none text-lg">Modo de Demostración</span>
+                    <span class="text-xs text-slate-400 font-normal">Este es un ejemplo de diseño web por Axel Cg</span>
+                </div>
+            </div>
+            <button onclick="closeDemo()"
+                class="bg-rose-500/10 text-rose-500 hover:bg-rose-500 hover:text-white px-5 py-2 rounded-lg font-bold transition flex items-center gap-2 border border-rose-500/50">
+                <i class="fas fa-times"></i> Cerrar Demostración
+            </button>
+        </div>
+
+        <!-- Contenedor de las vistas simuladas -->
+        <div id="demo-container" class="flex-1 overflow-y-auto w-full relative bg-slate-100">
+
+            <!-- VISTA DEMO 1: APP MÓVIL -->
+            <div id="demo-app"
+                class="demo-view hidden w-full min-h-full bg-[#0B0F19] text-white font-sans relative overflow-hidden">
+                <!-- Decoración fondo -->
+                <div
+                    class="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-teal-500/20 blur-[120px] rounded-full pointer-events-none">
+                </div>
+                <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-16 relative z-10">
+                    <div class="flex-1 text-center lg:text-left">
+                        <span
+                            class="text-teal-400 font-bold tracking-[0.2em] uppercase text-sm mb-6 block border border-teal-400/30 inline-block px-4 py-1 rounded-full bg-teal-400/10">Nueva
+                            App 2026</span>
+                        <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">La forma más <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-400">inteligente</span>
+                            de gestionar tu negocio</h1>
+                        <p class="text-lg text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0">Descarga nuestra app y toma el
+                            control de todo desde tu celular. Seguridad del más alto nivel en la palma de tu mano.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <button
+                                class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-slate-200 transition shadow-xl"><i
+                                    class="fab fa-apple text-2xl"></i> <span>Descargar en <br /><span
+                                        class="text-sm font-normal">App Store</span></span></button>
+                            <button
+                                class="bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-teal-500/50 transition"><i
+                                    class="fab fa-google-play text-2xl"></i> <span>Disponible en <br /><span
+                                        class="text-sm font-normal">Google Play</span></span></button>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex justify-center">
+                        <!-- Mockup de celular hecho con CSS -->
+                        <div
+                            class="w-[300px] h-[600px] bg-slate-800 rounded-[3rem] border-[12px] border-slate-900 shadow-2xl shadow-teal-500/20 relative flex flex-col overflow-hidden">
+                            <!-- Notch -->
+                            <div
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl z-20">
+                            </div>
+                            <!-- Pantalla App -->
+                            <div class="flex-1 bg-[#111827] w-full p-6 pt-12 flex flex-col">
+                                <div class="flex justify-between items-center mb-8">
+                                    <div class="w-10 h-10 bg-slate-700 rounded-full"></div>
+                                    <i class="fas fa-bell text-slate-400"></i>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-1">Caja del día</p>
+                                <h2 class="text-4xl font-bold text-white mb-8">$12,450.00</h2>
+                                <div class="grid grid-cols-2 gap-4 mb-8">
+                                    <div class="bg-teal-500/20 border border-teal-500/30 p-4 rounded-2xl"><i
+                                            class="fas fa-arrow-down text-teal-400 mb-2 block"></i><span
+                                            class="text-xs text-slate-400 block">Ventas</span><span
+                                            class="font-bold text-white">$4,200</span></div>
+                                    <div class="bg-rose-500/20 border border-rose-500/30 p-4 rounded-2xl"><i
+                                            class="fas fa-arrow-up text-rose-400 mb-2 block"></i><span
+                                            class="text-xs text-slate-400 block">Gastos</span><span
+                                            class="font-bold text-white">$1,150</span></div>
+                                </div>
+                                <div class="bg-slate-800 rounded-2xl p-4 flex-1">
+                                    <h3 class="text-sm font-bold mb-4">Movimientos de hoy</h3>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-8 h-8 bg-orange-500 rounded-lg"></div>
+                                        <div class="flex-1">
+                                            <div class="h-2 bg-slate-600 rounded w-1/2 mb-1"></div>
+                                            <div class="h-2 bg-slate-700 rounded w-1/3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 bg-blue-500 rounded-lg"></div>
+                                        <div class="flex-1">
+                                            <div class="h-2 bg-slate-600 rounded w-1/2 mb-1"></div>
+                                            <div class="h-2 bg-slate-700 rounded w-1/3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO 2: RESTAURANTE -->
+            <div id="demo-restaurant" class="demo-view hidden w-full min-h-full bg-[#FAFAF9] text-slate-800 font-sans">
+                <!-- Hero Section con overlay oscuro -->
+                <div
+                    class="relative w-full h-[500px] flex items-center justify-center text-center px-6 overflow-hidden bg-slate-900">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop"
+                        class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Comida deliciosa">
+                    <div class="relative z-10 max-w-3xl">
+                        <span class="text-orange-400 font-bold tracking-widest uppercase mb-4 block"><i
+                                class="fas fa-star text-xs"></i> Para Chuparse Los Dedos <i
+                                class="fas fa-star text-xs"></i></span>
+                        <h1 class="text-5xl md:text-7xl font-black text-white mb-6 drop-shadow-lg font-serif">Sabor
+                            Auténtico en tu Puerta</h1>
+                        <p class="text-xl text-slate-200 mb-8 font-medium">Pide en línea hoy y disfruta de nuestros
+                            mejores platillos con envío totalmente gratis a tu casa.</p>
+                        <button
+                            class="bg-orange-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-600 transition shadow-xl shadow-orange-500/30 flex items-center gap-2 mx-auto"><i
+                                class="fas fa-utensils"></i> Ver Menú y Ordenar ya</button>
+                    </div>
+                </div>
+                <!-- Menú Section -->
+                <div class="max-w-6xl mx-auto px-6 py-20">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-slate-900 font-serif mb-4">Lo Más Vendido</h2>
+                        <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200/50 text-center hover:-translate-y-2 transition duration-300 border border-slate-100">
+                            <div
+                                class="w-40 h-40 bg-orange-100 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl shadow-inner border-4 border-white">
+                                🍔</div>
+                            <h3 class="text-2xl font-bold mb-2 text-slate-800">Hamburguesa Sencilla</h3>
+                            <p class="text-slate-500 mb-6">Carne fresca con nuestro doble queso que se derrite en tu
+                                boca y aderezo especial de la casa.</p>
+                            <div class="flex justify-between items-center px-4">
+                                <span class="text-orange-600 font-black text-2xl">$180</span>
+                                <button
+                                    class="bg-slate-900 text-white w-10 h-10 rounded-full hover:bg-orange-500 transition"><i
+                                        class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200/50 text-center hover:-translate-y-2 transition duration-300 border border-slate-100 relative">
+                            <div
+                                class="absolute top-4 right-4 bg-rose-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                El Favorito</div>
+                            <div
+                                class="w-40 h-40 bg-rose-100 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl shadow-inner border-4 border-white">
+                                🍕</div>
+                            <h3 class="text-2xl font-bold mb-2 text-slate-800">Pizza de Horno de Piedra</h3>
+                            <p class="text-slate-500 mb-6">Cocida a la leña con salsa natural de tomate, queso que
+                                estira y bastante pepperoni.</p>
+                            <div class="flex justify-between items-center px-4">
+                                <span class="text-orange-600 font-black text-2xl">$240</span>
+                                <button
+                                    class="bg-slate-900 text-white w-10 h-10 rounded-full hover:bg-orange-500 transition"><i
+                                        class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200/50 text-center hover:-translate-y-2 transition duration-300 border border-slate-100">
+                            <div
+                                class="w-40 h-40 bg-green-100 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl shadow-inner border-4 border-white">
+                                🥗</div>
+                            <h3 class="text-2xl font-bold mb-2 text-slate-800">Ensalada Fresca</h3>
+                            <p class="text-slate-500 mb-6">Mix de lechugas crujientes con verduras cortadas en el día,
+                                aderezo ligero y sin culpas.</p>
+                            <div class="flex justify-between items-center px-4">
+                                <span class="text-orange-600 font-black text-2xl">$135</span>
+                                <button
+                                    class="bg-slate-900 text-white w-10 h-10 rounded-full hover:bg-orange-500 transition"><i
+                                        class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO 3: LEAD MAGNET -->
+            <div id="demo-lead"
+                class="demo-view hidden w-full min-h-full bg-blue-50 text-slate-800 font-sans flex items-center justify-center p-6">
+                <div
+                    class="max-w-5xl w-full flex flex-col md:flex-row items-center gap-12 bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl shadow-blue-500/10">
+                    <div class="flex-1">
+                        <span class="text-blue-600 font-bold uppercase tracking-wider text-sm mb-4 block">Manual
+                            Totalmente Gratis</span>
+                        <h1 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 leading-tight">Aprende los 7
+                            Secretos para Vender Más Rápido</h1>
+                        <p class="text-lg text-slate-500 mb-8">Te enseño en palabras súper sencillas lo que hacen los
+                            grandes negocios para vender todos los días. Escribe tu correo abajo para mandártelo.</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" placeholder="Escribe aquí tu correo..."
+                                class="flex-1 bg-slate-100 border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-blue-500 outline-none">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-600/30 transition">Enviármelo
+                                Ya</button>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 flex justify-center relative perspective-1000 mt-8 md:mt-0">
+                        <div
+                            class="w-64 h-80 bg-gradient-to-br from-blue-600 to-indigo-800 rounded-r-3xl rounded-l-md shadow-2xl transform md:rotate-y-[-15deg] md:rotate-x-[5deg] flex flex-col items-center justify-center p-6 text-center border-l-8 border-blue-400">
+                            <i class="fas fa-book text-4xl text-white/50 mb-4"></i>
+                            <h3 class="text-white font-black text-3xl leading-none mb-2">Ventas<br>Fáciles</h3>
+                            <p class="text-blue-200 text-sm mt-4">Manual Paso a Paso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO 4: CURSO ONLINE -->
+            <div id="demo-course" class="demo-view hidden w-full min-h-full bg-slate-900 text-white font-sans">
+                <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+                    <span
+                        class="bg-purple-500/20 text-purple-400 px-4 py-1 rounded-full text-sm font-bold tracking-wide border border-purple-500/30 mb-6 inline-block">NUEVO
+                        TALLER EN LÍNEA</span>
+                    <h1 class="text-5xl md:text-6xl font-black mb-6">Aprende a Crear Páginas Web en <span
+                            class="text-purple-400">Solo 30 Días</span></h1>
+                    <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">Empezando desde lo más básico hasta que
+                        hagas páginas increíbles como esta. Podrás empezar a cobrar por tu trabajo de inmediato.</p>
+
+                    <div
+                        class="w-full aspect-video bg-slate-800 rounded-3xl mb-12 shadow-2xl shadow-purple-500/20 flex items-center justify-center cursor-pointer hover:bg-slate-700 transition group border border-slate-700">
+                        <div
+                            class="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center text-white text-2xl group-hover:scale-110 transition shadow-lg shadow-purple-500/50 pl-1">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xl font-black px-12 py-5 rounded-full hover:scale-105 transition shadow-xl shadow-purple-600/30 mb-6">Quiero
+                        el taller por $99 USD</button>
+                    <p class="text-sm text-slate-500"><i class="fas fa-lock mr-2"></i>Pago por tarjeta totalmente
+                        seguro. Si no te gusta en 7 días, te regreso tu dinero.</p>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO 5: NEGOCIO LOCAL -->
+            <div id="demo-local" class="demo-view hidden w-full min-h-full bg-white text-slate-800 font-sans">
+                <div class="w-full bg-cyan-900 py-24 px-6 relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20">
+                    </div>
+                    <div class="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
+                        <div class="flex-1 text-white text-center md:text-left">
+                            <h1 class="text-5xl font-black mb-4 leading-tight">Sonrisas Muy Bonitas,<br>Cuidado Sin
+                                Dolor</h1>
+                            <p class="text-cyan-100 text-lg mb-8">La clínica dental que tu familia necesita. Hacemos
+                                limpiezas, ponemos brackets y cuidamos que no te duela nada.</p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                                <button
+                                    class="bg-cyan-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-cyan-400 transition shadow-lg flex items-center justify-center gap-2"><i
+                                        class="fas fa-phone"></i> Llama Aquí</button>
+                                <button
+                                    class="bg-white/10 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition backdrop-blur-sm border border-white/20">Ver
+                                    Precios</button>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-[400px] bg-white rounded-3xl p-8 shadow-2xl text-slate-800 shrink-0">
+                            <h3 class="text-2xl font-bold mb-6 text-center border-b border-slate-100 pb-4">Quiero ir a
+                                Consulta</h3>
+                            <input type="text" placeholder="¿Cómo te llamas?"
+                                class="w-full bg-slate-100 border-none rounded-lg px-4 py-3 mb-4 outline-none focus:ring-2 focus:ring-cyan-500">
+                            <input type="tel" placeholder="Tu número de celular"
+                                class="w-full bg-slate-100 border-none rounded-lg px-4 py-3 mb-4 outline-none focus:ring-2 focus:ring-cyan-500">
+                            <select
+                                class="w-full bg-slate-100 border-none rounded-lg px-4 py-3 mb-6 outline-none focus:ring-2 focus:ring-cyan-500 text-slate-600">
+                                <option>Solo quiero que me revisen</option>
+                                <option>Quiero ponerme Brackets</option>
+                                <option>Necesito una limpieza general</option>
+                            </select>
+                            <button
+                                class="w-full bg-slate-900 text-white font-bold py-4 rounded-lg hover:bg-cyan-600 transition shadow-lg">Listo,
+                                Guarden mi lugar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO 6: WAITLIST -->
+            <div id="demo-waitlist"
+                class="demo-view hidden w-full min-h-full bg-black text-white font-sans flex items-center justify-center relative overflow-hidden">
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/30 rounded-full blur-[120px] pointer-events-none">
+                </div>
+                <div class="text-center max-w-2xl px-6 relative z-10">
+                    <div
+                        class="w-20 h-20 bg-indigo-900/50 border border-indigo-500/50 rounded-2xl mx-auto flex items-center justify-center text-indigo-400 text-3xl mb-8 shadow-[0_0_50px_-10px_rgba(99,102,241,0.5)]">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h1
+                        class="text-5xl md:text-7xl font-black mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400">
+                        El Futuro Está Cerca</h1>
+                    <p class="text-xl text-slate-400 mb-10">Estamos terminando un sistema que te ayudará a hacer el
+                        trabajo de todo un día en solo una hora. Anota tu correo para avisarte cuando esté listo antes
+                        que a nadie.</p>
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input type="email" placeholder="Escribe tu correo..."
+                            class="flex-1 bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-indigo-500 transition placeholder:text-slate-500 backdrop-blur-md">
+                        <button
+                            class="bg-white text-black font-bold px-8 py-4 rounded-xl hover:bg-indigo-400 hover:text-white transition shadow-[0_0_20px_-5px_rgba(255,255,255,0.5)] whitespace-nowrap">Avísenme
+                            Primero</button>
+                    </div>
+                    <p class="mt-6 text-sm text-slate-500">Solo le avisaremos a las primeras 500 personas.</p>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO 7: REAL ESTATE -->
+            <div id="demo-realestate"
+                class="demo-view hidden w-full min-h-full bg-neutral-50 text-neutral-900 font-serif">
+                <div class="relative h-[70vh] w-full flex flex-col items-center justify-center">
+                    <div
+                        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop')] bg-cover bg-center">
+                    </div>
+                    <div class="absolute inset-0 bg-black/40"></div>
+                    <div class="relative z-10 text-center px-6 mt-20">
+                        <span
+                            class="text-yellow-500 tracking-[0.3em] uppercase text-sm font-sans font-bold mb-4 block drop-shadow-md">Condominio
+                            Los Robles</span>
+                        <h1 class="text-6xl md:text-8xl text-white mb-8 font-light drop-shadow-lg">La Casa de<br>Tus
+                            Sueños</h1>
+                        <button
+                            class="bg-white/10 backdrop-blur-md border border-white/30 text-white font-sans uppercase tracking-widest text-xs font-bold px-10 py-4 hover:bg-white hover:text-black transition duration-500">Quiero
+                            ir a verla</button>
+                    </div>
+                </div>
+                <div class="max-w-5xl mx-auto px-6 py-20 text-center">
+                    <h2 class="text-3xl font-light mb-16 text-slate-800">Espacios grandes para tu familia</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 font-sans">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-neutral-100"><i
+                                class="fas fa-bed text-4xl text-neutral-300 mb-4 block"></i><span
+                                class="font-bold block text-2xl text-slate-800">4</span><span
+                                class="text-neutral-500 text-sm">Cuartos grandes</span></div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-neutral-100"><i
+                                class="fas fa-bath text-4xl text-neutral-300 mb-4 block"></i><span
+                                class="font-bold block text-2xl text-slate-800">4</span><span
+                                class="text-neutral-500 text-sm">Baños completos</span></div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-neutral-100"><i
+                                class="fas fa-vector-square text-4xl text-neutral-300 mb-4 block"></i><span
+                                class="font-bold block text-2xl text-slate-800">450 m²</span><span
+                                class="text-neutral-500 text-sm">De puro espacio</span></div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-neutral-100"><i
+                                class="fas fa-car text-4xl text-neutral-300 mb-4 block"></i><span
+                                class="font-bold block text-2xl text-slate-800">3</span><span
+                                class="text-neutral-500 text-sm">Coches caben bien</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO 8: EVENTO -->
+            <div id="demo-event"
+                class="demo-view hidden w-full min-h-full bg-rose-950 text-white font-sans overflow-x-hidden">
+                <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col items-center">
+                    <div
+                        class="bg-rose-500/20 border border-rose-500/30 text-rose-300 px-6 py-2 rounded-full font-bold mb-8 flex items-center gap-2 shadow-lg">
+                        <i class="fas fa-calendar-alt"></i> 15 al 17 de Noviembre</div>
+                    <h1
+                        class="text-6xl md:text-8xl font-black text-center mb-6 uppercase tracking-tighter italic drop-shadow-xl">
+                        Convención de <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-400">Negocios</span>
+                    </h1>
+                    <p class="text-xl text-rose-200/80 mb-10 max-w-2xl text-center">La reunión más grande del año para
+                        dueños de empresas. Ven a escuchar a los mejores y aprende cómo hacen dinero.</p>
+                    <button
+                        class="bg-rose-600 hover:bg-rose-500 text-white text-xl font-black px-12 py-5 rounded-sm uppercase tracking-widest transition shadow-[8px_8px_0px_rgba(0,0,0,0.5)] hover:shadow-[4px_4px_0px_rgba(0,0,0,0.5)] hover:translate-x-1 hover:translate-y-1 mb-20">Comprar
+                        mi Boleto Aquí</button>
+
+                    <h2 class="text-3xl font-bold mb-10 border-b border-rose-800/50 pb-4 w-full text-center">Personas
+                        Especiales Invitadas</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
+                        <div class="text-center group"><img
+                                src="https://ui-avatars.com/api/?name=Ana+Gomez&background=f43f5e&color=fff&size=200"
+                                class="w-full aspect-square object-cover rounded-2xl mb-4 grayscale group-hover:grayscale-0 transition duration-500 border-2 border-transparent group-hover:border-rose-500">
+                            <h3 class="font-bold text-lg">Ana Gómez</h3>
+                            <p class="text-rose-400 text-sm">Dueña de 5 empresas</p>
+                        </div>
+                        <div class="text-center group"><img
+                                src="https://ui-avatars.com/api/?name=Luis+Perez&background=f43f5e&color=fff&size=200"
+                                class="w-full aspect-square object-cover rounded-2xl mb-4 grayscale group-hover:grayscale-0 transition duration-500 border-2 border-transparent group-hover:border-rose-500">
+                            <h3 class="font-bold text-lg">Luis Pérez</h3>
+                            <p class="text-rose-400 text-sm">Experto en vender mucho</p>
+                        </div>
+                        <div class="text-center group"><img
+                                src="https://ui-avatars.com/api/?name=Carla+Ruiz&background=f43f5e&color=fff&size=200"
+                                class="w-full aspect-square object-cover rounded-2xl mb-4 grayscale group-hover:grayscale-0 transition duration-500 border-2 border-transparent group-hover:border-rose-500">
+                            <h3 class="font-bold text-lg">Carla Ruiz</h3>
+                            <p class="text-rose-400 text-sm">Abogada de Negocios</p>
+                        </div>
+                        <div class="text-center group"><img
+                                src="https://ui-avatars.com/api/?name=Juan+M&background=f43f5e&color=fff&size=200"
+                                class="w-full aspect-square object-cover rounded-2xl mb-4 grayscale group-hover:grayscale-0 transition duration-500 border-2 border-transparent group-hover:border-rose-500">
+                            <h3 class="font-bold text-lg">Juan M.</h3>
+                            <p class="text-rose-400 text-sm">Consultor de Finanzas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO 9: COACHING -->
+            <div id="demo-coach" class="demo-view hidden w-full min-h-full bg-amber-50 text-amber-950 font-sans">
+                <div class="max-w-5xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-16">
+                    <div class="w-64 h-64 md:w-96 md:h-96 shrink-0 relative">
+                        <div
+                            class="absolute inset-0 bg-amber-200 rounded-full translate-x-4 translate-y-4 shadow-inner">
+                        </div>
+                        <img src="https://ui-avatars.com/api/?name=Alex+Profesor&background=d97706&color=fff&size=400"
+                            class="absolute inset-0 w-full h-full object-cover rounded-full border-8 border-amber-50 shadow-xl"
+                            alt="Tu foto aquí">
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <span class="text-amber-600 font-bold tracking-widest uppercase text-sm mb-4 block">Asesoría de
+                            persona a persona</span>
+                        <h1 class="text-5xl md:text-6xl font-black mb-6 text-slate-900 leading-tight">Te ayudo a sacar
+                            todo tu <span class="text-amber-600 border-b-4 border-amber-300">Potencial</span></h1>
+                        <p class="text-lg text-slate-600 mb-10">Juntos vamos a ordenar tus ideas, quitarte el miedo a
+                            equivocarte y hacer que consigas tus metas en menos de 3 meses. Todo en palabras fáciles de
+                            entender.</p>
+                        <button
+                            class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-10 py-5 rounded-full shadow-xl shadow-amber-600/20 transition text-lg flex items-center gap-3 mx-auto md:mx-0"><i
+                                class="far fa-calendar-check text-2xl"></i> Platiquemos un rato</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO 10: PORTFOLIO 2 -->
+            <div id="demo-portfolio2"
+                class="demo-view hidden w-full min-h-full bg-slate-950 text-green-500 font-mono flex items-center justify-center p-6">
+                <div
+                    class="w-full max-w-3xl border border-green-500/30 rounded-xl p-6 md:p-10 bg-slate-900/80 shadow-[0_0_50px_rgba(34,197,94,0.1)] backdrop-blur-sm">
+                    <div class="flex gap-2 mb-8 border-b border-green-500/30 pb-4">
+                        <div class="w-4 h-4 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
+                        <div class="w-4 h-4 rounded-full bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.5)]"></div>
+                        <div class="w-4 h-4 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+                    </div>
+                    <p class="mb-2"><span class="text-blue-400">computadora</span>:<span
+                            class="text-purple-400">~</span>$ ./iniciar_sistema.sh</p>
+                    <p class="mb-6 text-green-300 opacity-80">Encendiendo máquina... [LISTO]<br>Cargando información de
+                        Axel... [LISTO]<br>Asegurando que nadie pueda entrar... [LISTO]</p>
+
+                    <pre
+                        class="text-emerald-400 text-xs md:text-base mb-8 overflow-x-auto font-bold tracking-widest drop-shadow-[0_0_5px_rgba(52,211,153,0.8)]">
+   _____              .__    _________        
+  /  _  \  ___  ___  _|  |   \_   ___ \  ____ 
+ /  /_\  \ \  \/  / / __ |   /    \  \/ / ___\
+/    |    \ >    < / /_/ |   \     \___/ /_/  >
+\____|__  //__/\_ \\____ |    \______  /\___  /
+        \/       \/     \/           \//_____/ 
+                    </pre>
+
+                    <p class="mb-6 text-slate-300 font-sans text-lg">>> Hola. Soy Axel Coracero.<br>>> Me dedico a hacer
+                        que las computadoras hagan tu trabajo difícil.</p>
+                    <p class="mb-2"><span class="text-blue-400">computadora</span>:<span
+                            class="text-purple-400">~</span>$ ver_lo_que_se_hacer.txt</p>
+                    <p class="mb-8 text-green-300">> Crear Páginas Rápidas | Hacer Sistemas de Cobro | Automatizar
+                        Trabajos Cansados</p>
+                    <p class="mb-2"><span class="text-blue-400">computadora</span>:<span
+                            class="text-purple-400">~/mandar_mensaje</span>$ <span
+                            class="animate-pulse inline-block w-3 h-5 bg-green-500 align-middle"></span></p>
+                </div>
+            </div>
+
+            <!-- VISTA DEMO GENÉRICA -->
+            <div id="demo-generic"
+                class="demo-view hidden w-full min-h-full bg-slate-50 text-slate-800 flex flex-col items-center justify-center p-6">
+                <div class="text-center max-w-lg bg-white p-12 rounded-3xl shadow-xl">
+                    <div
+                        class="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Esta Página la construimos con tu nombre e idea
+                    </h2>
+                    <p class="text-slate-500 mb-8">Esta es una vista de ejemplo. Como creador de sistemas, me siento a
+                        escucharte, entiendo de qué va tu negocio y te hago una página web que le dé mucha confianza a
+                        la gente para comprarte.</p>
+                    <a href="https://wa.me/524181774447" target="_blank"
+                        class="inline-block bg-[#25D366] text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:scale-105 transition">
+                        <i class="fab fa-whatsapp mr-2"></i> Mandarme un WhatsApp para platicar
+                    </a>
+                </div>
+            </div>
+
+        </div> <!-- Cierre de demo-container -->
+    </div> <!-- Cierre de demo-modal -->
+
+    <script>
+        // Lógica de las Pestañas (Tabs)
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('fade-in');
+            });
+
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active', 'border-primary', 'text-primary');
+                el.classList.add('border-transparent', 'text-slate-400');
+            });
+
+            const selectedTab = document.getElementById(tabId);
+            selectedTab.classList.remove('hidden');
+            setTimeout(() => selectedTab.classList.add('fade-in'), 10);
+
+            const selectedBtn = document.getElementById('btn-' + tabId);
+            selectedBtn.classList.remove('border-transparent', 'text-slate-400');
+            selectedBtn.classList.add('active', 'border-primary', 'text-primary');
+        }
+
+        // Lógica del Modal Simulador de Landing Pages
+        function openDemo(demoId) {
+            const modal = document.getElementById('demo-modal');
+
+            // Mostrar modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            // Animar opacidad (entrada suave)
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            }, 10);
+
+            // Ocultar todas las vistas de demo internas
+            document.querySelectorAll('.demo-view').forEach(el => el.classList.add('hidden'));
+
+            // Mostrar la demo solicitada, o la genérica si no existe ID específico
+            const view = document.getElementById('demo-' + demoId);
+            if (view) {
+                view.classList.remove('hidden');
+            } else {
+                document.getElementById('demo-generic').classList.remove('hidden');
+            }
+
+            // Bloquear el scroll de la página de fondo
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDemo() {
+            const modal = document.getElementById('demo-modal');
+
+            // Animar opacidad (salida suave)
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+
+            // Esperar a que termine la animación para ocultar el div y restaurar scroll
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }, 300); // 300ms debe coincidir con duration-300 de tailwind
+        }
+
+        // Lógica de QR
+        function updateQR() {
+            const url = document.getElementById('qr-url').value;
+            if (!url) return;
+            const qrImg = document.getElementById('qr-image');
+            qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(url)}`;
+        }
+
+        function printQR() {
+            const url = document.getElementById('qr-url').value;
+            const windowPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+            windowPrint.document.write(`
+                <html>
+                    <head>
+                        <title>Imprimir Código QR - Axel Coracero</title>
+                        <style>
+                            body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; }
+                            .qr-container { padding: 40px; border: 2px solid #eee; border-radius: 20px; }
+                            img { width: 300px; height: 300px; }
+                            h1 { color: #0f172a; margin-top: 20px; font-size: 24px; }
+                            p { color: #64748b; margin-top: 10px; font-size: 16px; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="qr-container">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}" />
+                            <h1>Axel Coracero</h1>
+                            <p>Software & Automatización</p>
+                            <p style="font-size: 12px; font-family: monospace;">${url}</p>
+                        </div>
+                        <script>
+                            setTimeout(() => { window.print(); window.close(); }, 500);
+                        <\/script>
+                    </body>
+                </html>
+            `);
+            windowPrint.document.close();
+            windowPrint.focus();
+        }
+    </script>
+</body>
+
+</html>

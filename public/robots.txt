@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://coracer0.github.io/presentasion/sitemap.xml

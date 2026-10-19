@@ -1,0 +1,422 @@
+[
+  {
+    "id": "automation-1",
+    "kind": "automation",
+    "title": "Comparador de Precios",
+    "summary": "Revisa tiendas en línea todos los días y te avisa a tu celular si tu competencia bajó sus precios."
+  },
+  {
+    "id": "automation-2",
+    "kind": "automation",
+    "title": "Cazador de Bienes Raíces",
+    "summary": "Recopila casas en venta o renta de varios portales y te hace una tabla en Excel automática con precios y zonas."
+  },
+  {
+    "id": "automation-3",
+    "kind": "automation",
+    "title": "Buscador de Clientes (B2B)",
+    "summary": "Extrae correos y teléfonos de negocios en mapas de internet para que tu equipo de ventas les llame."
+  },
+  {
+    "id": "automation-4",
+    "kind": "automation",
+    "title": "Resumen de Noticias",
+    "summary": "Lee periódicos digitales cada mañana y te envía a tu correo solo lo más importante de tu sector."
+  },
+  {
+    "id": "automation-5",
+    "kind": "automation",
+    "title": "Monitor de Vuelos Baratos",
+    "summary": "Vigila las aerolíneas día y noche para encontrar boletos en liquidación o promociones secretas."
+  },
+  {
+    "id": "automation-6",
+    "kind": "automation",
+    "title": "Espía de la Competencia",
+    "summary": "Te avisa en el momento en que tu competencia directa lanza un nuevo producto o cambia sus fotos."
+  },
+  {
+    "id": "automation-7",
+    "kind": "automation",
+    "title": "Buscador de Autos Usados",
+    "summary": "Rastrea portales de venta de autos para encontrar la camioneta o coche específico que estás buscando comprar."
+  },
+  {
+    "id": "automation-8",
+    "kind": "automation",
+    "title": "Lector de Ofertas Laborales",
+    "summary": "Ideal para reclutadores. Lee cientos de perfiles y te entrega solo los que cumplen con lo que buscas."
+  },
+  {
+    "id": "automation-9",
+    "kind": "automation",
+    "title": "Monitor de Compras de Gobierno",
+    "summary": "Revisa portales de licitaciones públicas y te manda un mensaje si hay un contrato que tú puedas ganar."
+  },
+  {
+    "id": "automation-10",
+    "kind": "automation",
+    "title": "Vigilante de Inversiones",
+    "summary": "Compara el valor de monedas o inversiones en distintos lugares para que sepas cuándo es buen momento para vender."
+  },
+  {
+    "id": "automation-11",
+    "kind": "automation",
+    "title": "Mesero Virtual por Chat",
+    "summary": "Muestra tu menú, toma pedidos, suma la cuenta y manda la orden directo a tu cocina sin que tú hagas nada."
+  },
+  {
+    "id": "automation-12",
+    "kind": "automation",
+    "title": "Recepcionista de Citas",
+    "summary": "Tus clientes piden cita por WhatsApp, el asistente revisa qué horas tienes libres y los anota en tu calendario."
+  },
+  {
+    "id": "automation-13",
+    "kind": "automation",
+    "title": "Contestador Inteligente",
+    "summary": "Aprende sobre tu negocio y responde dudas a los clientes como si fuera una persona real (no suena a robot)."
+  },
+  {
+    "id": "automation-14",
+    "kind": "automation",
+    "title": "Rastreador de Paquetes",
+    "summary": "El cliente escribe su número de envío en el chat y el asistente le dice en qué parte de la ciudad va su pedido."
+  },
+  {
+    "id": "automation-15",
+    "kind": "automation",
+    "title": "Auto-Facturador en Chat",
+    "summary": "Pide el ticket y RFC por mensaje, y envía la factura timbrada al instante en PDF. Adiós filas en la caja."
+  },
+  {
+    "id": "automation-16",
+    "kind": "automation",
+    "title": "Recordatorio para Pacientes",
+    "summary": "Para clínicas. Envía un mensaje amable a los pacientes a cierta hora para recordarles que se tomen su medicina."
+  },
+  {
+    "id": "automation-17",
+    "kind": "automation",
+    "title": "Encuestador Post-Venta",
+    "summary": "Un día después de la compra, le pregunta al cliente cómo le fue. Guarda respuestas positivas y te alerta de las malas."
+  },
+  {
+    "id": "automation-18",
+    "kind": "automation",
+    "title": "Asesor de Bienes Raíces",
+    "summary": "Le muestra a tus clientes fotos de las casas por chat según su presupuesto, y te avisa a ti si quieren ir a verla."
+  },
+  {
+    "id": "automation-19",
+    "kind": "automation",
+    "title": "Asistente para Hoteles",
+    "summary": "Los huéspedes le escriben para pedir comida al cuarto, toallas extra o la clave del WiFi de forma automática."
+  },
+  {
+    "id": "automation-20",
+    "kind": "automation",
+    "title": "Tutor de Capacitación",
+    "summary": "Entrena a tus nuevos empleados por chat mandándoles el reglamento, videos y preguntas para ver si entendieron."
+  },
+  {
+    "id": "automation-21",
+    "kind": "automation",
+    "title": "Moderador Automático",
+    "summary": "Si alguien dice groserías o hace spam en tus grupos, el sistema borra el mensaje y expulsa a la persona al instante."
+  },
+  {
+    "id": "automation-22",
+    "kind": "automation",
+    "title": "Gestor de Sorteos",
+    "summary": "Tú le dices qué vas a regalar. El sistema hace que la gente participe y al final elige un ganador al azar de forma justa."
+  },
+  {
+    "id": "automation-23",
+    "kind": "automation",
+    "title": "Tickets de Atención",
+    "summary": "Si un cliente tiene una queja, se abre un canal privado para atenderlo sin que los demás vean el problema."
+  },
+  {
+    "id": "automation-24",
+    "kind": "automation",
+    "title": "Sistema de Puntos y Niveles",
+    "summary": "Premia a los clientes que más interactúan en tus grupos. Entre más participan, más puntos ganan para canjear por premios."
+  },
+  {
+    "id": "automation-25",
+    "kind": "automation",
+    "title": "Traductor en Vivo",
+    "summary": "Ideal si tienes clientes de otros países. Traduce automáticamente lo que dicen al español para que los entiendas."
+  },
+  {
+    "id": "automation-26",
+    "kind": "automation",
+    "title": "Notificador de En Vivos",
+    "summary": "Avisa a toda tu comunidad cuando subes un nuevo video, podcast o inicias una transmisión en vivo."
+  },
+  {
+    "id": "automation-27",
+    "kind": "automation",
+    "title": "Creador de Imágenes Divertidas",
+    "summary": "Permite a tus clientes crear memes o imágenes con tu logo fácilmente, ideal para que te hagan publicidad gratis."
+  },
+  {
+    "id": "automation-28",
+    "kind": "automation",
+    "title": "Saludos Automáticos",
+    "summary": "Recibe a los nuevos clientes que entran a tus grupos con un mensaje bonito explicándoles qué vendes o haces."
+  },
+  {
+    "id": "automation-29",
+    "kind": "automation",
+    "title": "Mini-juegos para Clientes",
+    "summary": "Juegos de adivinanzas o trivias pequeñas en tus grupos de chat para que la gente pase el rato y se acuerde de tu marca."
+  },
+  {
+    "id": "automation-30",
+    "kind": "automation",
+    "title": "Clasificador de Clientes",
+    "summary": "Les permite a los clientes elegir qué les interesa (Ej: \"Ropa de hombre\" o \"Ropa de mujer\") para enviarles solo eso."
+  },
+  {
+    "id": "automation-31",
+    "kind": "automation",
+    "title": "Capturista Automático",
+    "summary": "Lee datos de tus facturas o documentos en PDF y los escribe solito en tu sistema o en un archivo de Excel."
+  },
+  {
+    "id": "automation-32",
+    "kind": "automation",
+    "title": "Creador de Reportes Financieros",
+    "summary": "Suma tus ventas, resta tus gastos y te entrega un reporte en PDF súper bonito cada viernes por la tarde."
+  },
+  {
+    "id": "automation-33",
+    "kind": "automation",
+    "title": "Organizador de Archivos",
+    "summary": "Acomoda todos los archivos desordenados de tu computadora en carpetas por fecha, cliente o tipo de documento."
+  },
+  {
+    "id": "automation-34",
+    "kind": "automation",
+    "title": "Enviador de Correos Masivos",
+    "summary": "Manda promociones a miles de clientes, usando su nombre para que suene personal, y te avisa quién lo abrió."
+  },
+  {
+    "id": "automation-35",
+    "kind": "automation",
+    "title": "Guardián de Tu Página Web",
+    "summary": "Revisa tu página de internet a cada rato. Si se cae o deja de funcionar, te avisa por mensaje para arreglarlo rápido."
+  },
+  {
+    "id": "automation-36",
+    "kind": "automation",
+    "title": "Respaldo de Información Seguro",
+    "summary": "Hace una copia de seguridad de toda la información de tu empresa todos los días y la guarda bajo llave en la nube."
+  },
+  {
+    "id": "automation-37",
+    "kind": "automation",
+    "title": "Recibimiento a Nuevos Empleados",
+    "summary": "Crea el correo de empresa, da permisos y manda mensaje de bienvenida solito a la gente nueva que contratas."
+  },
+  {
+    "id": "automation-38",
+    "kind": "automation",
+    "title": "Actualizador de Contactos",
+    "summary": "Si un cliente llena un formulario pidiendo informes, lo guarda y le avisa inmediatamente a tu vendedor de turno."
+  },
+  {
+    "id": "automation-39",
+    "kind": "automation",
+    "title": "Achicador de Fotos Automático",
+    "summary": "Le pasas miles de fotos pesadas y te las regresa livianas para que tu página de internet cargue rapidísimo."
+  },
+  {
+    "id": "automation-40",
+    "kind": "automation",
+    "title": "Imprimidor Silencioso",
+    "summary": "Vigila una bandeja de correo; si llega un PDF (como una cotización o plano), lo manda a imprimir en automático."
+  },
+  {
+    "id": "system-1",
+    "kind": "system",
+    "title": "Sistema de Auto-Facturación",
+    "summary": "Ideal para restaurantes. El cliente escanea su ticket con el celular y él mismo saca su factura. Te ahorra la queja de clientes esperando su factura."
+  },
+  {
+    "id": "system-2",
+    "kind": "system",
+    "title": "Plataforma de Pedidos a Domicilio",
+    "summary": "Tu propio \"Uber Eats\" pero sin pagar comisiones altas. Tus clientes ven los platillos, eligen, pagan en línea y tú recibes la orden en tu pantalla."
+  },
+  {
+    "id": "system-3",
+    "kind": "system",
+    "title": "Control Total de Inventarios",
+    "summary": "Lleva la cuenta de todo lo que entra y sale de tu bodega. El sistema te lanza una alerta en rojo cuando te estás quedando sin algún producto clave."
+  },
+  {
+    "id": "system-4",
+    "kind": "system",
+    "title": "Portal para Empleados",
+    "summary": "Tus empleados inician sesión y pueden pedir vacaciones, descargar sus recibos de pago y checar su hora de entrada desde su computadora."
+  },
+  {
+    "id": "system-5",
+    "kind": "system",
+    "title": "Gestión de Consultorios Médicos",
+    "summary": "Expedientes clínicos digitales. Ten toda la historia de tus pacientes guardada de forma segura, agenda citas y crea recetas que se mandan por WhatsApp."
+  },
+  {
+    "id": "system-6",
+    "kind": "system",
+    "title": "Panel Gerencial de Ventas",
+    "summary": "Si tienes varias sucursales, este panel junta toda la información y te muestra gráficas con el dinero que entró hoy, qué producto se vende más, etc."
+  },
+  {
+    "id": "system-7",
+    "kind": "system",
+    "title": "Tu Propia Escuela Digital",
+    "summary": "Sube tus clases en video, cobra por ellas, revisa cómo van avanzando tus alumnos y dales un certificado de regalo cuando terminen el curso."
+  },
+  {
+    "id": "system-8",
+    "kind": "system",
+    "title": "Software para tu Gimnasio",
+    "summary": "Controla qué personas ya pagaron el mes, quélete acceso por torniquete y hazles un plan de pesas o dieta desde la computadora."
+  },
+  {
+    "id": "system-9",
+    "kind": "system",
+    "title": "Administrador de Choferes y Autos",
+    "summary": "Para dueños de camiones. Te avisa cuándo le toca el cambio de aceite a cada carro y te calcula en qué vehículo estás gastando más gasolina."
+  },
+  {
+    "id": "system-10",
+    "kind": "system",
+    "title": "Motor de Reservas de Hotel",
+    "summary": "Los turistas entran, escogen fecha, ven qué cuartos hay libres, pagan su noche y tú solo los recibes cuando llegan con su llave lista."
+  },
+  {
+    "id": "system-11",
+    "kind": "system",
+    "title": "Cobrador por Tiempo Trabajado",
+    "summary": "Ideal para quienes cobran por hora (abogados, consultores). Le das iniciar y al terminar, le hace el cálculo exacto a tu cliente de cuánto debe pagarte."
+  },
+  {
+    "id": "system-12",
+    "kind": "system",
+    "title": "Mercado en Línea Múltiple",
+    "summary": "Tu propio MercadoLibre pequeño. Diferentes negocios pueden subir sus productos a tu página y tú te llevas una comisión por cada venta que hagan."
+  },
+  {
+    "id": "system-13",
+    "kind": "system",
+    "title": "Buzón de Soporte a Clientes",
+    "summary": "Tus compradores mandan sus dudas o problemas. Tu equipo los atiende por orden de importancia sin que ninguno se pierda o se quede sin ayuda."
+  },
+  {
+    "id": "system-14",
+    "kind": "system",
+    "title": "Sistema de Suscripciones Mensuales",
+    "summary": "Para negocios que cobran mes tras mes (como internet, colegiaturas o clubs). Se encarga de hacer el cobro solo sin que tengas que ir a cobrar puerta a puerta."
+  },
+  {
+    "id": "system-15",
+    "kind": "system",
+    "title": "Checador de Asistencia con Ubicación",
+    "summary": "El empleado aprieta un botón en su celular para decir \"ya llegué\". El sistema comprueba su ubicación para asegurar que de verdad está en el trabajo."
+  },
+  {
+    "id": "system-16",
+    "kind": "system",
+    "title": "Plataforma de Votaciones Seguras",
+    "summary": "Para elegir líderes vecinales o sindicales. La gente entra, vota de forma secreta y el sistema da los ganadores al final sin permitir trucos ni fraudes."
+  },
+  {
+    "id": "system-17",
+    "kind": "system",
+    "title": "Cotizador Automático",
+    "summary": "El cliente va eligiendo qué quiere comprar en tu página. Al final, el sistema le entrega un documento en PDF con el precio exacto en menos de un segundo."
+  },
+  {
+    "id": "system-18",
+    "kind": "system",
+    "title": "Subastas en Vivo",
+    "summary": "La gente ofrece dinero por tus productos al mismo tiempo. Ven en la pantalla cómo el precio sube en segundos y gana el que ofrezca más al terminar el reloj."
+  },
+  {
+    "id": "system-19",
+    "kind": "system",
+    "title": "Nutriólogo Virtual",
+    "summary": "Los pacientes ponen su peso y lo que quieren lograr. El sistema les hace un menú semanal para comer y una lista de lo que tienen que comprar en el mercado."
+  },
+  {
+    "id": "system-20",
+    "kind": "system",
+    "title": "Asesor de Ventas de Inmuebles",
+    "summary": "Los agentes inmobiliarios ven quién quiere comprar casa, a quién ya llamaron y quién está a punto de firmar los papeles para no perder la comisión."
+  },
+  {
+    "id": "landing-1",
+    "kind": "landing",
+    "title": "Página para promocionar tu Aplicación",
+    "summary": "Página súper elegante y moderna para convencer a la gente de descargar e instalar la aplicación de tu negocio."
+  },
+  {
+    "id": "landing-2",
+    "kind": "landing",
+    "title": "Menú para Restaurante o Comida Rápida",
+    "summary": "Se ven unas fotos riquísimas de tus platillos. La gente se antoja, escoge qué quiere comer y te lo pide ahí mismo."
+  },
+  {
+    "id": "landing-3",
+    "kind": "landing",
+    "title": "Página para Conseguir Nuevos Contactos",
+    "summary": "Le regalas a la gente un manual o consejo gratis, y a cambio ellos te dan su correo para que después les vendas tus cosas."
+  },
+  {
+    "id": "landing-4",
+    "kind": "landing",
+    "title": "Página para Vender Talleres o Cursos",
+    "summary": "Perfecta para maestros o capacitadores. Muestra qué vas a enseñar y al final un botón gigante de comprar seguro."
+  },
+  {
+    "id": "landing-5",
+    "kind": "landing",
+    "title": "Para Consultorios o Especialistas Locales",
+    "summary": "Si eres dentista, abogado o mecánico. Muestra a qué te dedicas y tiene un espacio a la derecha para que te dejen su cita."
+  },
+  {
+    "id": "landing-6",
+    "kind": "landing",
+    "title": "Página de Misterio \"Próximamente\"",
+    "summary": "Si apenas estás abriendo tu empresa y quieres que la gente se emocione y deje su correo antes de que lances tus productos a la venta."
+  },
+  {
+    "id": "landing-7",
+    "kind": "landing",
+    "title": "Venta de Bienes Raíces o Casas Finas",
+    "summary": "Diseño carísimo a la vista. Con fotos de la propiedad abarcando toda la pantalla y cuadritos presumiendo cuántos baños y cuartos tiene."
+  },
+  {
+    "id": "landing-8",
+    "kind": "landing",
+    "title": "Venta de Entradas a Eventos o Fiestas",
+    "summary": "Una página muy enérgica. Pones la fecha del evento grandota, quiénes van a hablar o qué artistas van, y el botón para comprar boleto."
+  },
+  {
+    "id": "landing-9",
+    "kind": "landing",
+    "title": "Para Profesores, Entrenadores o Asesores",
+    "summary": "La página eres tú. Con tu foto muy limpia de un lado y de qué forma puedes ayudar a que las personas mejoren sus negocios o sus vidas del otro."
+  },
+  {
+    "id": "landing-10",
+    "kind": "landing",
+    "title": "Presentación \"Geek\" de Película",
+    "summary": "Hace de cuenta que entraste a la computadora de un hacker en una película (letras verdes sobre negro) mostrando todo lo que el creador de la página sabe hacer."
+  }
+]

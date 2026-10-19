@@ -1,110 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axel Coracero | Tarjeta de Presentación</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
-        
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        .card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 2.5rem;
-            padding: 2.5rem;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: slideUp 0.8s ease-out;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .gradient-text {
-            background: linear-gradient(to right, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .btn-action {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            width: 100%;
-            padding: 1rem;
-            border-radius: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-bottom: 1rem;
-        }
-
-        .btn-action:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="card relative overflow-hidden">
-        <!-- Artistic Elements -->
-        <div class="absolute inset-0 opacity-10 pointer-events-none" 
-            style="background-image: repeating-linear-gradient(45deg, #3b82f6 0, #3b82f6 1px, transparent 0, transparent 15px);"></div>
-        <div class="absolute -top-20 -left-20 w-64 h-64 bg-blue-600/30 rounded-full blur-[80px]"></div>
-        <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-purple-600/30 rounded-full blur-[80px]"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-radial-gradient from-blue-500/5 to-transparent blur-3xl"></div>
-
-        <div class="relative z-10">
-            <div class="mb-6 relative inline-block">
-                <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-75 animate-pulse"></div>
-                <img src="fb.jpg" alt="Axel Coracero" class="relative w-32 h-32 rounded-full border-4 border-slate-800 object-cover mx-auto">
-            </div>
-
-            <h1 class="text-3xl font-extrabold mb-1">Axel <span class="gradient-text">Coracero</span></h1>
-            <p class="text-slate-400 font-medium mb-8">Ingeniero de Software</p>
-
-            <div class="space-y-4">
-                <a href="https://wa.me/524181774447" class="btn-action bg-[#25D366] text-white">
-                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp Directo
-                </a>
-                
-                <a href="mailto:ax.coracero@gmail.com" class="btn-action bg-rose-600 text-white">
-                    <i class="fas fa-envelope text-xl"></i> Enviar Correo
-                </a>
-
-                <a href="index.html" class="btn-action bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30">
-                    <i class="fas fa-rocket text-xl"></i> Ver Portafolio Completo
-                </a>
-            </div>
-
-            <div class="mt-10 pt-8 border-t border-slate-700/50">
-                <p class="text-xs text-slate-500 uppercase tracking-widest mb-4">Escanea para guardar mi contacto</p>
-                <div class="bg-white p-3 rounded-2xl inline-block shadow-xl">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://coracer0.github.io/presentasion/card.html" alt="QR Card" class="w-24 h-24">
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contacto de Axel Coracero — software, automatización y experiencias web."
+    />
+    <link rel="icon" type="image/svg+xml" href="/presentasion/favicon.svg" />
+    <title>Contacto — Axel Coracero</title>
+  </head>
+  <body data-page="card">
+    <div id="root"></div>
+    <script type="module" src="/src/secondary.tsx"></script>
+  </body>
 </html>
