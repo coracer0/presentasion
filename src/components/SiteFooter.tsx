@@ -1,4 +1,5 @@
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
+import { getWhatsAppUrl } from "../lib/contact";
 
 export function SiteFooter() {
   return (
@@ -19,7 +20,7 @@ export function SiteFooter() {
         <div className="footer-actions">
           <a
             className="button button-light"
-            href="https://wa.me/524181774447"
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
           >

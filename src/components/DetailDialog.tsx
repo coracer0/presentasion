@@ -5,6 +5,7 @@ import { automationExamples } from "../data/examples";
 import { caseStudies, getCaseUrl } from "../data/case-studies";
 import { LandingVisual } from "./LandingVisual";
 import { DemoErrorBoundary } from "./DemoErrorBoundary";
+import { getWhatsAppUrl } from "../lib/contact";
 import type { DemoId, PortfolioItem } from "../data/portfolio.types";
 import type { DetailDialogProps } from "./site.types";
 
@@ -96,7 +97,7 @@ function ConceptDetails({ item }: { item: PortfolioItem }) {
       </div>
       <a
         className="text-link"
-        href="https://wa.me/524181774447?text=Hola%20Axel%2C%20vi%20una%20idea%20en%20tu%20portafolio%20y%20quiero%20contarte%20mi%20caso."
+        href={getWhatsAppUrl(`la idea de ${item.title}`)}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -147,7 +148,7 @@ function DemoContent({ id }: { id: DemoId }) {
 
 function DemoAfterword({ id }: { id: DemoId }) {
   const study = caseStudies[id];
-  const contactUrl = `https://wa.me/524181774447?text=${encodeURIComponent(`Hola Axel, vi la demo de ${study.title} y quiero contarte mi caso.`)}`;
+  const contactUrl = getWhatsAppUrl(`la demo de ${study.title}`);
   return (
     <div className="demo-afterword">
       <details className="case-explainer">

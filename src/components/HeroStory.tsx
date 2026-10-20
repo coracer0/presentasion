@@ -30,12 +30,9 @@ const stories: Record<StoryId, StoryScene> = {
 };
 
 const storyTiming = {
-  total: 1.75,
-  messageStart: 0.15,
-  messageGap: 0.28,
-  connector: 0.75,
-  result: 1.05,
-  check: 1.45,
+  messageGap: 0.18,
+  connector: 0.35,
+  result: 0.55,
 } as const;
 
 function StoryTabs({ selected, onSelect }: StoryTabsProps) {
@@ -60,23 +57,19 @@ function BeforePanel({ story, reduceMotion }: StoryPanelProps) {
     <motion.div
       className="story-before"
       aria-label="Antes: trabajo manual"
-      initial={reduceMotion ? false : { opacity: 0, x: 8 }}
-      animate={
-        reduceMotion ? { opacity: 1 } : { opacity: [1, 1, 0.56], x: [0, 0, -8] }
-      }
-      transition={{ duration: storyTiming.total, times: [0, 0.65, 1] }}
+      initial={false}
+      animate={reduceMotion ? undefined : { x: [0, -3, 0] }}
+      transition={{ duration: 0.55 }}
     >
       <small>ANTES / TRABAJO MANUAL</small>
       {story.before.map((message, index) => (
         <motion.p
           key={message}
-          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={false}
+          animate={reduceMotion ? undefined : { x: [0, 4, 0] }}
           transition={{
-            duration: 0.35,
-            delay: reduceMotion
-              ? 0
-              : storyTiming.messageStart + index * storyTiming.messageGap,
+            duration: 0.45,
+            delay: index * storyTiming.messageGap,
           }}
         >
           {message}
@@ -91,11 +84,18 @@ function AfterPanel({ story, reduceMotion }: StoryPanelProps) {
     <motion.div
       className="story-after"
       role="status"
-      initial={reduceMotion ? false : { opacity: 0, x: -18, scale: 0.94 }}
-      animate={{ opacity: 1, x: 0, scale: 1 }}
+      initial={false}
+      animate={
+        reduceMotion
+          ? undefined
+          : {
+              scale: [1, 1.025, 1],
+              borderColor: ["#98cbb2", "#42a67b", "#98cbb2"],
+            }
+      }
       transition={{
-        duration: 0.55,
-        delay: reduceMotion ? 0 : storyTiming.result,
+        duration: 0.7,
+        delay: storyTiming.result,
       }}
     >
       <small>DESPUÉS / EJEMPLO FICTICIO</small>
@@ -103,11 +103,11 @@ function AfterPanel({ story, reduceMotion }: StoryPanelProps) {
       <span>{story.detail}</span>
       <motion.i
         aria-hidden="true"
-        initial={reduceMotion ? false : { opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={false}
+        animate={reduceMotion ? undefined : { scale: [1, 1.25, 1] }}
         transition={{
-          duration: 0.25,
-          delay: reduceMotion ? 0 : storyTiming.check,
+          duration: 0.45,
+          delay: storyTiming.result + 0.2,
         }}
       >
         ✓
@@ -123,8 +123,8 @@ function StoryStage({ story, reduceMotion }: StoryPanelProps) {
       <motion.div
         className="story-arrow"
         aria-hidden="true"
-        initial={reduceMotion ? false : { opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={false}
+        animate={reduceMotion ? undefined : { x: [0, 5, 0] }}
         transition={{
           duration: 0.35,
           delay: reduceMotion ? 0 : storyTiming.connector,

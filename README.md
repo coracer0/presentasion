@@ -14,14 +14,16 @@ Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.h
 
 ## Comandos
 
-| Comando                | Función                                                           |
-| ---------------------- | ----------------------------------------------------------------- |
-| `npm run typecheck`    | Revisa tipos TypeScript.                                          |
-| `npm run lint`         | Revisa ESLint estricto.                                           |
-| `npm run format:check` | Verifica Prettier.                                                |
-| `npm test`             | Prueba lógica de demos, URL del overlay y contenido del catálogo. |
-| `npm run build`        | Genera `dist/` para GitHub Pages.                                 |
-| `npm run preview`      | Revisa el build local.                                            |
+| Comando                | Función                                                                                                |
+| ---------------------- | ------------------------------------------------------------------------------------------------------ |
+| `npm run typecheck`    | Revisa tipos TypeScript.                                                                               |
+| `npm run lint`         | Revisa ESLint estricto.                                                                                |
+| `npm run format:check` | Verifica Prettier.                                                                                     |
+| `npm test`             | Prueba lógica de demos, URL del overlay y contenido del catálogo.                                      |
+| `npm run test:browser` | Recorre seis demos y casos en Chromium a 320 px, 768 px y escritorio; revisa accesibilidad automática. |
+| `npm run test:card`    | Comprueba los destinos de los QR de ambas tarjetas.                                                    |
+| `npm run build`        | Genera `dist/` para GitHub Pages.                                                                      |
+| `npm run preview`      | Revisa el build local.                                                                                 |
 
 ## Qué hacen las demos
 
@@ -42,11 +44,11 @@ La portada permite recorrer ejemplos según la necesidad del visitante. La bibli
 
 ## Publicación
 
-El proyecto mantiene la ruta pública `https://coracer0.github.io/presentasion/`. Vite usa `base: '/presentasion/'`. El workflow `ci-cd-main.yml` instala desde el lockfile, comprueba formato, lint, tipos, pruebas y build, y publica `dist/` en GitHub Pages después de un push a `main`. GitHub Pages ya usa **GitHub Actions** como origen del despliegue.
+El proyecto mantiene la ruta pública `https://coracer0.github.io/presentasion/`. Vite usa `base: '/presentasion/'`. El workflow `ci-cd-main.yml` instala desde el lockfile, comprueba formato, lint, tipos, pruebas, build, flujos de navegador, accesibilidad automática, QR y PDF; luego publica `dist/` en GitHub Pages después de un push a `main`. GitHub Pages ya usa **GitHub Actions** como origen del despliegue. Para correr los tests de navegador localmente, instalar Chromium con `npx playwright install chromium` después de `npm ci`.
 
 La página `/print-card.html` permite imprimir en casa al tamaño final de 3.5 × 2 pulgadas. También ofrece un PDF para imprenta de dos páginas, una por cara, con 3 mm de sangrado por lado, `TrimBox` de 3.5 × 2 pulgadas y contenido a 4 mm o más del corte. El QR del reverso abre el portafolio público; el QR de la tarjeta digital abre WhatsApp. Antes de un tiraje grande, comprobar el color, corte y escaneo en una muestra física.
 
-Los destinos de ambos QR están en `scripts/card-links.json`. Después de cambiarlos, regenerar las imágenes con `node scripts/generate-qr.mjs` y el PDF con `python scripts/generate-print-card.py` (requiere `reportlab` y `pypdf`). El PDF se guarda en `public/` para descarga y en `output/pdf/` como entregable local.
+Los destinos de ambos QR están en `scripts/card-links.json`. Después de cambiarlos, regenerar las imágenes con `node scripts/generate-qr.mjs` y el PDF con `python scripts/generate-print-card.py`. Instalar antes `python -m pip install -r scripts/requirements-print-card.txt`. `npm run test:card` comprueba los QR SVG; `python scripts/check-print-card.py` comprueba el tamaño, sangrado y la URL visible del PDF. El PDF se guarda en `public/` para descarga y en `output/pdf/` como entregable local.
 
 ## Contenido y privacidad
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { FeatureArt } from "./FeatureArt";
 import { caseStudies, getCaseUrl } from "../data/case-studies";
@@ -33,6 +33,11 @@ const needs: readonly NeedOption[] = [
     label: "Quiero lanzar una idea",
     demos: ["podcast", "restaurant", "quotes"],
   },
+  {
+    id: "agency",
+    label: "Busco apoyo para mi agencia",
+    demos: ["quotes", "podcast", "prices"],
+  },
 ];
 
 export function Featured({ onOpen }: FeaturedProps) {
@@ -59,6 +64,19 @@ export function Featured({ onOpen }: FeaturedProps) {
           Elige lo que hoy te preocupa y prueba ejemplos relacionados. Son
           demostraciones originales con datos ficticios.
         </p>
+      </div>
+      <div id="agencias" className="agency-route">
+        <div>
+          <span>SI TRABAJAS EN UNA AGENCIA</span>
+          <p>
+            También puedo sumarme a una tarea concreta de desarrollo. Vemos el
+            alcance, los tiempos y lo que necesitas entregar; estos ejemplos
+            muestran cómo pienso y construyo.
+          </p>
+        </div>
+        <button type="button" onClick={() => setNeed("agency")}>
+          Ver ejemplos para agencias <ArrowRight size={18} />
+        </button>
       </div>
       <div className="need-paths" aria-label="Filtrar ejemplos por necesidad">
         {needs.map((option) => (

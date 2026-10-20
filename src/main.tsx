@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { motion, MotionConfig } from "motion/react";
+import { MotionConfig } from "motion/react";
 import { SiteHeader } from "./components/SiteHeader";
 import { Hero } from "./components/Hero";
 import { Featured } from "./components/Featured";
@@ -34,13 +34,9 @@ function App() {
       </a>
       <SiteHeader />
       <main id="main-content" tabIndex={-1}>
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
-        >
+        <div>
           <Hero />
-        </motion.div>
+        </div>
         <ScrollReveal>
           <Experience />
         </ScrollReveal>

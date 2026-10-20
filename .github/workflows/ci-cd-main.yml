@@ -35,8 +35,21 @@ jobs:
         run: npm run typecheck
       - name: Pruebas
         run: npm test
+      - name: Comprobar códigos QR
+        run: npm run test:card
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Comprobar PDF de imprenta
+        run: |
+          python -m pip install -r scripts/requirements-print-card.txt
+          python scripts/check-print-card.py
       - name: Build
         run: npm run build
+      - name: Instalar Chromium para pruebas
+        run: npx playwright install --with-deps chromium
+      - name: Pruebas en navegador
+        run: npm run test:browser
       - uses: actions/upload-pages-artifact@v5
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:

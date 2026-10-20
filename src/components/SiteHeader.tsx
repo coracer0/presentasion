@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, MessageCircle, X } from "lucide-react";
+import { getWhatsAppUrl } from "../lib/contact";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,11 +23,7 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <a
-        className="brand"
-        href="#inicio"
-        aria-label="Axel Coracero, ir al inicio"
-      >
+      <a className="brand" href="#inicio">
         <span>
           Axel Coracero<small>PÁGINAS Y HERRAMIENTAS A TU MEDIDA</small>
         </span>
@@ -39,7 +36,7 @@ export function SiteHeader() {
       </nav>
       <a
         className="header-contact"
-        href="https://wa.me/524181774447"
+        href={getWhatsAppUrl()}
         target="_blank"
         rel="noopener noreferrer"
       >

@@ -7,9 +7,12 @@ import {
   MessageCircle,
   Printer,
 } from "lucide-react";
+import cardLinks from "../scripts/card-links.json";
+import { getWhatsAppUrl } from "./lib/contact";
 import "./styles.css";
 
 const base = import.meta.env.BASE_URL;
+const portfolioLabel = new URL(cardLinks.print).href.replace("https://", "");
 
 function ContactCard() {
   return (
@@ -29,11 +32,7 @@ function ContactCard() {
           claro.
         </p>
         <div className="contact-links">
-          <a
-            href="https://wa.me/524181774447"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
             <MessageCircle size={19} /> Escríbeme por WhatsApp{" "}
             <ArrowUpRight size={18} />
           </a>
@@ -96,7 +95,7 @@ function PrintCard() {
             alt="Código QR que abre el portafolio y sus demos"
           />
           <span>ESCANEA Y EXPLORA MIS DEMOS</span>
-          <small>coracer0.github.io/presentasion/</small>
+          <small>{portfolioLabel}</small>
         </article>
       </div>
       <p className="print-note">
