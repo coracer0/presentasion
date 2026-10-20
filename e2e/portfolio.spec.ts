@@ -108,6 +108,60 @@ const demoActions = {
   },
 };
 
+test("la guía abre 15 tipos y prepara un WhatsApp para cada idea", async ({
+  page,
+}) => {
+  await page.goto("/presentasion/");
+  await page
+    .getByRole("link", { name: "Mira 15 páginas y herramientas web ↗" })
+    .click();
+  await expect(page).toHaveURL(/#tipos-de-web$/);
+  const guide = page.locator("#tipos-de-web");
+  await expect(
+    guide.getByRole("heading", { name: "¿Qué necesitas crear?" }),
+  ).toBeVisible();
+  const cards = guide.locator(".website-type-card:visible");
+  await expect(cards).toHaveCount(6);
+  await expect(cards.locator("h4")).toHaveText([
+    "Tarjeta digital",
+    "Sitio de negocio",
+    "Catálogo de productos",
+    "Tienda en línea",
+    "Reservas",
+    "Cotizador",
+  ]);
+  const toggle = guide.locator(".website-types-toggle");
+  await expect(toggle).toHaveText("Ver los 15 tipos");
+  await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  await toggle.focus();
+  await page.keyboard.press("Enter");
+  await expect(toggle).toHaveAttribute("aria-expanded", "true");
+  await expect(cards).toHaveCount(15);
+
+  for (const card of await cards.all()) {
+    const name = await card.locator("h4").innerText();
+    const href = await card
+      .getByRole("link", { name: `Consultar esta idea: ${name} por WhatsApp` })
+      .getAttribute("href");
+    expect(href).not.toBeNull();
+    expect(new URL(href ?? "").searchParams.get("text")).toContain(name);
+  }
+  await expect(
+    guide.getByRole("link", { name: "Probar demo ficticia" }),
+  ).toHaveCount(3);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth > window.innerWidth + 1,
+    ),
+  ).toBe(false);
+  await guide
+    .locator(".website-type-card")
+    .filter({ has: page.getByRole("heading", { name: "Reservas", level: 4 }) })
+    .getByRole("link", { name: "Probar demo ficticia" })
+    .click();
+  await expect(page.getByRole("dialog")).toBeVisible();
+});
+
 test("el enlace de marketing muestra la campaña", async ({ page }) => {
   await page.goto("/presentasion/#marketing");
   await expect(

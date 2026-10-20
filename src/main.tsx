@@ -12,6 +12,7 @@ import { SiteFooter } from "./components/SiteFooter";
 import { DetailDialog } from "./components/DetailDialog";
 import { ScrollReveal } from "./components/ScrollReveal";
 import { TechServices } from "./components/TechServices";
+import { WebsiteTypes } from "./components/WebsiteTypes";
 import type { DemoId, PortfolioItem } from "./data/portfolio.types";
 import { readDemoFromUrl } from "./lib/demo-link";
 import "./styles.css";
@@ -66,6 +67,9 @@ function App() {
         </ScrollReveal>
         <ScrollReveal>
           <TechServices />
+        </ScrollReveal>
+        <ScrollReveal>
+          <WebsiteTypes />
         </ScrollReveal>
       </main>
       <SiteFooter />

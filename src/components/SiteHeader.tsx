@@ -76,6 +76,9 @@ export function SiteHeader() {
         <a href="#catalogo" onClick={() => closeMenu("catalogo")}>
           Explorar ideas
         </a>
+        <a href="#tipos-de-web" onClick={() => closeMenu("tipos-de-web")}>
+          Qué puedo crear
+        </a>
         <a href="#proceso" onClick={() => closeMenu("proceso")}>
           Cómo trabajo
         </a>

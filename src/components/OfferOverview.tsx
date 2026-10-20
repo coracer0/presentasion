@@ -81,6 +81,10 @@ export function OfferOverview() {
         ))}
       </div>
       <p className="offers-support">
+        ¿Todavía no sabes qué pedir?{" "}
+        <a href="#tipos-de-web">Mira 15 páginas y herramientas web ↗</a>
+      </p>
+      <p className="offers-support">
         ¿Lo que necesitas es ayuda con una compu, un programa o un dispositivo?{" "}
         <a href="#soporte">También puedo ayudarte con eso ↗</a>
       </p>
