@@ -38,7 +38,7 @@ def main() -> None:
     for phrase in (
         "Osmar Axel",
         "Coracero Godínez",
-        "Páginas y automatizaciones",
+        "Web, campañas y automatizaciones",
         "Computadoras y programas",
         "Hogar inteligente",
     ):

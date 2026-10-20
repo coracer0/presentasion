@@ -135,6 +135,31 @@ export const caseStudies: Record<DemoId, CaseStudy> = {
     measure:
       "Tiempo de cotización y correcciones necesarias antes de enviarla.",
   },
+  campaign: {
+    id: "campaign",
+    slug: "campanas",
+    title: "Una campaña que empieza por una idea clara",
+    summary:
+      "Cambia el objetivo y el formato de un anuncio para un local ficticio.",
+    problem:
+      "Publicar sin una meta clara hace difícil elegir el mensaje y saber si funcionó.",
+    audience:
+      "Negocios locales que quieren darse a conocer o recibir más consultas.",
+    tryHere:
+      "Cambia entre mensajes o reconocimiento y mira la pieza en publicación e historia.",
+    decision:
+      "Cada objetivo tiene un texto, una invitación y una forma de medir distinta.",
+    contribution:
+      "Diseñé el concepto, la imagen de ejemplo, los textos y el recorrido para revisar la campaña antes de publicarla.",
+    ability:
+      "Unir criterio de marketing, diseño visual y una experiencia fácil de revisar con el cliente.",
+    limit:
+      "Es una campaña ficticia: no publica anuncios, no usa cuentas reales ni muestra resultados de clientes.",
+    realWorld:
+      "Confirmar oferta, público, presupuesto, derechos de imágenes, permisos de cuenta y forma de medir.",
+    measure:
+      "Conversaciones y pedidos si se busca contacto; alcance y visitas al perfil si se busca reconocimiento.",
+  },
 };
 
 export function getCaseUrl(id: DemoId): string {

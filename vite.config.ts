@@ -18,6 +18,7 @@ export default defineConfig({
         broadcastsCase: resolve(import.meta.dirname, "casos/directos.html"),
         messagesCase: resolve(import.meta.dirname, "casos/mensajes.html"),
         quotesCase: resolve(import.meta.dirname, "casos/cotizaciones.html"),
+        campaignsCase: resolve(import.meta.dirname, "casos/campanas.html"),
       },
     },
   },

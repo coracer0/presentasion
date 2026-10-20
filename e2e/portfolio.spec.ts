@@ -7,6 +7,7 @@ const demos = [
   "quotes",
   "prices",
   "podcast",
+  "campaign",
 ] as const;
 const casePaths = [
   "reservas",
@@ -15,6 +16,7 @@ const casePaths = [
   "cotizaciones",
   "precios",
   "directos",
+  "campanas",
 ] as const;
 
 const demoActions = {
@@ -77,14 +79,51 @@ const demoActions = {
       dialog.getByRole("button", { name: "Entrevista" }),
     ).toHaveAttribute("aria-pressed", "true");
   },
+  campaign: async (dialog: Locator) => {
+    const download = dialog.getByRole("link", {
+      name: "Descargar esta pieza de muestra",
+    });
+    await expect(download).toHaveAttribute("href", /messages-post\.webp$/);
+    await dialog
+      .getByRole("button", { name: "Dar a conocer el local" })
+      .click();
+    await expect(
+      dialog.getByText("Un lugar para comer con ganas."),
+    ).toBeVisible();
+    await expect(
+      dialog.getByText(/Alcance local, visitas al perfil/),
+    ).toBeVisible();
+    await dialog.getByRole("button", { name: "Historia vertical" }).click();
+    await expect(dialog.locator(".campaign-creative")).toHaveClass(
+      /campaign-story/,
+    );
+    await expect(download).toHaveAttribute("href", /awareness-story\.webp$/);
+    await dialog
+      .getByRole("button", { name: "Volver al ejemplo inicial" })
+      .click();
+    await expect(
+      dialog.getByText("Tu próxima pausa sabe a brasa."),
+    ).toBeVisible();
+    await expect(download).toHaveAttribute("href", /messages-post\.webp$/);
+  },
 };
+
+test("el enlace de marketing muestra la campaña", async ({ page }) => {
+  await page.goto("/presentasion/#marketing");
+  await expect(
+    page.getByRole("button", { name: "Quiero promocionarme" }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await expect(
+    page.getByRole("button", { name: /Probar demo: Una campaña/ }),
+  ).toBeVisible();
+});
 
 test("la portada explica el servicio y deja ver la historia completa", async ({
   page,
 }) => {
   await page.goto("/presentasion/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Páginas y herramientas",
+    "Páginas, campañas y herramientas",
   );
   await expect(page.getByText("Reserva de muestra confirmada")).toBeVisible();
   const contact = page.getByRole("link", { name: /Escríbeme por WhatsApp/ });
@@ -127,7 +166,7 @@ test("el soporte tecnológico y la tarjeta muestran los servicios nuevos", async
   ).toBeVisible();
 });
 
-test("los seis casos llevan a un contacto con contexto", async ({ page }) => {
+test("los siete casos llevan a un contacto con contexto", async ({ page }) => {
   for (const path of casePaths) {
     await page.goto(`/presentasion/casos/${path}.html`);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
@@ -142,6 +181,17 @@ test("los seis casos llevan a un contacto con contexto", async ({ page }) => {
       () => document.documentElement.scrollWidth > window.innerWidth + 1,
     );
     expect(hasHorizontalOverflow).toBe(false);
+    if (path === "campanas") {
+      await expect(page.locator(".case-campaign-visual img")).toHaveJSProperty(
+        "naturalWidth",
+        1080,
+      );
+      const story = await page.request.get(
+        "/presentasion/casa-brasa-awareness-story.webp",
+      );
+      expect(story.ok()).toBe(true);
+      expect(story.headers()["content-type"]).toContain("image/webp");
+    }
   }
 });
 

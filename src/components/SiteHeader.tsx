@@ -25,12 +25,13 @@ export function SiteHeader() {
     <header className="site-header">
       <a className="brand" href="#inicio">
         <span>
-          Axel Coracero<small>PÁGINAS Y HERRAMIENTAS A TU MEDIDA</small>
+          Axel Coracero<small>PÁGINAS · CAMPAÑAS · HERRAMIENTAS</small>
         </span>
       </a>
       <nav aria-label="Navegación principal">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#trabajos">Demos</a>
+        <a href="#marketing">Marketing</a>
         <a href="#proceso">Cómo trabajo</a>
         <a href="#catalogo">Más ideas</a>
         <a href="#soporte">Soporte</a>
@@ -65,6 +66,9 @@ export function SiteHeader() {
         </a>
         <a href="#trabajos" onClick={() => closeMenu("trabajos")}>
           Probar demos
+        </a>
+        <a href="#marketing" onClick={() => closeMenu("marketing")}>
+          Marketing y redes
         </a>
         <a href="#catalogo" onClick={() => closeMenu("catalogo")}>
           Explorar ideas

@@ -433,6 +433,61 @@ a {
   border-color: rgba(141, 168, 255, 0.5);
   box-shadow: 0 22px 45px rgba(0, 0, 0, 0.17);
 }
+.feature-campaign {
+  grid-column: 1 / -1;
+}
+.feature-campaign .feature-open {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+}
+.feature-campaign .feature-art {
+  height: 340px;
+}
+.feature-campaign .feature-card-copy {
+  align-self: center;
+  padding: 36px;
+}
+.art-campaign {
+  background: #421d15;
+}
+.art-campaign::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #2d110de6, #2d110d38 75%);
+}
+.art-campaign img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 62%;
+}
+.art-campaign > div {
+  position: absolute;
+  z-index: 1;
+  left: 30px;
+  bottom: 26px;
+  width: min(75%, 390px);
+  color: #fff5e9;
+}
+.art-campaign span,
+.art-campaign small {
+  display: block;
+  font:
+    600 10px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.12em;
+}
+.art-campaign strong {
+  display: block;
+  margin: 14px 0;
+  font-size: clamp(28px, 3.5vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+.art-campaign small {
+  color: #f3c99f;
+}
 .feature-art {
   height: 290px;
   position: relative;
@@ -2363,6 +2418,12 @@ a {
   .catalog-grid {
     grid-template-columns: 1fr;
   }
+  .feature-campaign .feature-open {
+    display: block;
+  }
+  .feature-campaign .feature-art {
+    height: 270px;
+  }
   .feature-art {
     height: 240px;
   }
@@ -2544,6 +2605,7 @@ a {
   transform: translateY(0);
 }
 #trabajos,
+#marketing,
 #catalogo,
 #proceso,
 #contacto {
@@ -2912,6 +2974,10 @@ a {
   font-weight: 800;
 }
 @media (min-width: 761px) and (max-width: 1100px) {
+  .site-header nav {
+    gap: 14px;
+    font-size: 11px;
+  }
   .hero {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -2931,6 +2997,7 @@ a {
 }
 @media (max-width: 760px) {
   #trabajos,
+  #marketing,
   #catalogo,
   #proceso,
   #contacto {
@@ -3869,7 +3936,216 @@ a {
   margin: 0 -26px 20px;
   width: calc(100% + 52px);
 }
+.campaign-demo-layout {
+  grid-template-columns: minmax(290px, 360px) minmax(0, 1fr);
+}
+.campaign-choice {
+  display: grid;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding: 0;
+  border: 0;
+}
+.campaign-choice legend {
+  margin-bottom: 10px;
+  color: #dce6f4;
+  font-size: 14px;
+  font-weight: 800;
+}
+.campaign-choice button {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #64758d;
+  background: #172338;
+  color: #eef3ff;
+  text-align: left;
+  font-size: 14px;
+}
+.campaign-choice button[aria-pressed="true"] {
+  border-color: #c98f68;
+  background: #f2dfcb;
+  color: #321b12;
+  font-weight: 800;
+}
+.campaign-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+.campaign-demo-limit {
+  margin: 18px 0 0;
+  color: #bec9d8;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.campaign-stage {
+  min-width: 0;
+  padding: 24px;
+  background: #e9daca;
+  color: #291b15;
+}
+.campaign-stage-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+  color: #65422e;
+  font:
+    700 11px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.campaign-creative {
+  position: relative;
+  width: min(100%, 470px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #3b1a12;
+  color: #fff9ed;
+  box-shadow: 0 18px 34px #5b392b40;
+  transition:
+    width 0.25s ease,
+    aspect-ratio 0.25s ease;
+}
+.campaign-creative.campaign-story {
+  width: min(100%, 280px);
+  aspect-ratio: 9 / 16;
+}
+.campaign-creative::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #26100be8,
+    #26100b8a 43%,
+    transparent 78%
+  );
+}
+.campaign-creative img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% center;
+}
+.campaign-creative-copy {
+  position: absolute;
+  z-index: 1;
+  inset: 26px 26px auto;
+}
+.campaign-creative-copy > span {
+  font:
+    700 11px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.12em;
+}
+.campaign-creative-copy > strong {
+  display: block;
+  max-width: 420px;
+  margin: 13px 0 8px;
+  font-size: clamp(27px, 4vw, 47px);
+  line-height: 1.03;
+  letter-spacing: -0.05em;
+}
+.campaign-creative-copy > p {
+  margin: 0 0 22px;
+  color: #fff0dc;
+  font-size: 15px;
+}
+.campaign-creative-copy > b {
+  display: inline-block;
+  padding: 11px 17px;
+  background: #f3e5d3;
+  color: #33180f;
+  font-size: 13px;
+}
+.campaign-story .campaign-creative-copy {
+  inset: 28px 19px auto;
+}
+.campaign-story .campaign-creative-copy > strong {
+  font-size: 32px;
+}
+.campaign-caption,
+.campaign-plan {
+  width: min(100%, 470px);
+  margin: 22px auto 0;
+}
+.campaign-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin: 14px 0 0;
+  color: #3d241b;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.case-main > .campaign-download {
+  color: #c1d0ff;
+}
+.campaign-caption > span {
+  font:
+    700 10px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.09em;
+  color: #614533;
+}
+.campaign-caption p {
+  margin: 7px 0 0;
+  line-height: 1.6;
+  font-size: 14px;
+}
+.campaign-plan {
+  display: grid;
+  gap: 13px;
+}
+.campaign-plan div {
+  padding-top: 13px;
+  border-top: 1px solid #bca996;
+}
+.campaign-plan dt {
+  font-weight: 800;
+  font-size: 13px;
+}
+.campaign-plan dd {
+  margin: 5px 0 0;
+  line-height: 1.6;
+  font-size: 13px;
+}
+.case-campaign-visual {
+  position: relative;
+  max-width: 520px;
+  aspect-ratio: 1;
+  margin: 36px 0;
+  overflow: hidden;
+  background: #3b1a12;
+}
+.case-campaign-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 @media (max-width: 760px) {
+  .campaign-demo-layout {
+    grid-template-columns: 1fr;
+  }
+  .campaign-stage {
+    padding: 18px;
+  }
+  .campaign-creative-copy {
+    inset: 20px 18px auto;
+  }
+  .campaign-creative-copy > strong {
+    font-size: clamp(26px, 8vw, 40px);
+  }
+  .campaign-creative-copy > p {
+    margin-bottom: 14px;
+    font-size: 12px;
+  }
   .agency-route {
     align-items: stretch;
     flex-direction: column;

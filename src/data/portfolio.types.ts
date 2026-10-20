@@ -18,4 +18,10 @@ export interface AutomationExample {
 }
 
 export type DemoId =
-  "podcast" | "appointments" | "prices" | "restaurant" | "messages" | "quotes";
+  | "podcast"
+  | "appointments"
+  | "prices"
+  | "restaurant"
+  | "messages"
+  | "quotes"
+  | "campaign";

@@ -27,6 +27,7 @@ test("las demos no tienen infracciones automáticas de WCAG AA", async ({
     "quotes",
     "prices",
     "podcast",
+    "campaign",
   ]) {
     await page.goto(`/presentasion/?demo=${demo}`);
     await expect(page.getByRole("dialog")).toBeVisible();
@@ -57,6 +58,7 @@ test("los casos no tienen infracciones automáticas de WCAG AA", async ({
     "cotizaciones",
     "precios",
     "directos",
+    "campanas",
   ]) {
     await page.goto(`/presentasion/casos/${path}.html`);
     const results = await new AxeBuilder({ page })

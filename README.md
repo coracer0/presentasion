@@ -2,7 +2,7 @@
 
 [![CI y GitHub Pages](https://github.com/coracer0/presentasion/actions/workflows/ci-cd-main.yml/badge.svg)](https://github.com/coracer0/presentasion/actions/workflows/ci-cd-main.yml)
 
-Portafolio público de Osmar Axel Coracero Godínez, centrado en páginas y herramientas para negocios locales y en soporte tecnológico: computadoras, programas y hogar inteligente. Incluye 70 ideas clasificadas y seis demostraciones interactivas con **datos ficticios**. Las ideas y demos no representan proyectos entregados a clientes. El canal de contacto principal es WhatsApp; el QR de la tarjeta imprimible abre el portafolio y el QR de la tarjeta digital abre WhatsApp.
+Portafolio público de Osmar Axel Coracero Godínez, centrado en desarrollo, campañas y redes para negocios locales, además de soporte tecnológico: computadoras, programas y hogar inteligente. Incluye 70 ideas clasificadas y siete demostraciones interactivas con **datos ficticios**. Las ideas y demos no representan proyectos entregados a clientes. El canal de contacto principal es WhatsApp; el QR de la tarjeta imprimible abre el portafolio y el QR de la tarjeta digital abre WhatsApp.
 
 ## Requisitos e instalación
 
@@ -10,20 +10,20 @@ Portafolio público de Osmar Axel Coracero Godínez, centrado en páginas y herr
 - `npm ci`
 - `npm run dev`
 
-Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.html`, `/print-card.html`, `/overlay.html` y los seis casos de `/casos/`.
+Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.html`, `/print-card.html`, `/overlay.html` y los siete casos de `/casos/`.
 
 ## Comandos
 
-| Comando                | Función                                                                                                |
-| ---------------------- | ------------------------------------------------------------------------------------------------------ |
-| `npm run typecheck`    | Revisa tipos TypeScript.                                                                               |
-| `npm run lint`         | Revisa ESLint estricto.                                                                                |
-| `npm run format:check` | Verifica Prettier.                                                                                     |
-| `npm test`             | Prueba lógica de demos, URL del overlay y contenido del catálogo.                                      |
-| `npm run test:browser` | Recorre seis demos y casos en Chromium a 320 px, 768 px y escritorio; revisa accesibilidad automática. |
-| `npm run test:card`    | Comprueba los destinos de los QR de ambas tarjetas.                                                    |
-| `npm run build`        | Genera `dist/` para GitHub Pages.                                                                      |
-| `npm run preview`      | Revisa el build local.                                                                                 |
+| Comando                | Función                                                                                                 |
+| ---------------------- | ------------------------------------------------------------------------------------------------------- |
+| `npm run typecheck`    | Revisa tipos TypeScript.                                                                                |
+| `npm run lint`         | Revisa ESLint estricto.                                                                                 |
+| `npm run format:check` | Verifica Prettier.                                                                                      |
+| `npm test`             | Prueba lógica de demos, URL del overlay y contenido del catálogo.                                       |
+| `npm run test:browser` | Recorre siete demos y casos en Chromium a 320 px, 768 px y escritorio; revisa accesibilidad automática. |
+| `npm run test:card`    | Comprueba los destinos de los QR de ambas tarjetas.                                                     |
+| `npm run build`        | Genera `dist/` para GitHub Pages.                                                                       |
+| `npm run preview`      | Revisa el build local.                                                                                  |
 
 ## Qué hacen las demos
 
@@ -33,12 +33,13 @@ Abrir la URL local mostrada por Vite. Las páginas disponibles son `/`, `/card.h
 - **Restaurante:** agrega platillos y confirma un resumen de pedido. No cobra ni envía órdenes.
 - **Mensajes:** explora respuestas a preguntas habituales y la opción de pedir atención humana. No se conecta a WhatsApp.
 - **Cotizaciones:** calcula un presupuesto ficticio para una imprenta y revisa su desglose. No genera una oferta comercial.
+- **Campaña y redes:** cambia el objetivo y formato de un anuncio para Casa Brasa, un negocio ficticio. Las cuatro piezas de muestra se pueden descargar en WebP. La foto se generó para la demo; no publica anuncios ni muestra resultados reales.
 
 Las 40 fichas de scripts incluyen problema, disparador, entrada de ejemplo, proceso, salida, integraciones posibles y límites. El contenido está en `src/data/`; la lógica pura de las demos está en `src/lib/`.
 
 ## Casos y experiencia
 
-Cada demo tiene una página HTML compartible con problema, público, aporte, decisión de diseño, límites y una forma de medir el resultado: [reservas](https://coracer0.github.io/presentasion/casos/reservas.html), [pedidos](https://coracer0.github.io/presentasion/casos/pedidos.html), [precios](https://coracer0.github.io/presentasion/casos/precios.html), [directos](https://coracer0.github.io/presentasion/casos/directos.html), [mensajes](https://coracer0.github.io/presentasion/casos/mensajes.html) y [cotizaciones](https://coracer0.github.io/presentasion/casos/cotizaciones.html). Los resultados descritos son de simulación; no se presentan cifras ni clientes inventados.
+Cada demo tiene una página HTML compartible con problema, público, aporte, decisión de diseño, límites y una forma de medir el resultado: [reservas](https://coracer0.github.io/presentasion/casos/reservas.html), [pedidos](https://coracer0.github.io/presentasion/casos/pedidos.html), [precios](https://coracer0.github.io/presentasion/casos/precios.html), [directos](https://coracer0.github.io/presentasion/casos/directos.html), [mensajes](https://coracer0.github.io/presentasion/casos/mensajes.html), [cotizaciones](https://coracer0.github.io/presentasion/casos/cotizaciones.html) y [campañas](https://coracer0.github.io/presentasion/casos/campanas.html). Los resultados descritos son de simulación; no se presentan cifras ni clientes inventados.
 
 La portada permite recorrer ejemplos según la necesidad del visitante. La biblioteca muestra ocho ideas al inicio y permite explorar las 70. La búsqueda ignora acentos. Las demos se cargan cuando se abren y un error en una demo queda aislado. El menú móvil, los diálogos y el enlace para saltar al contenido se pueden usar con teclado. Las animaciones breves respetan `prefers-reduced-motion`.
 

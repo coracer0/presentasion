@@ -97,7 +97,7 @@ def draw_front(pdf: canvas.Canvas) -> None:
     draw_line(pdf, "Coracero Godínez", SAFE_LEFT, 99, "CardBold", 17)
     pdf.setFillColor(HexColor("#4d5b6a"))
     draw_line(pdf, "Hagamos tu día más fácil.", SAFE_LEFT, 82, "CardRegular", 9.5)
-    draw_service(pdf, "Páginas y automatizaciones", 67, "#8da8ff")
+    draw_service(pdf, "Web, campañas y automatizaciones", 67, "#8da8ff")
     draw_service(pdf, "Computadoras y programas", 55, "#49af92")
     draw_service(pdf, "Hogar inteligente", 43, "#e5a47c")
     pdf.setFillColor(HexColor("#ffffff"))

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { FeatureArt } from "./FeatureArt";
@@ -14,10 +14,16 @@ const featured: readonly DemoId[] = [
   "quotes",
   "prices",
   "podcast",
+  "campaign",
 ];
 const needs: readonly NeedOption[] = [
-  { id: "all", label: "Ver las seis", demos: featured },
-  { id: "sell", label: "Quiero vender más", demos: ["restaurant", "quotes"] },
+  { id: "all", label: "Ver las siete", demos: featured },
+  {
+    id: "sell",
+    label: "Quiero vender más",
+    demos: ["restaurant", "quotes", "campaign"],
+  },
+  { id: "promote", label: "Quiero promocionarme", demos: ["campaign"] },
   {
     id: "save",
     label: "Quiero ahorrar tiempo",
@@ -44,6 +50,15 @@ export function Featured({ onOpen }: FeaturedProps) {
   const [need, setNeed] = useState<NeedId>("all");
   const reduceMotion = useReducedMotion();
   const visible = needs.find((option) => option.id === need)?.demos ?? featured;
+
+  useEffect(() => {
+    const showMarketing = () => {
+      if (window.location.hash === "#marketing") setNeed("promote");
+    };
+    showMarketing();
+    window.addEventListener("hashchange", showMarketing);
+    return () => window.removeEventListener("hashchange", showMarketing);
+  }, []);
 
   return (
     <section
@@ -83,6 +98,7 @@ export function Featured({ onOpen }: FeaturedProps) {
           <button
             type="button"
             key={option.id}
+            id={option.id === "promote" ? "marketing" : undefined}
             aria-pressed={need === option.id}
             onClick={() => setNeed(option.id)}
           >

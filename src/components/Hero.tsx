@@ -7,17 +7,16 @@ export function Hero() {
     <section id="inicio" className="hero section-shell">
       <div className="hero-copy">
         <span className="eyebrow">
-          <span className="eyebrow-line" /> HERRAMIENTAS DIGITALES PARA TU
-          NEGOCIO
+          <span className="eyebrow-line" /> PÁGINAS, CAMPAÑAS Y HERRAMIENTAS
         </span>
         <h1>
-          Páginas y herramientas para que tu negocio <em>trabaje mejor.</em>
+          Páginas, campañas y herramientas para que tu negocio{" "}
+          <em>trabaje mejor.</em>
         </h1>
         <p>
-          Soy Axel. Diseño sitios y herramientas para negocios locales: una
-          página para mostrar lo que haces, respuestas para las preguntas de
-          siempre o un sistema que ordene tu trabajo. Prueba seis demos con
-          datos ficticios.
+          Soy Axel. Creo páginas, planeo campañas y manejo redes sociales para
+          negocios locales. También hago herramientas para quitarte tareas
+          repetidas. Prueba siete demos con datos ficticios.
         </p>
         <div className="hero-actions">
           <a
@@ -34,6 +33,7 @@ export function Hero() {
         </div>
         <div className="hero-routes" aria-label="Explorar según tu caso">
           <a href="#trabajos">Tengo un negocio ↗</a>
+          <a href="#marketing">Quiero promocionarme ↗</a>
           <a href="#agencias">Colaboro en una agencia ↗</a>
           <a href="#soporte">Necesito ayuda técnica ↗</a>
         </div>

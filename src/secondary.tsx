@@ -27,9 +27,9 @@ function ContactCard() {
         <span>HOLA, SOY AXEL</span>
         <h1>Cuéntame qué tienes en mente.</h1>
         <p>
-          Creo páginas y herramientas para negocios locales. También ayudo con
-          computadoras, programas y dispositivos inteligentes. Me importa
-          escucharte y dejar todo claro.
+          Creo páginas, campañas y herramientas para negocios locales. También
+          ayudo con computadoras, programas y dispositivos inteligentes. Me
+          importa escucharte y dejar todo claro.
         </p>
         <div className="contact-links">
           <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
@@ -105,7 +105,7 @@ function PrintCard() {
           </h1>
           <p className="print-promise">Hagamos tu día más fácil.</p>
           <p className="print-services">
-            <span>Páginas y automatizaciones</span>
+            <span>Web, campañas y automatizaciones</span>
             <span>Computadoras y programas</span>
             <span>Hogar inteligente</span>
           </p>

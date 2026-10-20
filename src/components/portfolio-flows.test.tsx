@@ -72,6 +72,16 @@ describe("recorridos del portafolio", () => {
     ).toBeTruthy();
   });
 
+  it("permite llegar a la campaña desde una necesidad concreta", () => {
+    render(<Featured onOpen={() => undefined} />);
+    fireEvent.click(
+      screen.getByRole("button", { name: "Quiero promocionarme" }),
+    );
+    expect(
+      screen.getByRole("button", { name: /Una campaña que empieza/ }),
+    ).toBeTruthy();
+  });
+
   it("encuentra clínica aunque se escriba sin acento", () => {
     render(<Catalog onOpen={() => undefined} />);
     fireEvent.change(screen.getByRole("searchbox"), {

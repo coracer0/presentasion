@@ -3,6 +3,23 @@ import { OverlayGraphics } from "./Scene";
 import { defaultOverlay } from "../lib/overlay";
 
 export function FeatureArt({ id }: { id: DemoId }) {
+  if (id === "campaign")
+    return (
+      <div className="feature-art art-campaign">
+        <img
+          src={`${import.meta.env.BASE_URL}casa-brasa-campana.webp`}
+          width="1254"
+          height="1254"
+          alt=""
+          loading="lazy"
+        />
+        <div>
+          <span>CASA BRASA / CAMPAÑA FICTICIA</span>
+          <strong>Una buena idea abre conversación.</strong>
+          <small>Objetivo → pieza → medición</small>
+        </div>
+      </div>
+    );
   if (id === "podcast")
     return (
       <div className="feature-art art-podcast">

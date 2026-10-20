@@ -39,6 +39,11 @@ const QuotesDemo = lazy(() =>
     default: module.QuotesDemo,
   })),
 );
+const CampaignDemo = lazy(() =>
+  import("../demos/CampaignDemo").then((module) => ({
+    default: module.CampaignDemo,
+  })),
+);
 
 function AutomationDetails({ item }: { item: PortfolioItem }) {
   const example = automationExamples[item.id];
@@ -127,6 +132,9 @@ function DemoContent({ id }: { id: DemoId }) {
       break;
     case "quotes":
       content = <QuotesDemo />;
+      break;
+    case "campaign":
+      content = <CampaignDemo />;
       break;
     default:
       content = null;

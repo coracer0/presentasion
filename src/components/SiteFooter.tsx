@@ -34,7 +34,7 @@ export function SiteFooter() {
         <div className="footer-bottom">
           <a className="brand" href="#inicio">
             <span>
-              Axel Coracero<small>PÁGINAS Y HERRAMIENTAS A TU MEDIDA</small>
+              Axel Coracero<small>PÁGINAS · CAMPAÑAS · HERRAMIENTAS</small>
             </span>
           </a>
           <div>

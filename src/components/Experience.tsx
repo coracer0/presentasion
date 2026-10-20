@@ -61,6 +61,11 @@ export function Experience() {
               cuatro meses de prácticas en seguridad y pruebas de un sistema
               bancario.
             </p>
+            <p>
+              También planifico campañas publicitarias y llevo marketing y redes
+              sociales para una academia. Esto me ayuda a unir el mensaje, la
+              pieza visual y la forma de atender a quienes llegan por ella.
+            </p>
           </div>
         </div>
         <p className="experience-personal">
