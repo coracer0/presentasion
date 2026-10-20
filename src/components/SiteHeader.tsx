@@ -30,10 +30,10 @@ export function SiteHeader() {
       </a>
       <nav aria-label="Navegación principal">
         <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
         <a href="#trabajos">Demos</a>
         <a href="#marketing">Marketing</a>
         <a href="#proceso">Cómo trabajo</a>
-        <a href="#catalogo">Más ideas</a>
         <a href="#soporte">Soporte</a>
       </nav>
       <a
@@ -63,6 +63,9 @@ export function SiteHeader() {
       >
         <a href="#sobre-mi" onClick={() => closeMenu("sobre-mi")}>
           Sobre mí
+        </a>
+        <a href="#servicios" onClick={() => closeMenu("servicios")}>
+          Servicios para negocios
         </a>
         <a href="#trabajos" onClick={() => closeMenu("trabajos")}>
           Probar demos

@@ -1,7 +1,8 @@
 const WHATSAPP_NUMBER = "524181774447";
 
 export function getWhatsAppUrl(subject?: string): string {
-  const context = subject ? `Me llamó la atención ${subject}. ` : "";
-  const message = `Hola Axel, vi tu portafolio. ${context}Mi negocio o proyecto es... Me gustaría resolver... Y me gustaría empezar...`;
+  const message = subject
+    ? `Hola Axel, vi tu portafolio y quiero platicar sobre ${subject}.`
+    : "Hola Axel, vi tu portafolio y quiero contarte una idea. ¿Podemos platicar?";
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }

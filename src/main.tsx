@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { MotionConfig } from "motion/react";
 import { SiteHeader } from "./components/SiteHeader";
 import { Hero } from "./components/Hero";
+import { OfferOverview } from "./components/OfferOverview";
 import { Featured } from "./components/Featured";
 import { Catalog } from "./components/Catalog";
 import { Process } from "./components/Process";
@@ -38,6 +39,9 @@ function App() {
         <div>
           <Hero />
         </div>
+        <ScrollReveal>
+          <OfferOverview />
+        </ScrollReveal>
         <ScrollReveal>
           <Experience />
         </ScrollReveal>

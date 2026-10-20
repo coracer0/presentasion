@@ -125,7 +125,7 @@ a {
   display: block;
   color: #8b9bb3;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.04em;
   margin-top: 5px;
@@ -218,7 +218,7 @@ a {
   margin-left: auto;
   color: #bfc9d5;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
 }
 .hero-status i,
@@ -786,7 +786,7 @@ a {
   width: 100%;
   color: #8da8ff;
   margin-bottom: 20px;
-  font-size: 9px;
+  font-size: 11px;
 }
 .catalog-card > strong {
   font-size: 17px;
@@ -794,7 +794,7 @@ a {
   line-height: 1.3;
 }
 .catalog-card > p {
-  font-size: 12px;
+  font-size: 14px;
   color: #a4b0bf;
   line-height: 1.65;
   margin: 9px 0 19px;
@@ -804,7 +804,7 @@ a {
   color: #d8e0f0;
   margin-top: auto;
   letter-spacing: 0.04em;
-  font-size: 9px;
+  font-size: 12px;
 }
 .catalog-card-link span {
   color: var(--accent);
@@ -1925,7 +1925,7 @@ a {
 .menu-row small {
   display: block;
   color: #665043;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 3px;
 }
 .menu-row > span:not(.food-art) {
@@ -2572,14 +2572,14 @@ a {
   }
   .price-delta {
     min-width: 68px;
-    font-size: 9px;
+    font-size: 11px;
   }
   .product-icon {
     width: 28px;
     height: 28px;
   }
   .price-row > div:first-child strong {
-    font-size: 10px;
+    font-size: 12px;
   }
   .cart-summary {
     flex-wrap: wrap;
@@ -4160,5 +4160,148 @@ a {
   }
   .case-flow span {
     width: 100%;
+  }
+}
+
+.offers-section {
+  padding-top: 30px;
+  padding-bottom: 100px;
+  scroll-margin-top: 100px;
+}
+.offers-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.75fr);
+  align-items: end;
+  gap: 48px;
+  margin-bottom: 30px;
+}
+.offers-heading h2 {
+  max-width: 760px;
+  margin: 20px 0 0;
+  font-size: clamp(40px, 5vw, 70px);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+}
+.offers-heading h2 em {
+  color: #a9beff;
+  font-style: normal;
+}
+.offers-heading p {
+  max-width: 590px;
+  margin: 0;
+  color: #c0cbdb;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 490px;
+  padding: clamp(25px, 3vw, 42px);
+  color: #192536;
+}
+.offer-build {
+  background: #e9edf3;
+}
+.offer-market {
+  background: #f3e2d2;
+}
+.offer-card-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 15px;
+}
+.offer-card-top span,
+.offer-includes {
+  font:
+    700 12px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.offer-card h3 {
+  max-width: 520px;
+  margin: 42px 0 12px;
+  font-size: clamp(29px, 3vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+}
+.offer-card > p {
+  max-width: 520px;
+  margin: 0 0 27px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.offer-includes {
+  margin-bottom: 10px;
+  color: #50647c;
+}
+.offer-card ul {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+}
+.offer-card li {
+  display: flex;
+  align-items: start;
+  gap: 9px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.offer-card li::before {
+  content: "↗";
+  flex: none;
+  color: #526a9f;
+  font-weight: 800;
+}
+.offer-card > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  min-height: 44px;
+  margin-top: auto;
+  border-bottom: 1px solid currentColor;
+  font-size: 15px;
+  font-weight: 800;
+}
+.offers-support {
+  margin: 22px 0 0;
+  color: #c4cede;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.offers-support a {
+  color: #bed0ff;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 760px) {
+  .offers-section {
+    padding-top: 10px;
+    padding-bottom: 75px;
+    scroll-margin-top: 68px;
+  }
+  .offers-heading,
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+  .offers-heading {
+    gap: 18px;
+  }
+  .offer-card {
+    min-height: 0;
+  }
+  .offer-card h3 {
+    margin-top: 25px;
   }
 }

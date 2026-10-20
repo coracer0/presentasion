@@ -128,6 +128,12 @@ test("la portada explica el servicio y deja ver la historia completa", async ({
   await expect(page.getByText("Reserva de muestra confirmada")).toBeVisible();
   const contact = page.getByRole("link", { name: /Escríbeme por WhatsApp/ });
   await expect(contact).toHaveAttribute("href", /wa\.me\/524181774447\?text=/);
+  await page.getByRole("link", { name: /Tengo un negocio/ }).click();
+  const services = page.locator("#servicios");
+  await expect(services.locator(".offer-card")).toHaveCount(2);
+  await expect(
+    services.getByRole("link", { name: /Hablemos de tu campaña/ }),
+  ).toHaveAttribute("href", /wa\.me\/524181774447\?text=/);
   await page.getByRole("link", { name: /Colaboro en una agencia/ }).click();
   await page
     .getByRole("button", { name: "Ver ejemplos para agencias" })
