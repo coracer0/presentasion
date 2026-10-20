@@ -35,6 +35,7 @@ export function Hero() {
         <div className="hero-routes" aria-label="Explorar según tu caso">
           <a href="#trabajos">Tengo un negocio ↗</a>
           <a href="#agencias">Colaboro en una agencia ↗</a>
+          <a href="#soporte">Necesito ayuda técnica ↗</a>
         </div>
         <div className="hero-bottom">
           <img

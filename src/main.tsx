@@ -10,6 +10,7 @@ import { Experience } from "./components/Experience";
 import { SiteFooter } from "./components/SiteFooter";
 import { DetailDialog } from "./components/DetailDialog";
 import { ScrollReveal } from "./components/ScrollReveal";
+import { TechServices } from "./components/TechServices";
 import type { DemoId, PortfolioItem } from "./data/portfolio.types";
 import { readDemoFromUrl } from "./lib/demo-link";
 import "./styles.css";
@@ -58,6 +59,9 @@ function App() {
               setItem(selected);
             }}
           />
+        </ScrollReveal>
+        <ScrollReveal>
+          <TechServices />
         </ScrollReveal>
       </main>
       <SiteFooter />

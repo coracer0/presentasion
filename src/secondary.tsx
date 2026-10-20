@@ -27,9 +27,9 @@ function ContactCard() {
         <span>HOLA, SOY AXEL</span>
         <h1>Cuéntame qué tienes en mente.</h1>
         <p>
-          Creo páginas y herramientas que ayudan a negocios locales a atender
-          mejor y ahorrar tareas repetitivas. Me importa escucharte y dejar todo
-          claro.
+          Creo páginas y herramientas para negocios locales. También ayudo con
+          computadoras, programas y dispositivos inteligentes. Me importa
+          escucharte y dejar todo claro.
         </p>
         <div className="contact-links">
           <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
@@ -80,21 +80,59 @@ function PrintCard() {
       </button>
       <div className="print-cards">
         <article className="print-card print-front">
-          <h1>Axel Coracero</h1>
+          <svg
+            className="print-front-motif"
+            viewBox="0 0 112 135"
+            aria-hidden="true"
+          >
+            <path d="M112 0H38l74 74Z" fill="#8da8ff" />
+            <path
+              d="M26 50h58L55 96Z"
+              fill="none"
+              stroke="#4e67ad"
+              strokeWidth="2.5"
+            />
+            <path d="M51 90h42l-21 22Z" fill="#49af92" />
+            <path
+              d="M24 124h53m0 0-9-7m9 7-9 7"
+              fill="none"
+              stroke="#4e67ad"
+              strokeWidth="2.5"
+            />
+          </svg>
+          <h1>
+            Osmar Axel <span>Coracero Godínez</span>
+          </h1>
           <p className="print-promise">Hagamos tu día más fácil.</p>
           <p className="print-services">
-            Páginas web · Bots de mensajes · Herramientas a medida
+            <span>Páginas y automatizaciones</span>
+            <span>Computadoras y programas</span>
+            <span>Hogar inteligente</span>
           </p>
-          <small>WhatsApp: +52 418 177 4447</small>
+          <small>WhatsApp&nbsp; · &nbsp;+52 418 177 4447</small>
         </article>
         <article className="print-card print-back">
+          <svg
+            className="print-back-motif"
+            viewBox="0 0 336 192"
+            aria-hidden="true"
+          >
+            <path d="M0 0h70L0 70Z" fill="#8da8ff" />
+            <path d="M336 192h-70l70-70Z" fill="#49af92" />
+            <path
+              d="M52 102h32m0 0-8-6m8 6-8 6M284 102h-32m0 0 8-6m-8 6 8 6"
+              fill="none"
+              stroke="#a7bcff"
+              strokeWidth="2"
+            />
+          </svg>
           <img
             src={`${base}portfolio-qr.svg`}
             width="100"
             height="100"
             alt="Código QR que abre el portafolio y sus demos"
           />
-          <span>ESCANEA Y EXPLORA MIS DEMOS</span>
+          <span>ESCANEA Y CONOCE LO QUE HAGO</span>
           <small>{portfolioLabel}</small>
         </article>
       </div>

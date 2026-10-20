@@ -34,9 +34,21 @@ def main() -> None:
         expected_bleed = (TRIM[0] + 2 * BLEED, TRIM[1] + 2 * BLEED)
         if not matches(dimensions(page.bleedbox), expected_bleed):
             raise ValueError("El sangrado no es de 3 mm por lado")
+    front_text = pages[0].extract_text() or ""
+    for phrase in (
+        "Osmar Axel",
+        "Coracero Godínez",
+        "Páginas y automatizaciones",
+        "Computadoras y programas",
+        "Hogar inteligente",
+    ):
+        if phrase not in front_text:
+            raise ValueError(f"Falta información en el frente: {phrase}")
+    if "Alexa" in front_text:
+        raise ValueError("La tarjeta impresa no debe mencionar Alexa")
     if DESTINATION not in (pages[1].extract_text() or ""):
         raise ValueError("La URL visible en el PDF no coincide con card-links.json")
-    print("PDF: dos caras, corte, sangrado y URL visibles correctos")
+    print("PDF: dos caras, corte, sangrado, servicios y URL visibles correctos")
 
 
 if __name__ == "__main__":

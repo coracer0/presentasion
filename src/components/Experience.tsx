@@ -22,10 +22,11 @@ export function Experience() {
           <em>Trabajo contigo.</em>
         </h2>
         <p className="experience-lead">
-          Soy ingeniero en Desarrollo y Gestión de Software. Creo que todas las
-          personas y negocios merecen software útil y de calidad sin tener que
-          gastar una fortuna. Por eso empiezo por el problema que más pesa y
-          propongo un alcance claro para su presupuesto.
+          Mi nombre completo es Osmar Axel Coracero Godínez, pero puedes decirme
+          Axel. Soy ingeniero en Desarrollo y Gestión de Software. Creo que
+          todas las personas y negocios merecen software útil y de calidad sin
+          tener que gastar una fortuna. Por eso empiezo por el problema que más
+          pesa y propongo un alcance claro para su presupuesto.
         </p>
         <p>
           Me importa la confianza: escuchar bien, respetar los acuerdos y
@@ -66,6 +67,10 @@ export function Experience() {
           Vivo con una discapacidad psicomotora; a veces necesito un momento más
           para encontrar las palabras. Me gusta trabajar con calma, dejar
           acuerdos claros y poner mucho cariño en lo que construyo.
+        </p>
+        <p>
+          En mis ratos libres disfruto los videojuegos. Me gusta descubrir cómo
+          una buena experiencia puede hacer que algo complejo se sienta fácil.
         </p>
         <p className="experience-disclosure">
           Los trabajos de terceros tienen sus propios derechos. Las demos que

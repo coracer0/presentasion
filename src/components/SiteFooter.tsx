@@ -5,7 +5,7 @@ export function SiteFooter() {
   return (
     <footer id="contacto" className="site-footer" tabIndex={-1}>
       <div className="section-shell">
-        <span className="eyebrow">05 / SIGUIENTE PASO</span>
+        <span className="eyebrow">06 / SIGUIENTE PASO</span>
         <div className="footer-main">
           <h2>
             ¿Qué te gustaría mejorar

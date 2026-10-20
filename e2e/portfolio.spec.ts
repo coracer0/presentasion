@@ -98,6 +98,35 @@ test("la portada explica el servicio y deja ver la historia completa", async ({
   );
 });
 
+test("el soporte tecnológico y la tarjeta muestran los servicios nuevos", async ({
+  page,
+}) => {
+  await page.goto("/presentasion/");
+  await page.getByRole("link", { name: /Necesito ayuda técnica/ }).click();
+  const support = page.locator("#soporte");
+  for (const service of ["Computadoras", "Programas", "Hogar inteligente"]) {
+    await expect(support.getByRole("heading", { name: service })).toBeVisible();
+  }
+  await expect(
+    support.getByRole("link", { name: /Cuéntame por WhatsApp/ }),
+  ).toHaveAttribute("href", /wa\.me\/524181774447\?text=/);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth > window.innerWidth + 1,
+    ),
+  ).toBe(false);
+
+  await page.goto("/presentasion/print-card.html");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "Osmar Axel Coracero Godínez",
+  );
+  await expect(page.getByText("Hogar inteligente")).toBeVisible();
+  await expect(page.getByText(/Alexa/)).toHaveCount(0);
+  await expect(
+    page.getByRole("img", { name: /Código QR que abre el portafolio/ }),
+  ).toBeVisible();
+});
+
 test("los seis casos llevan a un contacto con contexto", async ({ page }) => {
   for (const path of casePaths) {
     await page.goto(`/presentasion/casos/${path}.html`);

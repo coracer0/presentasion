@@ -33,6 +33,7 @@ export function SiteHeader() {
         <a href="#trabajos">Demos</a>
         <a href="#proceso">Cómo trabajo</a>
         <a href="#catalogo">Más ideas</a>
+        <a href="#soporte">Soporte</a>
       </nav>
       <a
         className="header-contact"
@@ -70,6 +71,9 @@ export function SiteHeader() {
         </a>
         <a href="#proceso" onClick={() => closeMenu("proceso")}>
           Cómo trabajo
+        </a>
+        <a href="#soporte" onClick={() => closeMenu("soporte")}>
+          Soporte tecnológico
         </a>
         <a href="#contacto" onClick={() => closeMenu("contacto")}>
           Contacto
